@@ -1,0 +1,72 @@
+@import "var";
+.placements-overview {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Placement-card {
+  position: relative;
+  width: 40ch;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background: #ffffff;
+
+  box-shadow: 20px 20px 60px #e6e6e6, -20px -20px 60px #ffffff;
+  transition: all 0.3s ease-in;
+
+  &:hover,
+  &:focus-within,
+  &:focus {
+    box-shadow: 20px 20px 60px #c4c4c4, -20px -20px 60px #ffffff;
+    scale: 1.05;
+  }
+  .pic-comp-position-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+
+    .Placement-profile-pic {
+      padding: 0.5rem;
+      background-color: $muted-grey;
+      max-height: 100px;
+      svg {
+        height: 80px;
+      }
+    }
+    .details-container {
+      display: flex;
+      margin-left: 1rem;
+      flex-direction: column;
+      line-height: 1.5;
+      .comp-viewmore {
+        display: flex;
+        justify-content: space-between;
+        span {
+          font-size: 2rem;
+          color: grey;
+        }
+      }
+      .job-details {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+        justify-content: space-between;
+      }
+      .job-detail {
+        display: flex;
+        align-items: center;
+        max-height: 1.5rem;
+        margin-right: 1rem;
+        svg {
+          max-height: 1.2rem;
+          margin-right: 0.5rem;
+        }
+
+        span {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

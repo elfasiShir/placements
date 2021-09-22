@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T & P cell</title>
+    <link rel="stylesheet" href="css/navbar-styles.css" />
+    <link rel="stylesheet" href="css/input-styles.css" />
+    <link rel="stylesheet" href="css/dashboard-styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="user-details-container">
+      <div class="container-header">
+        <h2 class="container-title">My Account</h2>
+        <h4 class="edit-button">Edit</h4>
+      </div>
+      <div class="user-details">
+        <h3>Personal Information</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-firstname"
+              >First Name</label
+            >
+            <input
+              type="text"
+              required
+              id="input-firstname"
+              class="user-detail-field"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-lastname"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              required
+              id="input-lastname"
+              class="user-detail-field"
+              placeholder="Last Name"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-personal-mail"
+              >Email Address (personal)</label
+            >
+            <input
+              type="email"
+              required
+              id="input-personal-mail"
+              class="user-detail-field"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-personal-mobile"
+              >Mobile Number</label
+            >
+            <input
+              type="tel"
+              required
+              id="input-personal-mobile"
+              class="user-detail-field"
+              placeholder="+91 1231231231"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Location Information</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title wide-input" for="input-address"
+              >Address</label
+            >
+            <input
+              type="text"
+              required
+              id="input-adress"
+              class="user-detail-field"
+              placeholder="Tilak Marg, Mandi House,New Delhi"
+            />
+          </div>
+
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-city">City</label>
+            <input
+              type="text"
+              required
+              id="input-city"
+              class="user-detail-field"
+              placeholder="New Delhi"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-personal-pincode"
+              >Postal Code</label
+            >
+            <input
+              type="number"
+              required
+              id="input-personal-pincode"
+              class="user-detail-field"
+              placeholder="110001"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Education</h3>
+        <div class="field-container contact-information">
+          <div class="multiple-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-undergraduate"
+                >Under Graduate Institute</label
+              >
+              <input
+                type="text"
+                required
+                id="input-undergraduate"
+                class="user-detail-field"
+                placeholder="National Institute of Technology, AP"
+              />
+            </div>
+            <div class="detail-label-and-field">
+              <label
+                class="user-detail-title wide-input"
+                for="input-undergraduate-score"
+                >CGPA</label
+              >
+              <input
+                type="number"
+                step="0.01"
+                required
+                id="input-undergraduate-score"
+                class="user-detail-field"
+                placeholder="8.54"
+              />
+            </div>
+          </div>
+          <div class="multiple-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-12th"
+                >Intermediate College
+              </label>
+              <input
+                type="text"
+                required
+                id="input-intermediate"
+                class="user-detail-field"
+                placeholder="albakra Junior College"
+              />
+            </div>
+            <div class="detail-label-and-field">
+              <label
+                class="user-detail-title wide-input"
+                for="input-intermediate-score"
+                >Score</label
+              >
+              <input
+                type="number"
+                step="0.01"
+                required
+                id="input-intermediate-score"
+                class="user-detail-field"
+                placeholder="69.42"
+              />
+            </div>
+          </div>
+          <div class="multiple-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-tenth"
+                >10th School
+              </label>
+              <input
+                type="text"
+                required
+                id="input-tenth"
+                class="user-detail-field"
+                placeholder="shakti bhakti school"
+              />
+            </div>
+            <div class="detail-label-and-field">
+              <label
+                class="user-detail-title wide-input"
+                for="input-tenth-score"
+                >CGPA/Score</label
+              >
+              <input
+                type="number"
+                step="0.01"
+                required
+                id="input-tenth-score"
+                class="user-detail-field"
+                placeholder="9.5"
+              />
+            </div>
+          </div>
+        </div>
+        <hr />
+        <h3>College Information</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-personal-rollnumber"
+              >Roll Number</label
+            >
+            <input
+              type="number"
+              required
+              id="input-personal-rollnumber"
+              class="user-detail-field"
+              placeholder="411887"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label
+              class="user-detail-title"
+              for="input-personal-registrationnumber"
+              >Registration Number</label
+            >
+            <input
+              type="number"
+              required
+              id="input-personal-registrationnumber"
+              class="user-detail-field"
+              placeholder="411887"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-personal-branch"
+              >Branch</label
+            >
+            <select
+              name="input-personal-branch"
+              class="user-detail-field"
+              required
+              id="input-personal-branch"
+            >
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="EEE">EEE</option>
+              <option value="CHEM">CHEM</option>
+              <option value="CIVL">CIVL</option>
+              <option value="MECH">MECH</option>
+              <option value="BIOT">BIOT</option>
+              <option value="MME">MME</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <h3>Files</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-resume">Resume</label>
+            <input
+              type="file"
+              required
+              id="input-resume"
+              class="user-detail-field"
+              placeholder="Upload Resume"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-tenth"
+              >10th Standard certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-tenth"
+              class="user-detail-field"
+              placeholder="Upload 10th certificate"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-inter"
+              >Intermediate certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-inter"
+              class="user-detail-field"
+              placeholder="Upload intermediate certificate"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Experience</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-skills">Skills</label>
+
+            <textarea
+              type="text"
+              id="input-skills"
+              class="user-detail-field user-detail-text"
+              placeholder="Describe your skills"
+            ></textarea>
+          </div>
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-internships"
+              >Internships</label
+            >
+
+            <textarea
+              type="text"
+              id="input-internships"
+              class="user-detail-field user-detail-text"
+              placeholder="Describe Company, Role, Responsibitily"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item logo-item">
+          <a href="#" class="nav-link"
+            ><span class="link-text logo-text">NIT AP</span>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 220.168 220.168"
+            >
+              <path fill=""currentColor" class="fa-secondary"
+              d="M31.622,100.402v-0.624c0-4.143,3.358-7.5,7.5-7.5h37.725c4.142,0,7.5,3.357,7.5,7.5v0.624h51.476v-0.624
+              c0-4.143,3.358-7.5,7.5-7.5h37.725c4.142,0,7.5,3.357,7.5,7.5v0.624h31.622V79.259c0-14.337-11.664-26-26-26h-36.171V29.495
+              c0-4.143-3.358-7.5-7.5-7.5H69.671c-4.142,0-7.5,3.357-7.5,7.5v23.765H26c-14.336,0-26,11.663-26,26v21.143H31.622z
+              M77.171,36.995 h65.825v16.265H77.171V36.995z
+              M220.168,115.402v56.771c0,14.337-11.664,26-26,26H26c-14.336,0-26-11.663-26-26v-56.771h31.622
+              v3.896c0,4.143,3.358,7.5,7.5,7.5h37.725c4.142,0,7.5-3.357,7.5-7.5v-3.896h51.476v3.896c0,4.143,3.358,7.5,7.5,7.5h37.725
+              c4.142,0,7.5-3.357,7.5-7.5v-3.896H220.168z"/>
+            </svg>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/profile.html" class="nav-link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="id-card"
+              class="svg-inline--fa fa-id-card fa-w-18"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+            >
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+              ></path>
+            </svg>
+            <span class="link-text">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/dashboard.html" class="nav-link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="user-edit"
+              class="svg-inline--fa fa-user-edit fa-w-20"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512"
+            >
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h274.9c-2.4-6.8-3.4-14-2.6-21.3l6.8-60.9 1.2-11.1 7.9-7.9 77.3-77.3c-24.5-27.7-60-45.5-99.9-45.5zm45.3 145.3l-6.8 61c-1.1 10.2 7.5 18.8 17.6 17.6l60.9-6.8 137.9-137.9-71.7-71.7-137.9 137.8zM633 268.9L595.1 231c-9.3-9.3-24.5-9.3-33.8 0l-37.8 37.8-4.1 4.1 71.8 71.7 41.8-41.8c9.3-9.4 9.3-24.5 0-33.9z"
+              ></path>
+            </svg>
+            <span class="link-text">Edit Profile</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/applied.html" class="nav-link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="clipboard-list"
+              class="svg-inline--fa fa-clipboard-list fa-w-12"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+            >
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM96 424c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm96-192c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm128 368c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z"
+              ></path>
+            </svg>
+            <span class="link-text">Applied Opportunities</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="sign-out-alt"
+              class="svg-inline--fa fa-sign-out-alt fa-w-16"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"
+              ></path>
+            </svg>
+            <span class="link-text">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

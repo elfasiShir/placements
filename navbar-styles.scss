@@ -1,0 +1,126 @@
+/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-track-color: #fff;
+  scrollbar-highlight-color: rgba(228, 67, 228, 0.5);
+  scrollbar-shadow-color: rgba(228, 67, 228, 0.5);
+}
+$text-primary: #1f1f1f;
+$text-secondary: #000000;
+$bg-primary: #ffffff;
+$bg-secondary: #e4e4e4;
+
+.navbar {
+  position: fixed;
+  background: $bg-primary;
+
+  transition: 200ms;
+  .navbar-nav {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    height: 100%;
+    .logo-item {
+      svg {
+        transition: 0.8s;
+      }
+      &:hover {
+        .nav-link {
+          svg {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+    .nav-item {
+      width: 100%;
+      &:last-child {
+        margin-top: auto;
+      }
+      .nav-link {
+        display: flex;
+        height: 5rem;
+        color: $text-primary;
+
+        align-items: center;
+        filter: grayscale(100%) opacity(0.7);
+        transition: 200ms;
+        text-decoration: none;
+        &:hover {
+          filter: grayscale(0%) opacity(1);
+          background: $bg-secondary;
+          color: $text-secondary;
+        }
+        svg {
+          min-width: 2rem;
+          max-width: 2rem;
+          margin: 0rem 1.1rem;
+        }
+        .link-text {
+          display: none;
+        }
+      }
+      .logo-text {
+        text-transform: uppercase;
+        margin-left: 1.1rem;
+        letter-spacing: 0.7ch;
+        font-weight: 600;
+      }
+    }
+  }
+}
+.fa-primary {
+  color: #e8dab2;
+  transition: 200ms;
+}
+.fa-secondary {
+  color: #dd6e42;
+  transition: 200ms;
+}
+@media only screen and (max-width: 600px) {
+  section {
+    margin: 0;
+  }
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    .navbar-nav {
+      flex-direction: row;
+      .nav-item {
+        .nav-link {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    &:hover {
+      width: 16rem;
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            .link-text {
+              display: block;
+
+              text-decoration-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

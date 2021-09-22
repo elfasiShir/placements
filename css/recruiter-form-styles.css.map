@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../recruiter-form-styles.scss"
+    ],
+    "names": [],
+    "file": "recruiter-form-styles.css"
+}
