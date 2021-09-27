@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/navbar-styles.css" />
     <link rel="stylesheet" href="css/input-styles.css" />
     <link rel="stylesheet" href="css/dashboard-styles.css" />
+    <link rel="stylesheet" href="css/profile-styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
       rel="stylesheet"
@@ -14,6 +15,12 @@
   </head>
   <body>
     <section class="user-details-container">
+      <div class="profile-picture-container">
+        <img
+          src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg"
+          alt="user image"
+        />
+      </div>
       <div class="container-header">
         <h2 class="container-title">My Account</h2>
         <h4 class="edit-button">Edit</h4>
@@ -97,6 +104,16 @@
             />
           </div>
           <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-state">State</label>
+            <input
+              type="text"
+              required
+              id="input-state"
+              class="user-detail-field"
+              placeholder="New Delhi"
+            />
+          </div>
+          <div class="detail-label-and-field">
             <label class="user-detail-title" for="input-personal-pincode"
               >Postal Code</label
             >
@@ -112,6 +129,65 @@
         <hr />
         <h3>Education</h3>
         <div class="field-container contact-information">
+          <div class="multiple-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-doctorate"
+                >Doctorate University</label
+              >
+              <input
+                type="text"
+                required
+                id="input-doctorate"
+                class="user-detail-field"
+                placeholder="National Institute of Technology, AP"
+              />
+            </div>
+            <div class="detail-label-and-field">
+              <label
+                class="user-detail-title wide-input"
+                for="input-doctorate-publications"
+                >Entry Year</label
+              >
+              <input
+                type="number"
+                step="0.01"
+                required
+                id="input-doctorate-publications"
+                class="user-detail-field"
+                placeholder="Research Papers"
+              />
+            </div>
+            
+          </div>
+          <div class="multiple-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-postgraduate"
+                >Post Graduate Institute</label
+              >
+              <input
+                type="text"
+                required
+                id="input-postgraduate"
+                class="user-detail-field"
+                placeholder="National Institute of Technology, AP"
+              />
+            </div>
+            <div class="detail-label-and-field">
+              <label
+                class="user-detail-title wide-input"
+                for="input-postgraduate-score"
+                >CGPA</label
+              >
+              <input
+                type="number"
+                step="0.01"
+                required
+                id="input-postgraduate-score"
+                class="user-detail-field"
+                placeholder="8.94"
+              />
+            </div>
+          </div>
           <div class="multiple-detail-container wide-input">
             <div class="detail-label-and-field">
               <label class="user-detail-title" for="input-undergraduate"
@@ -199,6 +275,35 @@
               />
             </div>
           </div>
+          <div class="multiple-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-tenth"
+                >Other degrees
+              </label>
+              <input
+                type="text"
+                required
+                id="input-tenth"
+                class="user-detail-field"
+                placeholder="Diploma"
+              />
+            </div>
+            <div class="detail-label-and-field">
+              <label
+                class="user-detail-title wide-input"
+                for="input-tenth-score"
+                >CGPA/Score</label
+              >
+              <input
+                type="number"
+                step="0.01"
+                required
+                id="input-tenth-score"
+                class="user-detail-field"
+                placeholder="9.5"
+              />
+            </div>
+          </div>
         </div>
         <hr />
         <h3>College Information</h3>
@@ -230,6 +335,22 @@
             />
           </div>
           <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-programme"
+              >Programme</label
+            >
+            <select
+              name="input-programme"
+              class="user-detail-field"
+              required
+              id="input-programme"
+            >
+              <option value="BTECH">B.Tech</option>
+              <option value="MTECH">M.Tech</option>
+              <option value="PHD">PhD</option>
+              
+            </select>
+          </div>
+          <div class="detail-label-and-field">
             <label class="user-detail-title" for="input-personal-branch"
               >Branch</label
             >
@@ -251,6 +372,7 @@
           </div>
         </div>
         <hr />
+        
         <h3>Files</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
@@ -260,6 +382,7 @@
               required
               id="input-resume"
               class="user-detail-field"
+              accept="application/pdf"
               placeholder="Upload Resume"
             />
           </div>
@@ -271,7 +394,8 @@
               type="file"
               required
               id="input-tenth"
-              class="user-detail-field"
+              class="user-detail-field" 
+              accept="application/pdf" 
               placeholder="Upload 10th certificate"
             />
           </div>
@@ -284,21 +408,152 @@
               required
               id="input-inter"
               class="user-detail-field"
+              accept="application/pdf"
               placeholder="Upload intermediate certificate"
             />
           </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-mtech"
+              >M.Tech Certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-mtech"
+              class="user-detail-field"
+              accept="application/pdf"
+              placeholder="Upload M.Tech Certificate"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-resume"
+              >PhD Certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-phd"
+              class="user-detail-field"
+              accept="application/pdf"
+              placeholder="Upload PhD Certificate"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Certifications</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-undergraduate"
+              >Certification Name</label
+            >
+            <input
+              type="text"
+              required
+              id="input-undergraduate"
+              class="user-detail-field"
+              placeholder="Machine Learning"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-tenth"
+              >Upload certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-tenth"
+              class="user-detail-field" 
+              accept="application/pdf" 
+              placeholder="Upload 10th certificate"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-undergraduate"
+              >Certification Name</label
+            >
+            <input
+              type="text"
+              required
+              id="input-undergraduate"
+              class="user-detail-field"
+              placeholder="Algorithm Toolbox"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-tenth"
+              >Upload certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-tenth"
+              class="user-detail-field" 
+              accept="application/pdf" 
+              placeholder="Algorithm Toolbox"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-undergraduate"
+              >Certification Name</label
+            >
+            <input
+              type="text"
+              required
+              id="input-undergraduate"
+              class="user-detail-field"
+              placeholder="Cloud Computing"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-tenth"
+              >Upload certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-tenth"
+              class="user-detail-field" 
+              accept="application/pdf" 
+              placeholder="Upload certificate"
+            />
+          </div>
+          <!-- <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-resume"
+              >PhD Certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-phd"
+              class="user-detail-field"
+              accept="application/pdf"
+              placeholder="Upload PhD Certificate"
+            />
+          </div> -->
         </div>
         <hr />
         <h3>Experience</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field non-resizable-field">
-            <label class="user-detail-title" for="input-skills">Skills</label>
+            <label class="user-detail-title" for="input-techskills">Technical Skills</label>
 
             <textarea
               type="text"
               id="input-skills"
               class="user-detail-field user-detail-text"
-              placeholder="Describe your skills"
+              placeholder="Describe your technical skills"
+            ></textarea>
+          </div>
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-projects"
+              >Projects</label
+            >
+
+            <textarea
+              type="text"
+              id="input-projects"
+              class="user-detail-field user-detail-text"
+              placeholder="Describe the Projects"
             ></textarea>
           </div>
           <div class="detail-label-and-field non-resizable-field">
@@ -312,6 +567,73 @@
               class="user-detail-field user-detail-text"
               placeholder="Describe Company, Role, Responsibitily"
             ></textarea>
+          </div>
+          <hr />
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-awards"
+              >Awards/Recognitions received</label
+            >
+
+            <textarea
+              type="text"
+              id="input-awards"
+              class="user-detail-field user-detail-text"
+              placeholder="List Your Awards/Recognitions"
+            ></textarea>
+          </div>
+          <hr />
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-papers"
+              >Papers Publications</label
+            >
+
+            <textarea
+              type="text"
+              id="input-papers"
+              class="user-detail-field user-detail-text"
+              placeholder="Describe Your Published Papers"
+            ></textarea>
+          </div>
+          <hr/>
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-hackathon"
+              >Hackathons Participated</label
+            >
+
+            <textarea
+              type="text"
+              id="input-hackathon"
+              class="user-detail-field user-detail-text"
+              placeholder="Hackathons Participated list"
+            ></textarea>
+          </div>
+          <hr />
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-social"
+              >Social Profiles</label
+            >
+
+            <textarea
+              type="text"
+              id="input-social"
+              class="user-detail-field user-detail-text"
+              placeholder="Social Profiles Links like GITHUB,LinkedIn etc"
+            ></textarea>
+          </div>
+          <hr />
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title" for="input-extraca"
+              >Extra Curricular Activities</label
+            >
+
+            <textarea
+              type="text"
+              id="input-extraca"
+              class="user-detail-field user-detail-text"
+              placeholder="Describe your Extra Curricular Activities"
+            ></textarea>
+          </div>
+          <hr />
           </div>
         </div>
       </div>
