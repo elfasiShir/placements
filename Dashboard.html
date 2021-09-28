@@ -25,11 +25,12 @@
         <h2 class="container-title">My Account</h2>
         <h4 class="edit-button">Edit</h4>
       </div>
+      
       <div class="user-details">
         <h3>Personal Information</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-firstname"
+            <label class="user-detail-title required" for="input-firstname"
               >First Name</label
             >
             <input
@@ -41,7 +42,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-lastname"
+            <label class="user-detail-title required" for="input-lastname"
               >Last Name</label
             >
             <input
@@ -53,7 +54,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-personal-mail"
+            <label class="user-detail-title required" for="input-personal-mail"
               >Email Address (personal)</label
             >
             <input
@@ -65,7 +66,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-personal-mobile"
+            <label class="user-detail-title required" for="input-personal-mobile"
               >Mobile Number</label
             >
             <input
@@ -81,7 +82,7 @@
         <h3>Location Information</h3>
         <div class="field-container contact-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title wide-input" for="input-address"
+            <label class="user-detail-title wide-input required" for="input-address"
               >Address</label
             >
             <input
@@ -94,7 +95,7 @@
           </div>
 
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-city">City</label>
+            <label class="user-detail-title required" for="input-city">City</label>
             <input
               type="text"
               required
@@ -104,7 +105,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-state">State</label>
+            <label class="user-detail-title required" for="input-state">State</label>
             <input
               type="text"
               required
@@ -114,7 +115,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-personal-pincode"
+            <label class="user-detail-title required" for="input-personal-pincode"
               >Postal Code</label
             >
             <input
@@ -154,7 +155,7 @@
                 required
                 id="input-doctorate-publications"
                 class="user-detail-field"
-                placeholder="Research Papers"
+                placeholder="2020"
               />
             </div>
             
@@ -190,7 +191,7 @@
           </div>
           <div class="multiple-detail-container wide-input">
             <div class="detail-label-and-field">
-              <label class="user-detail-title" for="input-undergraduate"
+              <label class="user-detail-title required" for="input-undergraduate"
                 >Under Graduate Institute</label
               >
               <input
@@ -203,7 +204,7 @@
             </div>
             <div class="detail-label-and-field">
               <label
-                class="user-detail-title wide-input"
+                class="user-detail-title wide-input required"
                 for="input-undergraduate-score"
                 >CGPA</label
               >
@@ -219,7 +220,7 @@
           </div>
           <div class="multiple-detail-container wide-input">
             <div class="detail-label-and-field">
-              <label class="user-detail-title" for="input-12th"
+              <label class="user-detail-title required" for="input-12th"
                 >Intermediate College
               </label>
               <input
@@ -232,7 +233,7 @@
             </div>
             <div class="detail-label-and-field">
               <label
-                class="user-detail-title wide-input"
+                class="user-detail-title wide-input required"
                 for="input-intermediate-score"
                 >Score</label
               >
@@ -248,7 +249,7 @@
           </div>
           <div class="multiple-detail-container wide-input">
             <div class="detail-label-and-field">
-              <label class="user-detail-title" for="input-tenth"
+              <label class="user-detail-title required" for="input-tenth"
                 >10th School
               </label>
               <input
@@ -261,7 +262,7 @@
             </div>
             <div class="detail-label-and-field">
               <label
-                class="user-detail-title wide-input"
+                class="user-detail-title wide-input required"
                 for="input-tenth-score"
                 >CGPA/Score</label
               >
@@ -309,7 +310,7 @@
         <h3>College Information</h3>
         <div class="field-container contact-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-personal-rollnumber"
+            <label class="user-detail-title required" for="input-personal-rollnumber"
               >Roll Number</label
             >
             <input
@@ -322,7 +323,7 @@
           </div>
           <div class="detail-label-and-field">
             <label
-              class="user-detail-title"
+              class="user-detail-title required"
               for="input-personal-registrationnumber"
               >Registration Number</label
             >
@@ -335,7 +336,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-programme"
+            <label class="user-detail-title required" for="input-programme"
               >Programme</label
             >
             <select
@@ -351,7 +352,7 @@
             </select>
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-personal-branch"
+            <label class="user-detail-title required" for="input-personal-branch"
               >Branch</label
             >
             <select
@@ -373,10 +374,10 @@
         </div>
         <hr />
         
-        <h3>Files</h3>
+        <h3>Files(upload only pdf)</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-resume">Resume</label>
+            <label class="user-detail-title required" for="input-resume">Resume</label>
             <input
               type="file"
               required
@@ -387,7 +388,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth"
+            <label class="user-detail-title required" for="input-tenth"
               >10th Standard certificate</label
             >
             <input
@@ -400,7 +401,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-inter"
+            <label class="user-detail-title required" for="input-inter"
               >Intermediate certificate</label
             >
             <input
@@ -410,6 +411,19 @@
               class="user-detail-field"
               accept="application/pdf"
               placeholder="Upload intermediate certificate"
+            />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title required" for="input-btech"
+              >B.Tech Certificate</label
+            >
+            <input
+              type="file"
+              required
+              id="input-btech"
+              class="user-detail-field"
+              accept="application/pdf"
+              placeholder="Upload B.Tech Certificate"
             />
           </div>
           <div class="detail-label-and-field">
@@ -443,99 +457,87 @@
         <h3>Certifications</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-undergraduate"
+            <label class="user-detail-title" for="input-certificate1"
               >Certification Name</label
             >
             <input
               type="text"
               required
-              id="input-undergraduate"
+              id="input-certificate1"
               class="user-detail-field"
               placeholder="Machine Learning"
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth"
+            <label class="user-detail-title" for="input-certupload1"
               >Upload certificate</label
             >
             <input
               type="file"
               required
-              id="input-tenth"
+              id="input-certupload1"
               class="user-detail-field" 
               accept="application/pdf" 
               placeholder="Upload 10th certificate"
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-undergraduate"
+            <label class="user-detail-title" for="input-certificate2"
               >Certification Name</label
             >
             <input
               type="text"
               required
-              id="input-undergraduate"
+              id="input-certificate2"
               class="user-detail-field"
               placeholder="Algorithm Toolbox"
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth"
+            <label class="user-detail-title" for="input-certupload2"
               >Upload certificate</label
             >
             <input
               type="file"
               required
-              id="input-tenth"
+              id="input-certupload2"
               class="user-detail-field" 
               accept="application/pdf" 
               placeholder="Algorithm Toolbox"
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-undergraduate"
+            <label class="user-detail-title" for="input-certificate3"
               >Certification Name</label
             >
             <input
               type="text"
               required
-              id="input-undergraduate"
+              id="input-certificate3"
               class="user-detail-field"
               placeholder="Cloud Computing"
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth"
+            <label class="user-detail-title" for="input-certupload3"
               >Upload certificate</label
             >
             <input
               type="file"
               required
-              id="input-tenth"
+              id="input-certupload3"
               class="user-detail-field" 
               accept="application/pdf" 
               placeholder="Upload certificate"
             />
           </div>
-          <!-- <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-resume"
-              >PhD Certificate</label
-            >
-            <input
-              type="file"
-              required
-              id="input-phd"
-              class="user-detail-field"
-              accept="application/pdf"
-              placeholder="Upload PhD Certificate"
-            />
-          </div> -->
+          
         </div>
         <hr />
         <h3>Experience</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field non-resizable-field">
-            <label class="user-detail-title" for="input-techskills">Technical Skills</label>
+            <label class="user-detail-title required" for="input-techskills">Technical Skills</label>
 
             <textarea
               type="text"
@@ -568,6 +570,7 @@
               placeholder="Describe Company, Role, Responsibitily"
             ></textarea>
           </div>
+        </div>
           <hr />
           <div class="detail-label-and-field non-resizable-field">
             <label class="user-detail-title" for="input-awards"
@@ -634,8 +637,17 @@
             ></textarea>
           </div>
           <hr />
+          <h3 class="required">Confirm the correctness of your details</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field non-resizable-field" style="display: inline">
+            <input type="checkbox" id="aggrement-check" name="aggrementCheck"/>
+            <label class="user-detail-title" for="aggrement-check"
+              >  I agree that the details provided above are true and correct to the best of my knowlwdge.</label
+            >
           </div>
         </div>
+          </div>
+        
       </div>
     </section>
     <div class="navbar">
