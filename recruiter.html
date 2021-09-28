@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/navbar-styles.css" />
     <link rel="stylesheet" href="css/input-styles.css" />
     <link rel="stylesheet" href="css/dashboard-styles.css" />
+    <link rel="stylesheet" href="css/recruiter-form-styles.css" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -23,7 +24,7 @@
       <div class="user-details">
         <!-- <h3>Personal Information</h3>
         <div class="field-container personal-information">
-          <label class="user-detail-title" for="input-personal-gender"
+          <label class="user-detail-title required" for="input-personal-gender"
             >Gender specificity</label
           >
           <span>(CTRL + click to select multiple options)</span>
@@ -41,10 +42,99 @@
           </select>
         </div>
         <hr /> -->
+        <h3>Job title</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <input
+              type="text"
+              required
+              id="input-location"
+              class="user-detail-field"
+              placeholder="Enter Job tilte here"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Job description</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <label
+              class="user-detail-title required wide-input"
+              for="input-job-description"
+              >Important details and specifications about job</label
+            >
+            <textarea
+              type="text"
+              id="input-job-description"
+              class="user-detail-field user-detail-text"
+              placeholder="Detailed description about job"
+            ></textarea>
+          </div>
+        </div>
+        <hr />
+        <h3>Minimum Eligibility Criteria</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title required" for="min-qualification"
+              >Qualification</label
+            >
+            <select
+              name="input-min-qualification"
+              class="user-detail-field multi-select-input"
+              required
+              id="input-personal-branch"
+              multiple
+            >
+              <option value="B Tech">B Tech</option>
+              <option value="M Tech">M Tech</option>
+              <option value="PhD">PhD</option>
+            </select>
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title required" for="year-detail"
+              >Year of graduation</label
+            >
+            <input
+              type="text"
+              required
+              id="year-detail"
+              class="user-detail-field"
+              placeholder="2023"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Required Skills</h3>
+        <div class="field-container">
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title required" for="input-procedure"
+              >Madatory Technical Skills</label
+            >
+            <textarea
+              type="text"
+              id="input-procedure"
+              class="user-detail-field user-detail-text"
+              placeholder="Describe your procedure "
+            ></textarea>
+          </div>
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="user-detail-title required" for="input-skills"
+              >Desirable Skills
+            </label>
+            <textarea
+              type="text"
+              id="input-skills"
+              class="user-detail-field user-detail-text"
+              placeholder="Experience with Python"
+            ></textarea>
+          </div>
+          <div class="chips chips-placeholder"></div>
+        </div>
+        <hr />
         <h3>Location</h3>
         <div class="field-container contact-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title wide-input" for="input-location"
+            <label class="user-detail-title required wide-input" for="input-location"
               >Location Specificity If Any</label
             >
             <input
@@ -60,7 +150,7 @@
         <h3>Education</h3>
         <div class="field-container contact-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-undergraduate-score"
+            <label class="user-detail-title required" for="input-undergraduate-score"
               >Undergraduate CGPA Cutoff</label
             >
             <input
@@ -73,7 +163,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-intermediate-score"
+            <label class="user-detail-title required" for="input-intermediate-score"
               >Intermediate percentage Cutoff</label
             >
             <input
@@ -86,7 +176,7 @@
             />
           </div>
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth-score"
+            <label class="user-detail-title required" for="input-tenth-score"
               >10th CGPA/percentage Cutoff</label
             >
             <input
@@ -103,7 +193,7 @@
         <h3>College Information</h3>
         <div class="field-container contact-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-personal-branch"
+            <label class="user-detail-title required" for="input-personal-branch"
               >Branch Specificity</label
             >
             <p><kbd>CTRL</kbd> + <kbd>click</kbd> to select multiple options</p>
@@ -129,7 +219,7 @@
         <h3>Files</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-intro"
+            <label class="user-detail-title required" for="input-intro"
               >Introduction/info about the opportunity</label
             >
             <input
@@ -145,10 +235,9 @@
         <h3>PROCEDURE</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field non-resizable-field">
-            <label class="user-detail-title" for="input-procedure"
+            <label class="user-detail-title required" for="input-procedure"
               >Procedure for applying the job</label
             >
-
             <textarea
               type="text"
               id="input-procedure"
@@ -157,7 +246,7 @@
             ></textarea>
           </div>
           <div class="detail-label-and-field non-resizable-field">
-            <label class="user-detail-title" for="input-skills"
+            <label class="user-detail-title required" for="input-skills"
               >Other skills Needed
             </label>
 
@@ -170,6 +259,52 @@
           </div>
           <div class="chips chips-placeholder"></div>
         </div>
+        <hr />
+        <h3>Links</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <label class="user-detail-title required wide-input" for="input-links"
+              >Links about company if any</label
+            >
+            <textarea
+              type="text"
+              id="input-links"
+              class="user-detail-field user-detail-text"
+              placeholder="Detailed description about job"
+            ></textarea>
+          </div>
+        </div>
+        <hr />
+        <h3>Deadline</h3>
+        <div class="field-container contact-information">
+          <div class="detail-label-and-field">
+            <label
+              class="user-detail-title required wide-input"
+              for="input-application-deadline"
+              >Date</label
+            >
+            <input
+              type="date"
+              required
+              id="input-application-deadline"
+              class="user-detail-field"
+              placeholder="20-08-2001"
+            />
+            <label
+              class="user-detail-title required wide-input"
+              for="input-application-deadline-time"
+              >Time</label
+            >
+            <input
+              type="time"
+              required
+              id="input-application-deadline-time"
+              class="user-detail-field"
+              placeholder="6:00 PM IST"
+            />
+          </div>
+        </div>
+        <hr />
       </div>
     </section>
     <div class="navbar">
@@ -185,7 +320,7 @@
               <path fill=""currentColor" class="fa-secondary"
               d="M31.622,100.402v-0.624c0-4.143,3.358-7.5,7.5-7.5h37.725c4.142,0,7.5,3.357,7.5,7.5v0.624h51.476v-0.624
               c0-4.143,3.358-7.5,7.5-7.5h37.725c4.142,0,7.5,3.357,7.5,7.5v0.624h31.622V79.259c0-14.337-11.664-26-26-26h-36.171V29.495
-              c0-4.143-3.358-7.5-7.5-7.5H69.671c-4.142,0-7.5,3.357-7.5,7.5v23.765H26c-14.336,0-26,11.663-26,26v21.143H31.622z
+              c0-4.143-3.358-7.5-7.5-7.5H69.671c-4.142,0-7.5,3.357-7.5,7.5v23.765H26c-14.336,0-26,11.663-26,26v21.143h31.622z
               M77.171,36.995 h65.825v16.265H77.171V36.995z
               M220.168,115.402v56.771c0,14.337-11.664,26-26,26H26c-14.336,0-26-11.663-26-26v-56.771h31.622
               v3.896c0,4.143,3.358,7.5,7.5,7.5h37.725c4.142,0,7.5-3.357,7.5-7.5v-3.896h51.476v3.896c0,4.143,3.358,7.5,7.5,7.5h37.725
@@ -208,7 +343,7 @@
               <path
                 fill="currentColor"
                 class="fa-secondary"
-                d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
+                d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"
               ></path>
             </svg>
             <span class="link-text">Profile</span>
