@@ -260,4 +260,28 @@ hr {
 .Placement-card .pic-comp-position-container .details-container .job-detail span {
   white-space: nowrap;
 }
+
+.Placement-card .applications-status{
+  display: flex;
+  align-items: center;
+  justify-content:center !important;
+  border-radius: 6rem;
+  background-color: #F6F6F6;
+}
+.Placement-card .applications-status .status-update{
+  margin-left:4px;
+}
+
+.Placement-card .applications-status .rejected{
+  color: red;
+}
+
+.Placement-card .applications-status .success{
+  color: green;
+}
+
+.Placement-card .applications-status .pending{
+  color: orange;
+}
+
 /*# sourceMappingURL=applied-styles.css.map */
