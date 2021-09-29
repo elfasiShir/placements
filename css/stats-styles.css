@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  color: green;
+}
+
+.chart-heading {
+    margin-top: 6px;
+    text-align: center;
+}
+
+.stats-chart {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
