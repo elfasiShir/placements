@@ -151,6 +151,11 @@ hr {
   margin-bottom: 1.5rem;
 }
 
+.required:after {
+  content: " *";
+  color: red;
+}
+
 .container-header {
   display: -webkit-box;
   display: -ms-flexbox;
