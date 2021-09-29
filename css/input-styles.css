@@ -251,10 +251,7 @@ label {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
-.required:after {
-  content:" *";
-  color: red;
-}
+
 .edit-button {
   background-color: #dd6e42;
   padding: 0.375rem 0.75rem;
