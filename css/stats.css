@@ -156,108 +156,38 @@ hr {
   color: red;
 }
 
-.placements-overview {
+body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.Placement-card {
-  position: relative;
-  width: 40ch;
-  margin: 1rem;
-  padding: 0.5rem;
-  border-radius: 20px;
-  background: #ffffff;
-  -webkit-box-shadow: 20px 20px 60px #e6e6e6, -20px -20px 60px #ffffff;
-          box-shadow: 20px 20px 60px #e6e6e6, -20px -20px 60px #ffffff;
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-
-.Placement-card:hover, .Placement-card:focus-within, .Placement-card:focus {
-  -webkit-box-shadow: 20px 20px 60px #c4c4c4, -20px -20px 60px #ffffff;
-          box-shadow: 20px 20px 60px #c4c4c4, -20px -20px 60px #ffffff;
-  scale: 1.05;
-}
-
-.Placement-card .pic-comp-position-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding: 1rem;
-}
-
-.Placement-card .pic-comp-position-container .Placement-profile-pic {
-  padding: 0.5rem;
-  background-color: #8898aa;
-  max-height: 100px;
-}
-
-.Placement-card .pic-comp-position-container .Placement-profile-pic svg {
-  height: 80px;
-}
-
-.Placement-card .pic-comp-position-container .details-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  line-height: 1.5;
-}
-
-.Placement-card .pic-comp-position-container .details-container .comp-viewmore {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.Placement-card .pic-comp-position-container .details-container .comp-viewmore span {
-  font-size: 2rem;
-  color: grey;
-}
-
-.Placement-card .pic-comp-position-container .details-container .job-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 1.5rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.Placement-card .pic-comp-position-container .details-container .job-detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-height: 1.5rem;
-  margin-right: 1rem;
+  margin-top: 2rem;
 }
 
-.Placement-card .pic-comp-position-container .details-container .job-detail svg {
-  max-height: 1.2rem;
-  margin-right: 0.5rem;
+.stats-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 3rem;
 }
-
-.Placement-card .pic-comp-position-container .details-container .job-detail span {
-  white-space: nowrap;
-}
-/*# sourceMappingURL=applied-styles.css.map */
+/*# sourceMappingURL=stats.css.map */
