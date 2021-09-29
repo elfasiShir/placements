@@ -22,6 +22,9 @@
 .wide-input {
   grid-column: span 2 / auto;
 }
+.three-input {
+  grid-column: span 2 / auto;
+}
 .detail-label-and-field {
   display: flex;
   flex-direction: column;
@@ -29,6 +32,11 @@
 .multiple-detail-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.5rem;
+}
+.three-detail-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 0.5rem;
 }
 .user-detail-title {

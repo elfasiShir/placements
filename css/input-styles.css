@@ -192,6 +192,10 @@ hr {
   grid-column: span 2 / auto;
 }
 
+.three-input {
+  grid-column: span 2 / auto;
+}
+
 .detail-label-and-field {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,6 +211,14 @@ hr {
   display: grid;
   -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 0.5rem;
+}
+
+.three-detail-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 0.5rem;
 }
 
