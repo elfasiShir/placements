@@ -4,6 +4,17 @@
   flex-wrap: wrap;
 }
 
+.applied-container{
+  width:60%;
+  margin :1rem auto;
+  background-color: $tinted-white;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  border-radius: 0.375rem;
+  overflow: hidden;
+  padding: 2rem;
+ 
+}
+
 .Placement-card {
   position: relative;
   width: 40ch;
