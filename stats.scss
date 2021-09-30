@@ -1,17 +1,17 @@
 @import "var";
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-  align-items: center;
-  margin-top: 2rem;
+  font-family: sans-serif;
+  font-weight: 100;
 }
-.stats-heading {
+
+.chart-heading {
+    margin-top: 3px;
+    text-align: center;
+}
+
+.stats-chart {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 3rem;
 }

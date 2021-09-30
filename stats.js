@@ -96,14 +96,14 @@ const labelOption = {
 };
 option = {
   color: [
-    "#FFF9B2",
-    "#ACFFAD",
-    "#FF7878",
-    "#C1FFD7",
-    "#CEE5D0",
+    "#b5e48c",
+    "#99d98c",
+    "#76c893",
+    "#52b69a",
+    "#34a0a4",
     "#168aad",
-    "#14279B",
-    "#5C7AEA",
+    "#1a759f",
+    "#1e6091",
   ],
   tooltip: {
     trigger: "axis",
