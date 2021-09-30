@@ -176,10 +176,23 @@ hr {
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
+  .user-details-container {
+    margin: 1.6rem;
+    max-width: 100%;
+    padding: 0;
+  }
+  body {
+    margin-bottom: 5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
   .user-details-container {
     margin: 2rem;
+    margin: 0rem;
     max-width: 100%;
+    padding: 0;
   }
   body {
     margin-bottom: 5rem;
