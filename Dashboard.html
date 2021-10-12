@@ -71,173 +71,196 @@
       <h3>Education</h3>
       <div class="field-container contact-information">
         <div class="three-detail-container wide-input">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-doctorate">Doctorate University</label>
-            <input type="text" required id="input-doctorate" class="user-detail-field"
-              placeholder="National Institute of Technology, AP" />
+          <div class="name-specialization">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-doctorate">Doctorate University</label>
+              <input type="text" required id="input-doctorate" class="user-detail-field"
+                placeholder="National Institute of Technology, AP" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-doctorate-Specialization">Specialization</label>
+              <input type="number" step="0.01" required id="input-doctorate-specialization" class="user-detail-field"
+                placeholder="Computer Architecture" />
+            </div>
           </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-doctorate-Specialization">Specialization</label>
-            <input type="number" step="0.01" required id="input-doctorate-specialization" class="user-detail-field"
-              placeholder="Computer Architecture" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-doctorate-years">Entry Year</label>
-            <input type="number" step="0.01" required id="input-doctorate-years" class="user-detail-field"
-              placeholder="2020" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-doctorate-class">Class</label>
-            <select name="input-phd-class" class="user-detail-field" required id="input-phd-class">
-              <option value="Distinction">Distinction</option>
-              <option value="First Class">First Class</option>
-              <option value="Second Class">Second Class</option>
-              <option value="Third Class">Third Class</option>
-              <option value="Pass">Pass</option>
-              <option value="Fail">Fail</option>
-            </select>
-          </div>
-
-        </div>
-        <div class="three-detail-container wide-input">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-postgraduate">Post Graduate Institute</label>
-            <input type="text" required id="input-postgraduate" class="user-detail-field"
-              placeholder="National Institute of Technology, AP" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-postgraduate-specailization">Specialization</label>
-            <input type="number" step="0.01" required id="input-postgraduate-specailization" class="user-detail-field"
-              placeholder="Computer Science" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-postgraduate-score">CGPA</label>
-            <input type="number" step="0.01" required id="input-postgraduate-score" class="user-detail-field"
-              placeholder="8.94" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-postgraduate-class">Class</label>
-            <select name="input-pg-class" class="user-detail-field" required id="input-pg-class">
-              <option value="Distinction">Distinction</option>
-              <option value="First Class">First Class</option>
-              <option value="Second Class">Second Class</option>
-              <option value="Third Class">Third Class</option>
-              <option value="Pass">Pass</option>
-              <option value="Fail">Fail</option>
-            </select>
+          <div class="academic-stats">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-doctorate-years">Entry Year</label>
+              <input type="number" step="0.01" required id="input-doctorate-years" class="user-detail-field"
+                placeholder="2020" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-doctorate-class">Class</label>
+              <select name="input-phd-class" class="user-detail-field" required id="input-phd-class">
+                <option value="Distinction">Distinction</option>
+                <option value="First Class">First Class</option>
+                <option value="Second Class">Second Class</option>
+                <option value="Third Class">Third Class</option>
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="three-detail-container wide-input">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-undergraduate">Under Graduate Institute</label>
-            <input type="text" required id="input-undergraduate" class="user-detail-field"
-              placeholder="National Institute of Technology, AP" />
+          <div class="name-specialization">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-postgraduate">Post Graduate Institute</label>
+              <input type="text" required id="input-postgraduate" class="user-detail-field"
+                placeholder="National Institute of Technology, AP" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-postgraduate-specailization">Specialization</label>
+              <input type="number" step="0.01" required id="input-postgraduate-specailization" class="user-detail-field"
+                placeholder="Computer Science" />
+            </div>
           </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-undergraduate-specialization">Specialization</label>
-            <input type="number" step="0.01" required id="input-undergraduate-specialization" class="user-detail-field"
-              placeholder="8.54" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-undergraduate-score">CGPA</label>
-            <input type="number" step="0.01" required id="input-undergraduate-score" class="user-detail-field"
-              placeholder="8.54" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-undergraduate-class">Class</label>
-            <select name="input-ug-class" class="user-detail-field" required id="input-ug-class">
-              <option value="Distinction">Distinction</option>
-              <option value="First Class">First Class</option>
-              <option value="Second Class">Second Class</option>
-              <option value="Third Class">Third Class</option>
-              <option value="Pass">Pass</option>
-              <option value="Fail">Fail</option>
-            </select>
-          </div>
-        </div>
-        <div class="three-detail-container wide-input">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-12th">Intermediate College
-            </label>
-            <input type="text" required id="input-intermediate" class="user-detail-field"
-              placeholder="albakra Junior College" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-intermediate-group">Group</label>
-            <input type="number" step="0.01" required id="input-intermediate-group" class="user-detail-field"
-              placeholder="MEC/MPC" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-intermediate-score">Score</label>
-            <input type="number" step="0.01" required id="input-intermediate-score" class="user-detail-field"
-              placeholder="69.42" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-inter-class">Class</label>
-            <select name="input-inter-class" class="user-detail-field" required id="input-inter-class">
-              <option value="Distinction">Distinction</option>
-              <option value="First Class">First Class</option>
-              <option value="Second Class">Second Class</option>
-              <option value="Third Class">Third Class</option>
-              <option value="Pass">Pass</option>
-              <option value="Fail">Fail</option>
-            </select>
+          <div class="academic-stats">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-postgraduate-score">CGPA</label>
+              <input type="number" step="0.01" required id="input-postgraduate-score" class="user-detail-field"
+                placeholder="8.94" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-postgraduate-class">Class</label>
+              <select name="input-pg-class" class="user-detail-field" required id="input-pg-class">
+                <option value="Distinction">Distinction</option>
+                <option value="First Class">First Class</option>
+                <option value="Second Class">Second Class</option>
+                <option value="Third Class">Third Class</option>
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="three-detail-container wide-input">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-tenth">10th School
-            </label>
-            <input type="text" required id="input-tenth" class="user-detail-field" placeholder="shakti bhakti school" />
+          <div class="name-specialization">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-undergraduate">Under Graduate Institute</label>
+              <input type="text" required id="input-undergraduate" class="user-detail-field"
+                placeholder="National Institute of Technology, AP" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-undergraduate-specialization">Specialization</label>
+              <input type="number" step="0.01" required id="input-undergraduate-specialization" class="user-detail-field"
+                placeholder="8.54" />
+            </div>
           </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-tenth-board">Board</label>
-            <input type="number" step="0.01" required id="input-tenth-board" class="user-detail-field"
-              placeholder="CBSE" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-tenth-score">CGPA/Score</label>
-            <input type="number" step="0.01" required id="input-tenth-score" class="user-detail-field"
-              placeholder="9.5" />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-tenth-class">Class</label>
-            <select name="input-tenth-class" class="user-detail-field" required id="input-tenth-class">
-              <option value="Distinction">Distinction</option>
-              <option value="First Class">First Class</option>
-              <option value="Second Class">Second Class</option>
-              <option value="Third Class">Third Class</option>
-              <option value="Pass">Pass</option>
-              <option value="Fail">Fail</option>
-            </select>
+          <div class="academic-stats">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-undergraduate-score">CGPA</label>
+              <input type="number" step="0.01" required id="input-undergraduate-score" class="user-detail-field"
+                placeholder="8.54" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-undergraduate-class">Class</label>
+              <select name="input-ug-class" class="user-detail-field" required id="input-ug-class">
+                <option value="Distinction">Distinction</option>
+                <option value="First Class">First Class</option>
+                <option value="Second Class">Second Class</option>
+                <option value="Third Class">Third Class</option>
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="three-detail-container wide-input">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth">Other degrees
-            </label>
-            <input type="text" required id="input-tenth" class="user-detail-field" placeholder="Diploma" />
+          <div class="name-specialization">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-12th">Intermediate College
+              </label>
+              <input type="text" required id="input-intermediate" class="user-detail-field"
+                placeholder="albakra Junior College" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-intermediate-group">Group</label>
+              <input type="number" step="0.01" required id="input-intermediate-group" class="user-detail-field"
+                placeholder="MEC/MPC" />
+            </div>
           </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth-speliazation">Specialization</label>
-            <input type="number" step="0.01" required id="input-tenth-speliazation" class="user-detail-field"
-              placeholder="Economics" />
+          <div class="academic-stats">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-intermediate-score">Score</label>
+              <input type="number" step="0.01" required id="input-intermediate-score" class="user-detail-field"
+                placeholder="69.42" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-inter-class">Class</label>
+              <select name="input-inter-class" class="user-detail-field" required id="input-inter-class">
+                <option value="Distinction">Distinction</option>
+                <option value="First Class">First Class</option>
+                <option value="Second Class">Second Class</option>
+                <option value="Third Class">Third Class</option>
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+              </select>
+            </div>
           </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-tenth-score">CGPA/Score</label>
-            <input type="number" step="0.01" required id="input-tenth-score" class="user-detail-field"
-              placeholder="9.5" />
+        </div>
+        <div class="three-detail-container wide-input">
+          <div class="name-specialization">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-tenth">10th School
+              </label>
+              <input type="text" required id="input-tenth" class="user-detail-field" placeholder="shakti bhakti school" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-tenth-board">Board</label>
+              <input type="number" step="0.01" required id="input-tenth-board" class="user-detail-field"
+                placeholder="CBSE" />
+            </div>
           </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title" for="input-other-class">Class</label>
-            <select name="input-other-class" class="user-detail-field" required id="input-other-class">
-              <option value="Distinction">Distinction</option>
-              <option value="First Class">First Class</option>
-              <option value="Second Class">Second Class</option>
-              <option value="Third Class">Third Class</option>
-              <option value="Pass">Pass</option>
-              <option value="Fail">Fail</option>
-            </select>
+          <div class="academic-stats">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-tenth-score">CGPA/Score</label>
+              <input type="number" step="0.01" required id="input-tenth-score" class="user-detail-field"
+                placeholder="9.5" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title required" for="input-tenth-class">Class</label>
+              <select name="input-tenth-class" class="user-detail-field" required id="input-tenth-class">
+                <option value="Distinction">Distinction</option>
+                <option value="First Class">First Class</option>
+                <option value="Second Class">Second Class</option>
+                <option value="Third Class">Third Class</option>
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="three-detail-container wide-input">
+          <div class="name-specialization">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-tenth">Other degrees
+              </label>
+              <input type="text" required id="input-tenth" class="user-detail-field" placeholder="Diploma" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-tenth-speliazation">Specialization</label>
+              <input type="number" step="0.01" required id="input-tenth-speliazation" class="user-detail-field"
+                placeholder="Economics" />
+            </div>
+          </div>
+          <div class="academic-stats">
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-tenth-score">CGPA/Score</label>
+              <input type="number" step="0.01" required id="input-tenth-score" class="user-detail-field"
+                placeholder="9.5" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="user-detail-title" for="input-other-class">Class</label>
+              <select name="input-other-class" class="user-detail-field" required id="input-other-class">
+                <option value="Distinction">Distinction</option>
+                <option value="First Class">First Class</option>
+                <option value="Second Class">Second Class</option>
+                <option value="Third Class">Third Class</option>
+                <option value="Pass">Pass</option>
+                <option value="Fail">Fail</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
