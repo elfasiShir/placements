@@ -7,8 +7,8 @@
   <title>T & P cell</title>
   <link rel="stylesheet" href="css/navbar-styles.css" />
   <link rel="stylesheet" href="css/input-styles.css" />
-  <link rel="stylesheet" href="css/dashboard-styles.css" />
   <link rel="stylesheet" href="css/profile-styles.css" />
+  <link rel="stylesheet" href="css/dashboard-styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 
@@ -77,6 +77,11 @@
               placeholder="National Institute of Technology, AP" />
           </div>
           <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-doctorate-Specialization">Specialization</label>
+            <input type="number" step="0.01" required id="input-doctorate-specialization" class="user-detail-field"
+              placeholder="Computer Architecture" />
+          </div>
+          <div class="detail-label-and-field">
             <label class="user-detail-title" for="input-doctorate-years">Entry Year</label>
             <input type="number" step="0.01" required id="input-doctorate-years" class="user-detail-field"
               placeholder="2020" />
@@ -101,6 +106,11 @@
               placeholder="National Institute of Technology, AP" />
           </div>
           <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-postgraduate-specailization">Specialization</label>
+            <input type="number" step="0.01" required id="input-postgraduate-specailization" class="user-detail-field"
+              placeholder="Computer Science" />
+          </div>
+          <div class="detail-label-and-field">
             <label class="user-detail-title" for="input-postgraduate-score">CGPA</label>
             <input type="number" step="0.01" required id="input-postgraduate-score" class="user-detail-field"
               placeholder="8.94" />
@@ -122,6 +132,11 @@
             <label class="user-detail-title required" for="input-undergraduate">Under Graduate Institute</label>
             <input type="text" required id="input-undergraduate" class="user-detail-field"
               placeholder="National Institute of Technology, AP" />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title required" for="input-undergraduate-specialization">Specialization</label>
+            <input type="number" step="0.01" required id="input-undergraduate-specialization" class="user-detail-field"
+              placeholder="8.54" />
           </div>
           <div class="detail-label-and-field">
             <label class="user-detail-title required" for="input-undergraduate-score">CGPA</label>
@@ -148,6 +163,11 @@
               placeholder="albakra Junior College" />
           </div>
           <div class="detail-label-and-field">
+            <label class="user-detail-title required" for="input-intermediate-group">Group</label>
+            <input type="number" step="0.01" required id="input-intermediate-group" class="user-detail-field"
+              placeholder="MEC/MPC" />
+          </div>
+          <div class="detail-label-and-field">
             <label class="user-detail-title required" for="input-intermediate-score">Score</label>
             <input type="number" step="0.01" required id="input-intermediate-score" class="user-detail-field"
               placeholder="69.42" />
@@ -171,6 +191,11 @@
             <input type="text" required id="input-tenth" class="user-detail-field" placeholder="shakti bhakti school" />
           </div>
           <div class="detail-label-and-field">
+            <label class="user-detail-title required" for="input-tenth-board">Board</label>
+            <input type="number" step="0.01" required id="input-tenth-board" class="user-detail-field"
+              placeholder="CBSE" />
+          </div>
+          <div class="detail-label-and-field">
             <label class="user-detail-title required" for="input-tenth-score">CGPA/Score</label>
             <input type="number" step="0.01" required id="input-tenth-score" class="user-detail-field"
               placeholder="9.5" />
@@ -192,6 +217,11 @@
             <label class="user-detail-title" for="input-tenth">Other degrees
             </label>
             <input type="text" required id="input-tenth" class="user-detail-field" placeholder="Diploma" />
+          </div>
+          <div class="detail-label-and-field">
+            <label class="user-detail-title" for="input-tenth-speliazation">Specialization</label>
+            <input type="number" step="0.01" required id="input-tenth-speliazation" class="user-detail-field"
+              placeholder="Economics" />
           </div>
           <div class="detail-label-and-field">
             <label class="user-detail-title" for="input-tenth-score">CGPA/Score</label>
@@ -337,9 +367,19 @@
         </div>
         <div class="detail-label-and-field non-resizable-field">
           <label class="user-detail-title" for="input-projects">Projects</label>
-
+          <div class="project-meta-data">
+            <input type="text" required id="input-project-title" class="user-detail-field" placeholder="Project title"  />
+            <select name="project-contribution-type" class="user-detail-field" required id="project-contribution-type">
+              <option value="Team">Team</option>
+              <option value="Individual">Individual</option>
+            </select>
+          </div>
           <textarea type="text" id="input-projects" class="user-detail-field user-detail-text"
-            placeholder="Describe the Projects"></textarea>
+          placeholder="About project  and its discription"></textarea>
+          <input type="text" required id="input-project-impact" class="user-detail-field" placeholder="Impact of project" />
+          <input type="text" required id="input-project-tech" class="user-detail-field" placeholder="Tech Stack used in project" />
+        </div>
+
         </div>
         <div class="detail-label-and-field non-resizable-field">
           <label class="user-detail-title" for="input-internships">Internships</label>
@@ -371,10 +411,14 @@
       </div>
       <hr />
       <div class="detail-label-and-field non-resizable-field">
-        <label class="user-detail-title" for="input-social">Social Profiles</label>
-
-        <textarea type="text" id="input-social" class="user-detail-field user-detail-text"
-          placeholder="Social Profiles Links like GITHUB,LinkedIn etc"></textarea>
+        <label class="user-detail-title" for="input-social-profile-links">Social Profiles</label>
+        <select name="input-social-profile-links" class="user-detail-field" required id="input-social-profile-links">
+          <option value="GitHub">GitHub</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="StackOverFlow">Stack Over FLow</option>
+        </select>
+        <input type="url" required id="social-profile-link" class="user-detail-field"
+        placeholder="github profile link" />
       </div>
       <hr />
       <div class="detail-label-and-field non-resizable-field">

@@ -35,9 +35,9 @@
   gap: 0.5rem;
 }
 .three-detail-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .user-detail-title {
   font-size: 0.875rem;

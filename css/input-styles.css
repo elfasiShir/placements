@@ -215,11 +215,15 @@ hr {
 }
 
 .three-detail-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .user-detail-title {

@@ -14,13 +14,24 @@
     color: $muted-grey;
     text-transform: uppercase;
   }
+  .project-meta-data {
+    display: flex;
+    justify-content: space-between;
+
+    #input-project-title {
+      width: 67%;
+    }
+    #project-contribution-type {
+      width: 29%;
+    }
+  }
 }
 
 @media only screen and (max-width: 900px) {
   .user-details-container {
     margin: 1.6rem;
     max-width: 100%;
-    padding:0;
+    padding: 0;
   }
   body {
     margin-bottom: 5rem;
@@ -32,11 +43,9 @@
     margin: 2rem;
     margin: 0rem;
     max-width: 100%;
-    padding:0;
+    padding: 0;
   }
   body {
     margin-bottom: 5rem;
   }
 }
-
-
