@@ -1,3 +1,4 @@
+{% load sass_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +6,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>T & P cell</title>
-  <link rel="stylesheet" href="css/navbar-styles.css" />
-  <link rel="stylesheet" href="css/input-styles.css" />
-  <link rel="stylesheet" href="css/profile-styles.css" />
-  <link rel="stylesheet" href="css/dashboard-styles.css" />
+  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/navbar-styles.scss' %}" />
+  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
+  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/profile-styles.scss' %}" />
+  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 

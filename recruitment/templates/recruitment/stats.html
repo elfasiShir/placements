@@ -1,3 +1,5 @@
+{% load sass_tags %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- Custom CSS Links -->
-    <link rel="stylesheet" href="css/navbar-styles.css" />
-    <link rel="stylesheet" href="css/stats.css" />
+    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/navbar-styles.scss' %}" />
+    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/stats.scss' %}" />
 
   </head>
   <body>
@@ -49,7 +51,7 @@
         <br>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.0/dist/echarts.min.js"></script>
-    <script defer src="./stats.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/echarts@5.2.0/dist/echarts.min.js"></script>
+    <script defer src="{% static 'recruitment/js/stats.js' %}"></script>
   </body>
 </html>
