@@ -177,4 +177,16 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+h2 {
+  text-align: center;
+}
+
+form {
+  margin-left: 30%;
+}
+
+table {
+  margin-left: 30%;
+}
 /*# sourceMappingURL=stats.css.map */

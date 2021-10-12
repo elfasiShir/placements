@@ -207,3 +207,54 @@ option = {
 };
 
 option && myChart.setOption(option);
+
+function branchStats(){
+  var branch=document.getElementById("branchSelect").value;
+  var students=document.getElementById("students");
+  var companies=document.getElementById("companies");
+  var highctc=document.getElementById("highctc");
+  var lowctc=document.getElementById("lowctc");
+  var avgctc=document.getElementById("avgctc");
+  if(branch == 'CSE'){
+    students.innerHTML="65";
+    companies.innerHTML="Infosis, Deloitte, Amazon";
+    highctc.innerHTML="16 LPA";
+    lowctc.innerHTML="4 LPA";
+    avgctc.innerHTML="7 LPA";
+  }
+  else if(branch == 'ECE'){
+    students.innerHTML="55";
+    companies.innerHTML="Napier, Deloitte, Amazon";
+    highctc.innerHTML="13 LPA";
+    lowctc.innerHTML="3 LPA";
+    avgctc.innerHTML="5 LPA";
+  }
+  else if(branch == 'EEE'){
+    students.innerHTML="49";
+    companies.innerHTML="Infosis, Amazon, Fanatics";
+    highctc.innerHTML="10 LPA";
+    lowctc.innerHTML="3 LPA";
+    avgctc.innerHTML="4.5 LPA";
+  }
+  else if(branch == 'MECH'){
+    students.innerHTML="35";
+    companies.innerHTML="Deloitte, Fanatics";
+    highctc.innerHTML="8 LPA";
+    lowctc.innerHTML="2 LPA";
+    avgctc.innerHTML="3.5 LPA";
+  } 
+  else if(branch == 'CIVIL'){
+    students.innerHTML="29";
+    companies.innerHTML="Napier, Deloitte";
+    highctc.innerHTML="8 LPA";
+    lowctc.innerHTML="2 LPA";
+    avgctc.innerHTML="2.5 LPA";
+  }
+  else if(branch == 'CHEM'){
+    students.innerHTML="20";
+    companies.innerHTML="Fanatics, Napier";
+    highctc.innerHTML="8 LPA";
+    lowctc.innerHTML="2 LPA";
+    avgctc.innerHTML="3 LPA";
+  }
+}

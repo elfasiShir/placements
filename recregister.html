@@ -18,7 +18,7 @@
   <body>
     <section class="user-details-container">
       <div class="container-header">
-        <h2 class="container-title">RECRUITING FORM</h2>
+        <h2 class="container-title">RECRUITER REGISTRATION FORM</h2>
         <h4 class="edit-button">POST</h4>
       </div>
       <div class="user-details">
@@ -42,20 +42,59 @@
           </select>
         </div>
         <hr /> -->
-        <h3 class="required">Job title</h3>
-        <div class="field-container contact-information">
+        <h3 class="required">Name</h3>
+        <div class="field-container personal-information">
           <div class="detail-label-and-field">
             <input
               type="text"
               required
-              id="input-location"
+              id="input-name"
               class="user-detail-field"
-              placeholder="Enter Job tilte here"
+              placeholder="Enter your name here"
             />
           </div>
         </div>
-        <hr />
-        <h3>Job description</h3>
+        <br />
+        <h3 class="required">Company</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <input
+              type="text"
+              required
+              id="input-company"
+              class="user-detail-field"
+              placeholder="Enter your company name here"
+            />
+          </div>
+        </div>
+        <br />
+        <h3 class="required">Email address</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <input
+              type="email"
+              required
+              id="input-email"
+              class="user-detail-field"
+              placeholder="Enter your email address here"
+            />
+          </div>
+        </div>
+        <br />
+        <h3 class="required">Phone number</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <input
+              type="tel"
+              required
+              id="input-location"
+              class="user-detail-field"
+              placeholder="Enter your phone number here"
+            />
+          </div>
+        </div>
+        
+        <!-- <h3>Job description</h3>
         <div class="field-container contact-information">
           <div class="detail-label-and-field">
             <label
@@ -71,221 +110,9 @@
             ></textarea>
           </div>
         </div>
-        <hr />
-        <h3>Cost To Company</h3>
-        <div class="field-container contact-information">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required wide-input" for="input-ctc"
-              >Expected figures of CTC</label
-            >
-            <input
-              type="text"
-              required
-              id="input-ctc"
-              class="user-detail-field"
-              placeholder="30-40 Lakhs"
-            />
-          </div>
-        </div>
-        <hr />
-        <h3>Minimum Qualification</h3>
-        <div class="field-container contact-information">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="min-qualification"
-              >Qualification</label
-            >
-            <select
-              name="input-min-qualification"
-              class="user-detail-field"
-              required
-              id="input-personal-branch"
-            >
-              <option value="B Tech">B Tech</option>
-              <option value="M Tech">M Tech</option>
-              <option value="PhD">PhD</option>
-            </select>
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="year-detail"
-              >Year of graduation</label
-            >
-            <input
-              type="text"
-              required
-              id="year-detail"
-              class="user-detail-field"
-              placeholder="2023"
-            />
-          </div>
-        </div>
-        <hr />
-        <h3>Required Skills</h3>
-        <div class="field-container">
-          <div class="detail-label-and-field non-resizable-field">
-            <label class="user-detail-title required" for="input-procedure"
-              >Madatory Technical Skills</label
-            >
-            <textarea
-              type="text"
-              id="input-procedure"
-              class="user-detail-field user-detail-text"
-              placeholder="Describe your procedure "
-            ></textarea>
-          </div>
-          <div class="detail-label-and-field non-resizable-field">
-            <label class="user-detail-title" for="input-skills"
-              >Desirable Skills
-            </label>
-            <textarea
-              type="text"
-              id="input-skills"
-              class="user-detail-field user-detail-text"
-              placeholder="Experience with Python"
-            ></textarea>
-          </div>
-        </div>
-        <hr />
-        <h3>Location</h3>
-        <div class="field-container contact-information">
-          <div class="detail-label-and-field">
-            <label
-              class="user-detail-title required wide-input"
-              for="input-location"
-              >Job Location</label
-            >
-            <input
-              type="text"
-              required
-              id="input-location"
-              class="user-detail-field"
-              placeholder="willing to move to banglore "
-            />
-          </div>
-        </div>
-        <hr />
-        <h3>Education</h3>
-        <div class="field-container contact-information">
-          <div class="detail-label-and-field">
-            <label
-              class="user-detail-title required"
-              for="input-undergraduate-score"
-              >Undergraduate CGPA Cutoff
-            </label>
-            <input
-              type="number"
-              step="0.01"
-              required
-              id="input-undergraduate-score"
-              class="user-detail-field"
-              placeholder="8.54"
-            />
-          </div>
-          <div class="detail-label-and-field">
-            <label
-              class="user-detail-title required"
-              for="input-intermediate-score"
-              >Intermediate percentage Cutoff</label
-            >
-            <input
-              type="number"
-              step="0.01"
-              required
-              id="input-intermediate-score"
-              class="user-detail-field"
-              placeholder="85%"
-            />
-          </div>
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-tenth-score"
-              >10th CGPA/percentage Cutoff</label
-            >
-            <input
-              type="number"
-              step="0.01"
-              required
-              id="input-tenth-score"
-              class="user-detail-field"
-              placeholder="8.54"
-            />
-          </div>
-        </div>
-        <hr />
-        <h3>College Information</h3>
-        <div class="field-container contact-information">
-          <div class="detail-label-and-field">
-            <label
-              class="user-detail-title required"
-              for="input-personal-branch"
-              >Branches Allowed</label
-            >
-            <p><kbd>CTRL</kbd> + <kbd>click</kbd> to select multiple options</p>
-            <select
-              name="input-personal-branch"
-              class="user-detail-field multi-select-input"
-              required
-              id="input-personal-branch"
-              multiple
-            >
-              <option value="CSE">CSE</option>
-              <option value="ECE">ECE</option>
-              <option value="EEE">EEE</option>
-              <option value="CHEM">CHEM</option>
-              <option value="CIVL">CIVL</option>
-              <option value="MECH">MECH</option>
-              <option value="BIOT">BIOT</option>
-              <option value="MME">MME</option>
-            </select>
-          </div>
-        </div>
-        <hr />
-        <h3>Files</h3>
-        <div class="field-container personal-information">
-          <div class="detail-label-and-field">
-            <label class="user-detail-title required" for="input-intro"
-              >Introduction/info about the opportunity</label
-            >
-            <input
-              type="file"
-              required
-              id="input-intro"
-              class="user-detail-field"
-              placeholder="Upload any introduction"
-              accept="application/pdf"
-            />
-          </div>
-        </div>
-        <hr />
-        <h3>Deadline</h3>
-        <div class="field-container contact-information">
-          <div class="detail-label-and-field">
-            <label
-              class="user-detail-title required wide-input"
-              for="input-application-deadline"
-              >Date</label
-            >
-            <input
-              type="date"
-              required
-              id="input-application-deadline"
-              class="user-detail-field"
-              placeholder="20-08-2001"
-            />
-            <label
-              class="user-detail-title required wide-input"
-              for="input-application-deadline-time"
-              >Time</label
-            >
-            <input
-              type="time"
-              required
-              value="23:59:00"
-              id="input-application-deadline-time"
-              class="user-detail-field"
-              placeholder="6:00 PM IST"
-            />
-          </div>
-        </div>
-        <hr />
+        <hr /> -->
+        
+       
       </div>
     </section>
     <div class="navbar">
@@ -399,3 +226,5 @@
     </div>
   </body>
 </html>
+
+

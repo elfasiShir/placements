@@ -23,6 +23,32 @@
     <div class="stats-chart">
       <div id="main" style="width: 80vw; height: 80vh"></div>
     </div>
+    <div class="branch-stats">
+      <div>
+        <h2>Branchwise Placement Statistics</h2>
+        <br>
+        <form action="">
+          <label><strong>Select Branch: </strong></label>
+          <select name="branch-select" id="branchSelect" onchange="branchStats()">
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="CHEM">CHEM</option> 
+          </select>
+        </form>
+        <br>
+        <table>
+          <tr><th>No. of students placed:</th><td id="students">65</td></tr>
+          <tr><th>Companies:</th><td id="companies">Infosis, Delloite, Amazon</td></tr>
+          <tr><th>Highest CTC:</th><td id="highctc">16 LPA</td></tr>
+          <tr><th>Lowest CTC:</th><td id="lowctc">4 LPA</td></tr>
+          <tr><th>Average CTC:</th><td id="avgctc">7 LPA</td></tr>
+        </table>
+        <br>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.0/dist/echarts.min.js"></script>
     <script defer src="./stats.js"></script>
   </body>
