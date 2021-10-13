@@ -18,3 +18,9 @@ def applied_jobs(request):
 
 def stats(request):
     return render(request, "recruitment/stats.html")
+
+def login(request):
+    return render(request, "recruitment/login.html")
+
+def redirect_dummy(request):
+    return render(request, "recruitment/redirect_dummy.html")

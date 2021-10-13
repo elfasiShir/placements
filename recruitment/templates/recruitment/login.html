@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>T & P cell</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="{% sass_src 'recruitment/scss/navbar-styles.scss' %}" />
     <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
@@ -17,12 +17,12 @@
     />
   </head>
   <body>
-    <section class="user-details-container">
+    <section class="login-container">
       <div class="container-header">
-        <h2 class="container-title">RECRUITER REGISTRATION FORM</h2>
+        <h2 class="container-title">Login</h2>
       </div>
       <div class="user-details">
-        <h3 class="required">Name</h3>
+        <h3>Email</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
             <input
@@ -35,44 +35,19 @@
           </div>
         </div>
         <br />
-        <h3 class="required">Company</h3>
+        <h3>Password</h3>
         <div class="field-container personal-information">
           <div class="detail-label-and-field">
             <input
-              type="text"
-              required
+              type="password"
               id="input-company"
-              class="user-detail-field"
-              placeholder="Enter your company name here"
-            />
-          </div>
-        </div>
-        <br />
-        <h3 class="required">Email address</h3>
-        <div class="field-container personal-information">
-          <div class="detail-label-and-field">
-            <input
-              type="email"
+              name="password"
+              placeholder="password"
               required
-              id="input-email"
-              class="user-detail-field"
-              placeholder="Enter your email address here"
             />
           </div>
         </div>
-        <br />
-        <h3 class="required">Phone number</h3>
-        <div class="field-container personal-information">
-          <div class="detail-label-and-field">
-            <input
-              type="tel"
-              required
-              id="input-location"
-              class="user-detail-field"
-              placeholder="Enter your phone number here"
-            />
-          </div>
-        </div>
+        <a href={% url 'redirect_dummy' %}>Login</a>
       </div>
     </section>
   </body>
