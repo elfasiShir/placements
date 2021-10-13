@@ -1,2 +1,4 @@
 compiled_css/
 deven/
+*.pyc
+__pycache__
