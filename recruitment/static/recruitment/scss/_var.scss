@@ -72,6 +72,28 @@ kbd {
   padding: 2px 4px;
   white-space: nowrap;
 }
+.general-container{
+    background-color: $tinted-white;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
+  border-radius: 0.375rem;
+  padding:1rem;
+
+}
+.general-button{
+  background-color:$voilet;
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  z-index: 1;
+
+}
+.general-inside-container{
+    background-color: $another-tinted-white;
+  
+  padding: 1rem;
+}
+
 
 hr {
   overflow: visible;
