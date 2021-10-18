@@ -33,19 +33,21 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
 }
 .three-detail-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .name-specialization{
+  .name-specialization {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
 
-  .academic-stats{
+  .academic-stats {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,6 +57,9 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: $greyish-blue;
+}
+.hide {
+  visibility: hidden;
 }
 .user-detail-field {
   border-radius: 0.375rem;
@@ -96,39 +101,52 @@ label {
   color: white;
   cursor: pointer;
 }
+.remove-add-button {
+  width: min-content;
+  padding: 0.6rem;
+}
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+}
 
 @media only screen and (max-width: 900px) {
-  .three-detail-container{
+  .multiple-detail-container {
+    margin-bottom: 3rem;
+  }
+  .three-detail-container {
     flex-direction: column;
     box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
     border-radius: 0.375rem;
     padding: 0.5rem;
-    .academic-stats,.name-specialization{
-      width:100%;
-      justify-content:space-between;
-      .user-detail-field{
-        width:24rem;
+    .academic-stats,
+    .name-specialization {
+      width: 100%;
+      justify-content: space-between;
+      .user-detail-field {
+        width: 24rem;
       }
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .three-detail-container{
+  .three-detail-container {
     flex-direction: column;
     border-style: line solid;
     border-radius: 0.375rem;
-    margin-bottom:0.6rem;
-    .academic-stats,.name-specialization{
+    margin-bottom: 0.6rem;
+    .academic-stats,
+    .name-specialization {
       flex-direction: column;
-      width:100%;
-      justify-content:space-around;
-      .user-detail-field{
-        width:19rem;
+      width: 100%;
+      justify-content: space-around;
+      .user-detail-field {
+        width: 19rem;
         margin-left: 0.6rem;
       }
-      label{
-        margin-left:0.6rem;
+      label {
+        margin-left: 0.6rem;
       }
     }
   }

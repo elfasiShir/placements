@@ -1,0 +1,23 @@
+@import "var";
+.round-details-container{
+    margin:2rem;
+    margin-left:7rem;
+    width: 90%;
+    .options-container{
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        z-index: 1;
+    }
+
+  }
+
+
+@media only screen and (max-width: 900px) {
+    .round-details-container{
+        margin:1rem;
+        margin-bottom: 6rem;
+    }
+
+}
+

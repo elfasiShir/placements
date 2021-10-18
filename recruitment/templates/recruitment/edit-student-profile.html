@@ -1,5 +1,6 @@
 {% extends 'recruitment/student_base.html' %}
 {% load sass_tags %}
+{% load static %}
 
 {% block metadata %}
 <title>Edit Profile</title>
@@ -7,6 +8,7 @@
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/profile-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
+<script src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
 {% endblock %}
 
 {% block content %}
@@ -337,45 +339,32 @@
       </div>
     </div>
     <hr />
-    <h3>Certifications</h3>
-    <div class="field-container personal-information">
-      <div class="multiple-detail-container wide-input">
-      <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-certificate1">Certification Name</label>
-        <input type="text" required id="input-certificate1" class="user-detail-field"
-          placeholder="Machine Learning" />
+          <div class="heading-container">
+        <h3>Certifications</h3><h4  class="edit-button remove-add-button"  onclick="addCertificationRow()">Add</h4>
       </div>
-      <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-certupload1">Upload certificate</label>
-        <input type="file" required id="input-certupload1" class="user-detail-field" accept="application/pdf"
-          placeholder="Upload 10th certificate" />
-      </div>
-      </div>
-      <div class="multiple-detail-container wide-input">
-      <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-certificate2">Certification Name</label>
-        <input type="text" required id="input-certificate2" class="user-detail-field"
-          placeholder="Algorithm Toolbox" />
-      </div>
-      <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-certupload2">Upload certificate</label>
-        <input type="file" required id="input-certupload2" class="user-detail-field" accept="application/pdf"
-          placeholder="Algorithm Toolbox" />
-      </div>
-      </div>
-      <div class="multiple-detail-container wide-input">
-      <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-certificate3">Certification Name</label>
-        <input type="text" required id="input-certificate3" class="user-detail-field" placeholder="Cloud Computing" />
-      </div>
-      <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-certupload3">Upload certificate</label>
-        <input type="file" required id="input-certupload3" class="user-detail-field" accept="application/pdf"
-          placeholder="Upload certificate" />
-      </div>
-      </div>
+      
+      <div class="field-container personal-information" id="certification-container">
+        <div class="multiple-detail-container wide-input">
+        <div class="detail-label-and-field">
+          <label class="user-detail-title" for="input-certificate1">Certification Name</label>
+          <input type="text" required id="input-certificate1" class="user-detail-field"
+            placeholder="Machine Learning" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="user-detail-title" for="input-certupload1">Upload certificate</label>
+          <input type="file" required id="input-certupload1" class="user-detail-field" accept="application/pdf"
+            placeholder="Upload 10th certificate" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="user-detail-title hide" >I</label>
+                  <h4 class="edit-button  " onclick="removeRow(this)">Remove</h4>
 
-    </div>
+        </div>
+        </div>
+        
+
+      </div>
+  
     <hr />
     <h3>Experience</h3>
     <div class="field-container personal-information">
