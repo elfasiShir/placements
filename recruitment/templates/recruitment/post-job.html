@@ -1,5 +1,6 @@
 {% extends 'recruitment/recruiter_base.html' %}
 {% load sass_tags %}
+{% load static %}
 
 {% block metadata %}
 <title>Post Job</title>
@@ -8,6 +9,8 @@
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/recruiter-form-styles.scss' %}" />
+<script src="{% static 'recruitment/js/postJob.js' %}"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -56,8 +59,8 @@
           class="user-detail-field user-detail-text"
           placeholder="Detailed description about job"
         ></textarea>
-        <h3>Link for better description</h3>
-        <input type="url" class="user-detail-field">
+        <label class="user-detail-title">Link for better description</label>
+        <input type="url" class="user-detail-field" placeholder="URL">
       </div>
     </div>
     <hr />
@@ -72,6 +75,7 @@
           step="0.01"
           required
           id="input-ctc"
+          min = 0
           class="user-detail-field"
           placeholder="12.25"
           aria-describedby="ctcHelp"
@@ -205,8 +209,16 @@
       </div>
     </div>
     <div class="backlogs-checkbox">
-      <input type="checkbox" id="backlogCheck" name="backlogCheck">
-          <label for="backlogCheck">Without backlogs</label>
+      <input type="checkbox" id="backlogCheckBox" name="backlogCheckBox" onchange="addDiv(this,backlogLimitations)">
+          <label for="backlogCheckBox">Backlogs allowed</label>
+    </div>
+    <div class="detail-label-and-field" id="backlogLimitations">
+      <label class="user-detail-title required" for="input-programme">Minimum number of backlogs</label>
+      <select class="user-detail-field" id="backlog-limitations-dropdown" name="backlog-limitations-dropdown">
+        <option value="1">Only one backlog</option>
+        <option value="2">Atmost two backlogs</option>
+        <option value="3">Atmost 3 backlogs</option>
+      </select>
     </div>
     <hr />
     <h3>College Information</h3>
@@ -304,10 +316,55 @@
       </div>
     </div>
     <hr />
+    <input type="checkbox" id="hrContactCheckBox" name="hrContactCheckBox" onchange="addDiv(this,hrContactInformation)">
+    <label for="hrContactCheckBox">Include HR contact details for TNP</label>
+    <div id="hrContactInformation">
+      <h3>HR contact details</h3>
+      <div class="field-container contact-information">
+        <div class="detail-label-and-field">
+          <label
+            class="user-detail-title wide-input"
+            for="hrName"
+            >Name</label
+          >
+          <input
+            type="text"
+            id="hrName"
+            name="hrName"
+            class="user-detail-field"
+            placeholder="Name of HR"
+          />
+          <label
+            class="user-detail-title wide-input"
+            for="hrName"
+            >Mobile Number</label
+          >
+          <input
+            type="tel"
+            id="hrMobile"
+            name="hrMobile"
+            class="user-detail-field"
+            placeholder="-"
+          />
+          <label
+          class="user-detail-title wide-input"
+          for="hrName"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="hremail"
+          name="hremail"
+          class="user-detail-field"
+          placeholder="@"
+        />
+        </div>
+      </div>
+    </div>
   </div>
   <div class="edit-button-div">
     <button class="edit-button" type="reset">RESET</button>
-    <button class="edit-button" type="submit">POST</button>
+    <button class="edit-button submit-button" type="submit">POST</button>
   </div>
 </form>
 {% endblock %}
