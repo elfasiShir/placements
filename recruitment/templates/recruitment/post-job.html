@@ -68,14 +68,15 @@
           >Expected figures of CTC</label
         >
         <input
-          type="text"
+          type="number"
+          step="0.01"
           required
           id="input-ctc"
           class="user-detail-field"
-          placeholder="30-40 Lakhs"
+          placeholder="12.25"
           aria-describedby="ctcHelp"
         />
-        <div id="ctcHelp">Please enter the figure in Lakhs only</div>
+        <div id="ctcHelp">Please enter the figure in lakhs only</div>
       </div>
     </div>
     <hr />
@@ -216,7 +217,6 @@
           for="input-personal-branch"
           >Branches Allowed</label
         >
-        <p><kbd>check the boxes</kbd> to select multiple options</p>
         <div class="checkbox-items">
           <div class="item">
             <input type="checkbox" id="cse" name="cse">
