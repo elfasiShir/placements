@@ -13,6 +13,9 @@ def recruiter_registration(request):
 def post_job(request):
     return render(request, "recruitment/post-job.html")
 
+def hiring_status(request):
+    return render(request, "recruitment/hiring-status.html")
+
 def add_rounds(request):
     return render(request, "recruitment/add-rounds.html")
 

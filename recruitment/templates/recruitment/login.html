@@ -5,11 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-
-    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/navbar-styles.scss' %}" />
+    
     <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
-    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
-    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/recruiter-form-styles.scss' %}" />
+    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/login-styles.scss' %}" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
@@ -37,8 +35,8 @@
         <br />
         <h3>Password</h3>
         <div class="field-container personal-information">
-          <div class="detail-label-and-field">
             <input
+              class="user-detail-field"
               type="password"
               id="input-company"
               name="password"
@@ -47,7 +45,7 @@
             />
           </div>
         </div>
-        <a href={% url 'redirect_dummy' %}>Login</a>
+        <a href={% url 'redirect_dummy' %}><button class="login-button">Login</button></a>
       </div>
     </section>
   </body>
