@@ -124,6 +124,6 @@ function removeRow(input) {
   input.parentNode.parentNode.remove();
 }
 
-function removeParentRow(input) {
+function removepppRow(input) {
   input.parentNode.parentNode.parentNode.remove();
 }
