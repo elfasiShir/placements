@@ -48,7 +48,7 @@ function addInternshipRow() {
     </div>
     <div class="detail-label-and-field">
       <label class="user-detail-title hide">.</label>
-      <h4 class="edit-button remove-add-button" onclick="removeInternshipRow(this)">Remove</h4>
+      <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">Remove</h4>
     </div>
   </div>
 
@@ -82,7 +82,7 @@ function addProjectRow() {
       </div>
       <div class="detail-label-and-field">
         <label class="user-detail-title hide">.</label>
-        <h4 class="edit-button remove-add-button" onclick="removeInternshipRow(this)">Remove</h4>
+        <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">Remove</h4>
       </div>
     </div>
     <div class="detail-label-and-field non-resizable-field">
