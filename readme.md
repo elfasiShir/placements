@@ -1,4 +1,4 @@
-### Installation instructions
+### Setup instructions
 
 1. Install python and pip
 1. create virtual env named `deven` using `python -m venv deven`
