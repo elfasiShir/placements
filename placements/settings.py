@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sass_processor',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,8 @@ STATICFILES_FINDERS = [
 
 SASS_PRECISION = 8
 SASS_PROCESSOR_ROOT = 'compiled_css'
+
+GRAPH_MODELS = {
+    'pygraphviz': True,
+    'group_models': True,
+}
