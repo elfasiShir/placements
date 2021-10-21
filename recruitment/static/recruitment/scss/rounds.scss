@@ -1,23 +1,101 @@
 @import "var";
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 .round-details-container{
+    h2{
+        text-align: center;
+    }
     margin:2rem;
     margin-left:7rem;
-    width: 90%;
+    width: 60%;
+    align-self: center;
     .options-container{
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         gap: 1rem;
         z-index: 1;
+        
+        
     }
 
   }
+  .job-details{
+      position: relative;
+      
+      margin: 1rem;
+      margin-bottom: 2rem;
+
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 20px 20px 60px #e6e6e6, -20px -20px 60px #ffffff;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;
+      gap: 3rem;
+      padding: 1.5rem;
+      .pic-comp-position-container{
+          padding: 0;
+      }
+      
+      
+
+  }
+  .added-rounds{
+      display: flex;
+      flex-direction: column;
+      background-color: $another-tinted-white;
+      padding: 2rem;
+      margin: 2rem 5rem;
+      align-items: center;
+      hr{
+          width: 100%;
+      }
+      .round-header{
+          width: 100%;
+          justify-content: space-between;
+          
+          
+      }
+      .remove-add-button{
+              width: max-content;
+          }
+
+      .add-round-form{
+          gap: 1.5rem;
+          
+          
+          #input-round-procedure{
+              width: clamp(80ch,30%,600ch);
+          }
+      }
+      #forms-parent{
+         h3{
+             text-align: center;
+         }
+      }
+
+
+  }
+ 
 
 
 @media only screen and (max-width: 900px) {
     .round-details-container{
         margin:1rem;
         margin-bottom: 6rem;
+        width: 90%;
+        .options-container{
+            
+            flex-wrap: wrap;
+        }
     }
+      .added-rounds{
+          margin: 1rem;
+      }
 
 }
 

@@ -17,6 +17,7 @@ $bg-secondary: #e4e4e4;
 .navbar {
   position: fixed;
   background: $bg-primary;
+  z-index: 1000;
 
   transition: 200ms;
   .navbar-nav {

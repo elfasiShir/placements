@@ -32,7 +32,9 @@
     box-shadow: 20px 20px 60px #c4c4c4, -20px -20px 60px #ffffff;
     scale: 1.05;
   }
-  .pic-comp-position-container {
+  
+}
+.pic-comp-position-container {
     display: flex;
     justify-content: flex-start;
     padding: 1rem;
@@ -80,7 +82,6 @@
       }
     }
   }
-}
 
 .Placement-card .applications-status{
   display: flex;

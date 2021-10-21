@@ -88,10 +88,31 @@ kbd {
   z-index: 1;
 
 }
+.general-button1{
+  background-color:$greyish-blue;
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  z-index: 1;
+
+}
 .general-inside-container{
     background-color: $another-tinted-white;
   
   padding: 1rem;
+}
+.flex-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.flex-spbw{
+  justify-content: space-between;
 }
 
 

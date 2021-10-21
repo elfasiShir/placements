@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     email = models.EmailField(unique=True)
-    USERNAME_FIELD = 'email'
+    # USERNAME_FIELD = 'email'
 
     from_tnp = models.BooleanField(default=False)  # Everyone who's not from TnP is a student. Only they'll have a StudentProfile.
     mobile_number = models.CharField(max_length=10, blank=True)
