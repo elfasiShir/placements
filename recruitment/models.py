@@ -27,12 +27,19 @@ class User(AbstractBaseUser):
     
 
 class Address(models.Model):
+    student = models.ForeignKey(User, on_delete=models.CASCADE)
     line_1 = models.CharField(max_length=100)
     line_2 = models.CharField(max_length=100, blank=True)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     pincode = models.CharField(max_length=6)
     country = models.CharField(max_length=100)
+
+    ADDRESS_TYPE_CHOICES = (
+        ('P', 'Permanent'),
+        ('H', 'Hostel'),
+    )
+    address_type = models.CharField('Address type', max_length=1, choices=ADDRESS_TYPE_CHOICES)
 
 
 class StudentProfile(models.Model):
@@ -46,6 +53,7 @@ class StudentProfile(models.Model):
         ('O', 'Other'),
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    date_of_birth = models.DateField()
 
     PROGRAMME_CHOICES = (
         ('B.Tech', 'Bachelor of Technology'),
@@ -64,6 +72,8 @@ class StudentProfile(models.Model):
         ('OB', 'Outstanding backlogs'),
     )
     backlogs_status = models.CharField(max_length=3, default='NB')
+    backlogs_cleared = models.SmallIntegerField(blank=True)
+    outstanding_backlogs = models.SmallIntegerField(blank=True)
 
     gap_in_education = models.BooleanField()
     reason_for_gap_in_education = models.TextField()
@@ -109,6 +119,13 @@ class Education(models.Model):
     certificate = models.FileField(upload_to=certificate_path, null=True, blank=True)
     marksheet = models.FileField(upload_to=marksheet_path, null=True, blank=True)
 
+class BTechExtras(models.Model):
+    btech = models.OneToOneField(Education, on_delete=models.CASCADE, related_name='btech_extras')
+    minor_degree = models.CharField(max_length=128, null=True, blank=True)
+    minor_gpa = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+    honors_degree = models.CharField(max_length=128, null=True, blank=True)
+    honors_gpa = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
+
 class Certification(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='certifications')
     name = models.CharField('Certification name', max_length=128)
@@ -123,7 +140,7 @@ class Project(models.Model):
 
 class Internship(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='internships')
-    role = models.CharField(max_length=128)
+    area = models.CharField(max_length=128)
     company = models.CharField(max_length=128)
     duration = models.CharField(max_length=128)
     description = models.TextField()
@@ -154,9 +171,10 @@ class Job(models.Model):
     ug_cutoff = models.DecimalField('Undergraduate CGPA cutoff', max_digits=4, decimal_places=2)
     masters_cutoff = models.DecimalField('Masters CGPA cutoff', max_digits=4, decimal_places=2)
 
+    gap_in_education_allowed = models.BooleanField()
     backlogs_allowed = models.BooleanField()
     max_num_of_backlogs_allowed = models.SmallIntegerField('Maximum number of backlogs allowed', null=True, default=None)  # None for any nymber of backlogs allowed
-    
+
     branches_allowed = ArrayField(models.CharField(max_length=10, choices=BRANCHES))
 
     files = ArrayField(models.FileField('Attached file'))
@@ -169,8 +187,7 @@ class Job(models.Model):
 class JobRound(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds')
     round_number = models.SmallIntegerField('Round number')
-    start_time = models.DateTimeField()
-    deadline = models.DateTimeField()
+    reporting_time = models.DateTimeField()
     selected = models.ManyToManyField(User)
     venue = models.CharField(max_length=128)
     description = models.TextField()
