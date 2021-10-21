@@ -6,12 +6,12 @@ function addCertificationRow() {
     `<div class="multiple-detail-container wide-input">
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certificate1">Certification Name</label>
-          <input type="text" required id="input-certificate1" class="user-detail-field"
+          <input type="text" required id="input-certificate1" class="detail-field"
             placeholder="Machine Learning" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certupload1">Upload certificate</label>
-          <input type="file" required id="input-certupload1" class="user-detail-field" accept="application/pdf"
+          <input type="file" required id="input-certupload1" class="detail-field" accept="application/pdf"
             placeholder="Upload 10th certificate" />
         </div>
         <div class="detail-label-and-field">
@@ -39,19 +39,19 @@ function addRound() {
         <div class="flex-row">
           <div class="flex-col">
             <label class="detail-title required" for="input-round-name">Round Name</label>
-            <input type="text" name="input-round-name" class="user-detail-field" id="input-round-name" required placeholder="Technical round">
+            <input type="text" name="input-round-name" class="detail-field" id="input-round-name" required placeholder="Technical round">
             
           </div>
           
           <div class="flex-col ">
              <label class="detail-title " for="input-round-venue">Venue</label>
-             <input type="text"  id="input-round-venue" class="user-detail-field" 
+             <input type="text"  id="input-round-venue" class="detail-field" 
                placeholder="Academic block room 19" />
              
           </div>
           <div class="flex-col ">
              <label class="detail-title " for="input-round-link">Link</label>
-             <input type="url"  id="input-round-link" class="user-detail-field" 
+             <input type="url"  id="input-round-link" class="detail-field" 
                placeholder="" />
              
           </div>
@@ -61,7 +61,7 @@ function addRound() {
         <div class="flex-row">
           <div class="flex-col " style="width: 100%;">
              <label class="detail-title  " for="input-round-procedure">Procedure</label>
-             <textarea  id="input-round-procedure" class="user-detail-field user-detail-text" 
+             <textarea  id="input-round-procedure" class="detail-field user-detail-text" 
                placeholder="" ></textarea>
              
           </div>
@@ -72,18 +72,18 @@ function addRound() {
         <div class="flex-col">
           <label class="detail-title required " for="input-round-from-day">Starting From</label>
           <div class="flex-row">
-              <input type="date"  id="input-round-from-day" class="user-detail-field" 
+              <input type="date"  id="input-round-from-day" class="detail-field" 
               placeholder="" />
-              <input type="time"  id="input-round-from-time" class="user-detail-field" 
+              <input type="time"  id="input-round-from-time" class="detail-field" 
               placeholder="10:00 AM" value="23:59:00" />           
           </div>
         </div>
         <div class="flex-col">
           <label class="detail-title required " for="input-round-to-day">Deadline</label>
           <div class="flex-row">
-              <input type="date"  id="input-round-to-day" class="user-detail-field" 
+              <input type="date"  id="input-round-to-day" class="detail-field" 
               placeholder="" /> 
-              <input type="time"  id="input-round-to-time" class="user-detail-field" 
+              <input type="time"  id="input-round-to-time" class="detail-field" 
               placeholder="10:00 AM" value="23:59:00" /> 
           </div>
         </div>
@@ -93,12 +93,12 @@ function addRound() {
             
             <div class="flex-col">
               <label class="detail-title " for="input-round-contact">Contact No.</label>
-              <input type="tel" name="input-round-contact" class="user-detail-field" id="input-round-contact" >
+              <input type="tel" name="input-round-contact" class="detail-field" id="input-round-contact" >
               
             </div>
             <div class="flex-col">
               <label class="detail-title " for="input-round-email">Email</label>
-              <input type="email" name="input-round-email" class="user-detail-field" id="input-round-email" >
+              <input type="email" name="input-round-email" class="detail-field" id="input-round-email" >
               
             </div>
           </div>

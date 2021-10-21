@@ -7,7 +7,15 @@
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}"/>
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/applied-styles.scss' %}"/>
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/rounds.scss' %}"/>
-<script src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="{% sass_src 'recruitment/scss/modal-styles.scss' %}"/>
+<script defer src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
+  <!-- Remember to include jQuery : -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<!-- jQuery Modal -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script defer src="{% static 'recruitment/js/add-students-modal.js'%}"></script>
+
 {% endblock %} 
 {% block content %}
   <section class="round-details-container general-container">
@@ -107,19 +115,19 @@
         <div class="flex-row">
           <div class="flex-col">
             <label class="detail-title required" for="input-round-name">Round Name</label>
-            <input type="text" name="input-round-name" class="user-detail-field" id="input-round-name" required placeholder="Technical round">
+            <input type="text" name="input-round-name" class="detail-field" id="input-round-name" required placeholder="Technical round">
             
           </div>
           
           <div class="flex-col ">
              <label class="detail-title " for="input-round-venue">Venue</label>
-             <input type="text"  id="input-round-venue" class="user-detail-field" 
+             <input type="text"  id="input-round-venue" class="detail-field" 
                placeholder="Academic block room 19" />
              
           </div>
           <div class="flex-col ">
              <label class="detail-title " for="input-round-link">Link</label>
-             <input type="url"  id="input-round-link" class="user-detail-field" 
+             <input type="url"  id="input-round-link" class="detail-field" 
                placeholder="" />
              
           </div>
@@ -129,7 +137,7 @@
         <div class="flex-row">
           <div class="flex-col " style="width: 100%;">
              <label class="detail-title  " for="input-round-procedure">Procedure</label>
-             <textarea  id="input-round-procedure" class="user-detail-field user-detail-text" 
+             <textarea  id="input-round-procedure" class="detail-field user-detail-text" 
                placeholder="" ></textarea>
              
           </div>
@@ -140,18 +148,18 @@
         <div class="flex-col">
           <label class="detail-title required " for="input-round-from-day">Starting From</label>
           <div class="flex-row">
-              <input type="date"  id="input-round-from-day" class="user-detail-field" 
+              <input type="date"  id="input-round-from-day" class="detail-field" 
               placeholder="" />
-              <input type="time"  id="input-round-from-time" class="user-detail-field" 
+              <input type="time"  id="input-round-from-time" class="detail-field" 
               placeholder="10:00 AM" value="23:59:00" />           
           </div>
         </div>
         <div class="flex-col">
           <label class="detail-title required " for="input-round-to-day">Deadline</label>
           <div class="flex-row">
-              <input type="date"  id="input-round-to-day" class="user-detail-field" 
+              <input type="date"  id="input-round-to-day" class="detail-field" 
               placeholder="" /> 
-              <input type="time"  id="input-round-to-time" class="user-detail-field" 
+              <input type="time"  id="input-round-to-time" class="detail-field" 
               placeholder="10:00 AM" value="23:59:00" /> 
           </div>
         </div>
@@ -161,12 +169,12 @@
             
             <div class="flex-col">
               <label class="detail-title " for="input-round-contact">Contact No.</label>
-              <input type="tel" name="input-round-contact" class="user-detail-field" id="input-round-contact" >
+              <input type="tel" name="input-round-contact" class="detail-field" id="input-round-contact" >
               
             </div>
             <div class="flex-col">
               <label class="detail-title " for="input-round-email">Email</label>
-              <input type="email" name="input-round-email" class="user-detail-field" id="input-round-email" >
+              <input type="email" name="input-round-email" class="detail-field" id="input-round-email" >
               
             </div>
           </div>
@@ -175,7 +183,8 @@
 
 <div class="flex-row flex-spbw">
   <div >
-    <h4 class="edit-button remove-add-button" >Add Students</h4>
+    <a href="#add-students-modal" rel="modal:open"> <h4 class="edit-button remove-add-button" >Add Students</h4></a>
+   
   </div>
   <div >
   <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
@@ -188,6 +197,32 @@
       </div>
     </div>
     </div>
+
+<div id="add-students-modal" class="modal flex-col">
+  <div class="flex-row" style="justify-content: center;">
+    <label for="student-search-field" class="detail-title">Search Students</label>
+
+    <input type="search" id="student-search-field"  onkeyup="filter(this)" />
+    
+  </div>
+  <div class="flex-col">
+    <ul id="theList">
+    <li><a href="">Tyrone Schlecht</a></li>
+    <li><a href="">Javier Ress</a></li>
+    <li><a href="">Carlene Tomes</a></li>
+    <li><a href="">Neil Aigner</a></li>
+    <li><a href="">Nita Schreffler</a></li>
+    <li><a href="">Clinton Knuckles</a></li>
+    <li><a href="">Eve Kellett</a></li>
+    <li><a href="">Jamie Kaspar</a></li>
+    <li><a href="">Emilia Hooton</a></li>
+    <li><a href="">Kenya Sidney</a></li>
+</ul>
+  </div>
+
+</div>
+
+
     
     
 
