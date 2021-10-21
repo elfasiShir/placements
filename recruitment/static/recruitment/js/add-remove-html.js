@@ -62,17 +62,18 @@ function addInternshipRow() {
 }
 function addProjectRow() {
   document.querySelector("#project-container").insertAdjacentHTML(
-    "afterbegin",
-    `<div class="field-container personal-information non-resizable-field">
+    "afterbegin", `
+    <div class="field-container personal-information non-resizable-field">
     <div class="three-detail-container wide-input">
 
       <div class="detail-label-and-field non-resizable-field">
+        <label class="user-detail-title" for="input-project-title">Project title</label>
         <input type="text" required id="input-project-title" class="user-detail-field"
           placeholder="Project title" />
 
       </div>
       <div class="detail-label-and-field non-resizable-field">
-        
+        <label class="user-detail-title" for="input-project-contribution">Project contribution</label>
         <select name="project-contribution-type" class="user-detail-field" required
           id="project-contribution-type">
           <option value="Team">Team</option>
@@ -86,8 +87,9 @@ function addProjectRow() {
       </div>
     </div>
     <div class="detail-label-and-field non-resizable-field">
-    <textarea type="text" id="input-projects" class="user-detail-field user-detail-text"
-      placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
+      <label class="user-detail-title" for="input-project-description">Project Description</label>
+      <textarea type="text" id="input-projects" class="user-detail-field user-detail-text"
+        placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
     </div>
   </div>
     `
