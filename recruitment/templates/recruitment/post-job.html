@@ -26,7 +26,7 @@
           type="text"
           required
           id="input-location"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="Name of the company"
         />
       </div>
@@ -39,7 +39,7 @@
           type="text"
           required
           id="input-location"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="Enter Job tilte here"
         />
       </div>
@@ -49,25 +49,25 @@
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <label
-          class="user-detail-title wide-input"
+          class="detail-title wide-input"
           for="input-job-description"
           >Important details and specifications about job</label
         >
         <textarea
           type="text"
           id="input-job-description"
-          class="user-detail-field user-detail-text"
+          class="detail-field user-detail-text"
           placeholder="Detailed description about job"
         ></textarea>
-        <label class="user-detail-title">Link for better description</label>
-        <input type="url" class="user-detail-field" placeholder="URL">
+        <label class="detail-title">Link for better description</label>
+        <input type="url" class="detail-field" placeholder="URL">
       </div>
     </div>
     <hr />
     <h3>Cost To Company</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label class="user-detail-title required wide-input" for="input-ctc"
+        <label class="detail-title required wide-input" for="input-ctc"
           >Expected figures of CTC</label
         >
         <input
@@ -76,7 +76,7 @@
           required
           id="input-ctc"
           min = 0
-          class="user-detail-field"
+          class="detail-field"
           placeholder="12.25"
           aria-describedby="ctcHelp"
         />
@@ -87,12 +87,12 @@
     <h3>Minimum Qualification</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label class="user-detail-title required" for="min-qualification"
+        <label class="detail-title required" for="min-qualification"
           >Qualification</label
         >
         <select
           name="input-min-qualification"
-          class="user-detail-field"
+          class="detail-field"
           required
           id="input-personal-branch"
         >
@@ -102,14 +102,14 @@
         </select>
       </div>
       <div class="detail-label-and-field">
-        <label class="user-detail-title required" for="year-detail"
+        <label class="detail-title required" for="year-detail"
           >Year of graduation</label
         >
         <input
           type="text"
           required
           id="year-detail"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="2023"
         />
       </div>
@@ -118,24 +118,24 @@
     <h3>Required Skills</h3>
     <div class="field-container">
       <div class="detail-label-and-field non-resizable-field">
-        <label class="user-detail-title required" for="input-procedure"
+        <label class="detail-title required" for="input-procedure"
           >Mandatory Technical Skills</label
         >
         <textarea
           type="text"
           id="input-procedure"
-          class="user-detail-field user-detail-text"
+          class="detail-field user-detail-text"
           placeholder="Describe your procedure "
         ></textarea>
       </div>
       <div class="detail-label-and-field non-resizable-field">
-        <label class="user-detail-title" for="input-skills"
+        <label class="detail-title" for="input-skills"
           >Desirable Skills
         </label>
         <textarea
           type="text"
           id="input-skills"
-          class="user-detail-field user-detail-text"
+          class="detail-field user-detail-text"
           placeholder="Experience with Python"
         ></textarea>
       </div>
@@ -145,7 +145,7 @@
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <label
-          class="user-detail-title required wide-input"
+          class="detail-title required wide-input"
           for="input-location"
           >Job Location</label
         >
@@ -153,7 +153,7 @@
           type="text"
           required
           id="input-location"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="willing to move to banglore "
         />
       </div>
@@ -163,7 +163,7 @@
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <label
-          class="user-detail-title"
+          class="detail-title"
           for="input-undergraduate-score"
           >Undergraduate CGPA Cutoff
         </label>
@@ -173,13 +173,13 @@
           min="0"
           max="10"
           id="input-undergraduate-score"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="8.54"
         />
       </div>
       <div class="detail-label-and-field">
         <label
-          class="user-detail-title"
+          class="detail-title"
           for="input-mtech-score"
           >M-Tech Cutoff</label
         >
@@ -189,19 +189,19 @@
           min="0"
           max="10"
           id="input-pg-score"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="8"
         />
       </div>
       <div class="detail-label-and-field">
-        <label class="user-detail-title" for="input-tenth-score"
+        <label class="detail-title" for="input-tenth-score"
           >PG-Cutoff</label
         >
         <input
           type="number"
           step="0.01"
           id="input-tenth-score"
-          class="user-detail-field"
+          class="detail-field"
           min="0"
           max="10"
           placeholder="7.9"
@@ -213,8 +213,8 @@
           <label for="backlogCheckBox">Backlogs allowed</label>
     </div>
     <div class="detail-label-and-field" id="backlogLimitations">
-      <label class="user-detail-title required" for="input-programme">Minimum number of backlogs</label>
-      <select class="user-detail-field" id="backlog-limitations-dropdown" name="backlog-limitations-dropdown">
+      <label class="detail-title required" for="input-programme">Minimum number of backlogs</label>
+      <select class="detail-field" id="backlog-limitations-dropdown" name="backlog-limitations-dropdown">
         <option value="1">Only one backlog</option>
         <option value="2">Atmost two backlogs</option>
         <option value="3">Atmost 3 backlogs</option>
@@ -225,7 +225,7 @@
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <label
-          class="user-detail-title required"
+          class="detail-title required"
           for="input-personal-branch"
           >Branches Allowed</label
         >
@@ -271,14 +271,14 @@
     <h3>Files</h3>
     <div class="field-container personal-information">
       <div class="detail-label-and-field">
-        <label class="user-detail-title required" for="input-intro"
+        <label class="detail-title required" for="input-intro"
           >Introduction/info about the opportunity</label
         >
         <input
           type="file"
           required
           id="input-intro"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="Upload any introduction"
           accept="application/pdf"
         />
@@ -289,7 +289,7 @@
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <label
-          class="user-detail-title required wide-input"
+          class="detail-title required wide-input"
           for="input-application-deadline"
           >Date</label
         >
@@ -297,11 +297,11 @@
           type="date"
           required
           id="input-application-deadline"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="20-08-2001"
         />
         <label
-          class="user-detail-title wide-input"
+          class="detail-title wide-input"
           for="input-application-deadline-time"
           >Time</label
         >
@@ -310,7 +310,7 @@
           required
           value="23:59:00"
           id="input-application-deadline-time"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="6:00 PM IST"
         />
       </div>
@@ -323,7 +323,7 @@
       <div class="field-container contact-information">
         <div class="detail-label-and-field">
           <label
-            class="user-detail-title wide-input"
+            class="detail-title wide-input"
             for="hrName"
             >Name</label
           >
@@ -331,11 +331,11 @@
             type="text"
             id="hrName"
             name="hrName"
-            class="user-detail-field"
+            class="detail-field"
             placeholder="Name of HR"
           />
           <label
-            class="user-detail-title wide-input"
+            class="detail-title wide-input"
             for="hrName"
             >Mobile Number</label
           >
@@ -343,11 +343,11 @@
             type="tel"
             id="hrMobile"
             name="hrMobile"
-            class="user-detail-field"
+            class="detail-field"
             placeholder="-"
           />
           <label
-          class="user-detail-title wide-input"
+          class="detail-title wide-input"
           for="hrName"
           >Email</label
         >
@@ -355,7 +355,7 @@
           type="email"
           id="hremail"
           name="hremail"
-          class="user-detail-field"
+          class="detail-field"
           placeholder="@"
         />
         </div>

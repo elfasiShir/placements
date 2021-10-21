@@ -53,7 +53,7 @@
     align-items: center;
   }
 }
-.user-detail-title {
+.detail-title {
   font-size: 0.875rem;
   font-weight: 600;
   color: $greyish-blue;
@@ -61,7 +61,7 @@
 .hide {
   visibility: hidden;
 }
-.user-detail-field {
+.detail-field {
   border-radius: 0.375rem;
   background-color: white;
   background-clip: padding-box;
@@ -130,7 +130,7 @@ label {
     .name-specialization {
       width: 100%;
       justify-content: space-between;
-      .user-detail-field {
+      .detail-field {
         width: 24rem;
       }
     }
@@ -148,7 +148,7 @@ label {
       flex-direction: column;
       width: 100%;
       justify-content: space-around;
-      .user-detail-field {
+      .detail-field {
         width: 19rem;
         margin-left: 0.6rem;
       }
