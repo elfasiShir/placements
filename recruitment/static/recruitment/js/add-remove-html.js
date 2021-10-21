@@ -3,7 +3,9 @@ var NumberofExperiences = 1;
 function addCertificationRow() {
   document.querySelector("#certification-container").insertAdjacentHTML(
     "afterbegin",
-    `<div class="three-detail-container wide-input">
+    `
+    <div class="multiple-detail-container wide-input">
+      
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certificate1">Certification Name</label>
           <input type="text" required id="input-certificate1" class="detail-field"
@@ -20,12 +22,10 @@ function addCertificationRow() {
             placeholder="Upload 10th certificate" />
         </div>
         <div class="detail-label-and-field">
-          <label class="detail-title hide" >.</label>
-                  <h4 class="edit-button remove-add-button" onclick="removeRow(this)">Remove</h4>
-
+          <label class="user-detail-title hide" >.</label>
+          <button type="button" class="edit-button remove-add-button" onclick="removeRow(this)">-</button>
         </div>
         </div>
-      
     `
   );
 }

@@ -16,6 +16,7 @@
     border: 4px solid white;
     width: clamp(170px, 15%, 20rem);
     border-radius: 50%;
+    margin-bottom: 2rem;
   }
 }
 
@@ -38,5 +39,34 @@
     -moz-appearance: none;
     appearance: none;
     margin: 0;
+  }
+}
+
+.multiple-detail-container,#educationGap{
+  animation: fadeInRight 1s ease 1;
+}
+
+.remove-add-button {
+  width: 10%;
+  background-color: #d9dbdf;
+  border-radius: 1rem;
+  border:none !important;
+  color: black;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  animation: fadeInRight 1s ease 1;
+  
+  &:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(-80px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
 }

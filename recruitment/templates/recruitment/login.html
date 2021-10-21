@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <section class="login-container">
+    <form class="login-container">
       <div class="container-header">
         <h2 class="container-title">Login</h2>
       </div>
@@ -44,10 +44,10 @@
               required
             />
           </div>
+          <a href={% url 'redirect_dummy' %}><button type="submit" class="login-button">Login</button></a>
         </div>
-        <a href={% url 'redirect_dummy' %}><button class="login-button">Login</button></a>
       </div>
-    </section>
+    </form>
   </body>
 </html>
 
