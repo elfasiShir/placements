@@ -12,7 +12,6 @@
   border-radius: 0.375rem;
   overflow: hidden;
   padding: 2rem;
- 
 }
 
 .Placement-card {
@@ -75,9 +74,27 @@
           max-height: 1.2rem;
           margin-right: 0.5rem;
         }
-
         span {
           white-space: nowrap;
+        }
+      }
+      .applications-status{
+        display: flex;
+        align-items: center;
+        justify-content:center !important;
+        border-radius: 6rem;
+        background-color: #F6F6F6;
+        .status-update{
+          margin-left:4px;
+        }
+        .rejected{
+          color: red;
+        }
+        .success{
+          color: green;
+        }
+        .pending{
+          color: orange;
         }
       }
     }

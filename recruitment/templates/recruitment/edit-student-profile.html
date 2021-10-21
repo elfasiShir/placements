@@ -68,7 +68,7 @@
           <option value="MTECH">M.Tech</option>
           <option value="UGDEGREE">Undergraduate Degree</option>
           <option value="PGDEGREE">Postgraduate Degree</option>
-          
+
 
         </select>
       </div>
@@ -113,50 +113,221 @@
     <h4>Post Graduation</h4>
     <div class="field-container contact-information">
       <div class="multiple-detail-container wide-input user-details">
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-postgraduate">Post Graduate Institute</label>
+          <input type="text" required id="input-postgraduate" class="detail-field"
+            placeholder="National Institute of Technology, AP" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-postgraduate-programme">Programme</label>
+          <select name="input-pg-programme" class="detail-field" required id="input-pg-programme">
+            <option value="MTech">M.Tech</option>
+            <option value="MS">M.S</option>
+            <option value="MBA">M.B.A</option>
+          </select>
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-postgraduate-degree-specailization">Specialization</label>
+          <select name="input-postgraduate-degree-specailization" class="detail-field" required
+            id="input-postgraduate-degree-specailization">
+            <option value="BioProcess Engineering">BioProcess Engineering</option>
+            <option value="Chemical Engineering">Chemical engineering</option>
+            <option value="Geotechnical Engineering">Geotechnical engineering</option>
+            <option value="Computer Science and Data Analytics">Computer Science and Data Analytics</option>
+            <option value="Power Electronics and Drives">Power Electronics and Drives</option>
+            <option value="Advanced communication systems and signal processing">Advanced Communication systems and
+              signal processing</option>
+            <option value="Thermal Engineering">Thermal Engineering</option>
+            <option value="Manufacturing Engineering">Manufacturing Engineering</option>
+          </select>
+        </div>
+
+
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-yearOfEnrollment">Year of Enrollment</label>
+          <input type="number" step="1" required id="input-yoepg" class="detail-field" placeholder="2016" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-yearOfGraduation">Year of Graduation</label>
+          <input type="number" step="1" required id="input-yogpg" class="detail-field" placeholder="2020" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-postgraduate-score">CGPA</label>
+          <input type="number" step="0.01" min="0" max="10" required id="input-postgraduate-score"
+            class="detail-field" placeholder="8.94" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-inter-class">Class</label>
+          <select name="input-pgdegree-class" class="detail-field" required id="input-pgdegree-class">
+            <option value="">-</option>
+            <option value="Distinction">Distinction</option>
+            <option value="First Class">First Class</option>
+            <option value="Second Class">Second Class</option>
+            <option value="Third Class">Third Class</option>
+
+          </select>
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-mtech">Post Graduation degree Marksheets</label>
+          <input type="file" required id="input-pgdegree-marksheet" class="detail-field" accept="application/pdf"
+            placeholder="Upload M.Tech Marksheets" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-mtech">Post Graduation degree Certificate</label>
+          <input type="file" required id="input-pgdegree-certificate" class="detail-field" accept="application/pdf"
+            placeholder="Upload M.Tech Certificate" />
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <h4>Under Graduation</h4>
+    <div class="multiple-detail-container wide-input user-details">
+
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-postgraduate">Post Graduate Institute</label>
-        <input type="text" required id="input-postgraduate" class="detail-field"
+        <label class="detail-title required" for="input-undergraduate">Under Graduate Institute</label>
+        <input type="text" required id="input-undergraduate" class="detail-field"
           placeholder="National Institute of Technology, AP" />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-postgraduate-programme">Programme</label>
-        <select name="input-pg-programme" class="detail-field" required id="input-pg-programme">
-          <option value="MTech">M.Tech</option>       
-          <option value="MS">M.S</option>       
-          <option value="MBA">M.B.A</option>      
+        <label class="detail-title required" for="input-undergraduate-degree">Programme</label>
+        <select name="input-ug-degree" class="detail-field" required id="input-ug-degree">
+          <option value="BTech">B.Tech</option>
+          <option value="BE">B.E</option>
+          <option value="BSc">B.Sc</option>
+          <option value="BCA">B.C.A</option>
         </select>
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-postgraduate-degree-specailization">Specialization</label>
-        <select name="input-postgraduate-degree-specailization" class="detail-field" required id="input-postgraduate-degree-specailization">
-          <option value="BioProcess Engineering">BioProcess Engineering</option>
-          <option value="Chemical Engineering">Chemical engineering</option>
-          <option value="Geotechnical Engineering">Geotechnical engineering</option>
-          <option value="Computer Science and Data Analytics">Computer Science and Data Analytics</option>
-          <option value="Power Electronics and Drives">Power Electronics and Drives</option>
-          <option value="Advanced communication systems and signal processing">Advanced Communication systems and signal processing</option>
-          <option value="Thermal Engineering">Thermal Engineering</option>
-          <option value="Manufacturing Engineering">Manufacturing Engineering</option>
+        <label class="detail-title required" for="input-undergraduate-degree-specialization">Specialization</label>
+        <select name="input-undergraduate-degree-specialization" class="detail-field" required
+          id="input-undergraduate-degree-specialization">
+          <option value="CSE">CSE</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="CHEM">CHEM</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="MECH">MECH</option>
+          <option value="BIOT">BIOT</option>
+          <option value="MME">MME</option>
         </select>
       </div>
-
-
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-yearOfEnrollment">Year of Enrollment</label>
-        <input type="number" step="1" required id="input-yoepg" class="detail-field" placeholder="2016" />
+        <label class="detail-title required" for="input-yearOfEnrollment">Year of Enrollment</label>
+        <input type="number" step="1" required id="input-yoeug" class="detail-field" placeholder="2016" />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-yearOfGraduation">Year of Graduation</label>
-        <input type="number" step="1" required id="input-yogpg" class="detail-field" placeholder="2020" />
+        <label class="detail-title required" for="input-yearOfGraduation">Year of Graduation</label>
+        <input type="number" step="1" required id="input-yogug" class="detail-field" placeholder="2020" />
       </div>
+
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-postgraduate-score">CGPA</label>
-        <input type="number" step="0.01" min="0" max="10" required id="input-postgraduate-score" class="detail-field"
-          placeholder="8.94" />
+        <label class="detail-title required" for="input-undergraduate-score">CGPA</label>
+        <input type="number" step="0.01" min="0" max="10" required id="input-undergraduate-score"
+          class="detail-field" placeholder="8.54" />
       </div>
       <div class="detail-label-and-field">
         <label class="detail-title" for="input-inter-class">Class</label>
-        <select name="input-pgdegree-class" class="detail-field" required id="input-pgdegree-class">
+        <select name="input-ugdegree-class" class="detail-field" required id="input-ugdegree-class">
+          <option value="">-</option>
+          <option value="Distinction">Distinction</option>
+          <option value="First Class">First Class</option>
+          <option value="Second Class">Second Class</option>
+          <option value="Third Class">Third Class</option>
+        </select>
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-ugdegree">Under Graduation Degree Marksheets</label>
+        <input type="file" required id="input-ugdegree-marksheets" class="detail-field" accept="application/pdf"
+          placeholder="Upload Under Graduation Degree Marksheets" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-ugdegree">Under Graduation Degree Certificate</label>
+        <input type="file" required id="input-ugdegree-certificate" class="detail-field" accept="application/pdf"
+          placeholder="Upload Under Graduation Degree Certificate" />
+      </div>
+    </div>
+    <h4>Intermediate</h4>
+    <div class="multiple-detail-container wide-input user-details">
+
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-12th">Intermediate College
+        </label>
+        <input type="text" required id="input-intermediate" class="detail-field"
+          placeholder="albakra Junior College" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-intermediate-group">Group</label>
+        <select name="input-intermediate-group" class="detail-field" required id="input-intermediate-group">
+          <option value="MPC">MPC</option>
+          <option value="MBiPC">MBiPC</option>
+          <option value="MEC">MEC</option>
+          <option value="BiPC">BiPC</option>
+          <option value="DIPLOMA">DIPLOMA</option>
+        </select>
+      </div>
+
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-yearOfEnrollment">Year of Enrollment</label>
+        <input type="number" step="1" required id="input-yoe-inter" class="detail-field" placeholder="2016" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-yoc-inter">Year of Completion</label>
+        <input type="number" step="1" required id="input-yoc-inter" class="detail-field" placeholder="2020" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-intermediate-score">Score</label>
+        <input type="number" step="0.01" min="0" max="100" required id="input-intermediate-score"
+          class="detail-field" placeholder="69.42" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-inter-class">Class</label>
+        <select name="input-inter-class" class="detail-field" required id="input-inter-class">
+          <option value="">-</option>
+          <option value="Distinction">Distinction</option>
+          <option value="First Class">First Class</option>
+          <option value="Second Class">Second Class</option>
+          <option value="Third Class">Third Class</option>
+        </select>
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-inter">Intermediate certificate</label>
+        <input type="file" required id="input-inter" class="detail-field" accept="application/pdf"
+          placeholder="Upload intermediate certificate" />
+      </div>
+
+    </div>
+    <h4>Tenth Grade</h4>
+    <div class="multiple-detail-container wide-input user-details">
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-tenth">10th School
+        </label>
+        <input type="text" required id="input-tenth" class="detail-field" placeholder="shakti bhakti school" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-tenth-board">Board</label>
+        <select name="input-tenth-board" class="detail-field" required id="input-tenth-board">
+          <option value="State">State Board</option>
+          <option value="CBSE">CBSE</option>
+          <option value="ICSE">ICSE</option>
+        </select>
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-yoc-tenth">Year of Completion</label>
+        <input type="number" step="1" required id="input-yoc-tenth" class="detail-field" placeholder="2020" />
+      </div>
+
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-tenth-score">CGPA/Score</label>
+        <input type="number" step="0.01" min="0" max="100" required id="input-tenth-score" class="detail-field"
+          placeholder="9.5" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-inter-class">Class</label>
+        <select name="input-inter-class" class="detail-field" required id="input-inter-class">
           <option value="">-</option>
           <option value="Distinction">Distinction</option>
           <option value="First Class">First Class</option>
@@ -166,177 +337,11 @@
         </select>
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title" for="input-mtech">Post Graduation degree Marksheets</label>
-        <input type="file" required id="input-pgdegree-marksheet" class="detail-field" accept="application/pdf"
-          placeholder="Upload M.Tech Marksheets" />
+        <label class="detail-title required" for="input-tenth">10th Standard certificate</label>
+        <input type="file" required id="input-tenth" class="detail-field" accept="application/pdf"
+          placeholder="Upload 10th certificate" />
       </div>
-      <div class="detail-label-and-field">
-        <label class="detail-title" for="input-mtech">Post Graduation degree Certificate</label>
-        <input type="file" required id="input-pgdegree-certificate" class="detail-field" accept="application/pdf"
-          placeholder="Upload M.Tech Certificate" />
-      </div>
-
-
     </div>
-
-  </div>
-  
-
-  <h4>Under Graduation</h4>
-  <div class="multiple-detail-container wide-input user-details">
-
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-undergraduate">Under Graduate Institute</label>
-      <input type="text" required id="input-undergraduate" class="detail-field"
-        placeholder="National Institute of Technology, AP" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-undergraduate-degree">Programme</label>
-      <select name="input-ug-degree" class="detail-field" required id="input-ug-degree">
-        <option value="BTech">B.Tech</option>       
-        <option value="BE">B.E</option>       
-        <option value="BSc">B.Sc</option>       
-        <option value="BCA">B.C.A</option>      
-      </select>
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-undergraduate-degree-specialization">Specialization</label>
-      <select name="input-undergraduate-degree-specialization" class="detail-field" required id="input-undergraduate-degree-specialization">
-        <option value="CSE">CSE</option>
-        <option value="ECE">ECE</option>
-        <option value="EEE">EEE</option>
-        <option value="CHEM">CHEM</option>
-        <option value="CIVIL">CIVIL</option>
-        <option value="MECH">MECH</option>
-        <option value="BIOT">BIOT</option>
-        <option value="MME">MME</option>
-      </select>
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-yearOfEnrollment">Year of Enrollment</label>
-      <input type="number" step="1" required id="input-yoeug" class="detail-field" placeholder="2016" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-yearOfGraduation">Year of Graduation</label>
-      <input type="number" step="1" required id="input-yogug" class="detail-field" placeholder="2020" />
-    </div>
-
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-undergraduate-score">CGPA</label>
-      <input type="number" step="0.01" min="0" max="10" required id="input-undergraduate-score" class="detail-field"
-        placeholder="8.54" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title" for="input-inter-class">Class</label>
-      <select name="input-ugdegree-class" class="detail-field" required id="input-ugdegree-class">
-        <option value="">-</option>
-        <option value="Distinction">Distinction</option>
-        <option value="First Class">First Class</option>
-        <option value="Second Class">Second Class</option>
-        <option value="Third Class">Third Class</option>
-      </select>
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-ugdegree">Under Graduation Degree Marksheets</label>
-      <input type="file" required id="input-ugdegree-marksheets" class="detail-field" accept="application/pdf"
-        placeholder="Upload Under Graduation Degree Marksheets" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-ugdegree">Under Graduation Degree Certificate</label>
-      <input type="file" required id="input-ugdegree-certificate" class="detail-field" accept="application/pdf"
-        placeholder="Upload Under Graduation Degree Certificate" />
-    </div>
-  </div>
-  <h4>Intermediate</h4>
-  <div class="multiple-detail-container wide-input user-details">
-
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-12th">Intermediate College
-      </label>
-      <input type="text" required id="input-intermediate" class="detail-field"
-        placeholder="albakra Junior College" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-intermediate-group">Group</label>
-      <select name="input-intermediate-group" class="detail-field" required id="input-intermediate-group">
-        <option value="MPC">MPC</option>
-        <option value="MBiPC">MBiPC</option>
-        <option value="MEC">MEC</option>
-        <option value="BiPC">BiPC</option>
-        <option value="DIPLOMA">DIPLOMA</option>
-      </select>
-    </div>
-
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-yearOfEnrollment">Year of Enrollment</label>
-      <input type="number" step="1" required id="input-yoe-inter" class="detail-field" placeholder="2016" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-yoc-inter">Year of Completion</label>
-      <input type="number" step="1" required id="input-yoc-inter" class="detail-field" placeholder="2020" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-intermediate-score">Score</label>
-      <input type="number" step="0.01" min="0" max="100"required id="input-intermediate-score" class="detail-field"
-        placeholder="69.42" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title" for="input-inter-class">Class</label>
-      <select name="input-inter-class" class="detail-field" required id="input-inter-class">
-        <option value="">-</option>
-        <option value="Distinction">Distinction</option>
-        <option value="First Class">First Class</option>
-        <option value="Second Class">Second Class</option>
-        <option value="Third Class">Third Class</option>
-      </select>
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-inter">Intermediate certificate</label>
-      <input type="file" required id="input-inter" class="detail-field" accept="application/pdf"
-        placeholder="Upload intermediate certificate" />
-    </div>
-
-  </div>
-  <h4>Tenth Grade</h4>
-  <div class="multiple-detail-container wide-input user-details">
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-tenth">10th School
-      </label>
-      <input type="text" required id="input-tenth" class="detail-field" placeholder="shakti bhakti school" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-tenth-board">Board</label>
-      <select name="input-tenth-board" class="detail-field" required id="input-tenth-board">
-        <option value="State">State Board</option>
-        <option value="CBSE">CBSE</option>
-        <option value="ICSE">ICSE</option>
-      </select>
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-yoc-tenth">Year of Completion</label>
-      <input type="number" step="1" required id="input-yoc-tenth" class="detail-field" placeholder="2020" />
-    </div>
-
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-tenth-score">CGPA/Score</label>
-      <input type="number" step="0.01" min="0" max="100" required id="input-tenth-score" class="detail-field" placeholder="9.5" />
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title" for="input-inter-class">Class</label>
-      <select name="input-inter-class" class="detail-field" required id="input-inter-class">
-        <option value="">-</option>
-        <option value="Distinction">Distinction</option>
-        <option value="First Class">First Class</option>
-        <option value="Second Class">Second Class</option>
-        <option value="Third Class">Third Class</option>
-
-      </select>
-    </div>
-    <div class="detail-label-and-field">
-      <label class="detail-title required" for="input-tenth">10th Standard certificate</label>
-      <input type="file" required id="input-tenth" class="detail-field" accept="application/pdf"
-        placeholder="Upload 10th certificate" />
-    </div></div>
     <br>
     <hr>
     <h3>Backlogs</h3>
@@ -345,8 +350,9 @@
         <label class="detail-title required" for="input-backlogs">Do you have any backlogs?</label>
         <select name="input-backlogs" class="detail-field" required id="input-backlogs" onchange="backlogs()">
           <option value="NoBacklogs">I have no backlogs</option>
-          <option value="NoOutstandingBacklogs">I do not have any outstanding backlogs but I had a few backlogs that I cleared</option>
-          <option value="OutstandingBacklogs">I have some outstanding backlogs</option>  
+          <option value="NoOutstandingBacklogs">I do not have any outstanding backlogs but I had a few backlogs that I
+            cleared</option>
+          <option value="OutstandingBacklogs">I have some outstanding backlogs</option>
         </select>
       </div>
       <div style="display: none;" class="detail-label-and-field non-resizable-field" id="outBacklogs">
@@ -354,33 +360,38 @@
         <div>
           <label for="">Number of Outstanding Backlogs</label>
           <input type="number" required id="input-backlogs-count" class="detail-field" placeholder="3" />
-          
         </div>
         <textarea type="text" id="input-backlog-history" class="detail-field user-detail-text"
           placeholder="History of Backlogs"></textarea>
-        
+
       </div>
-    </div><hr>
+    </div>
+    <hr>
     <h3>Education Gap</h3><br>
-    <div><input type="checkbox" name="eduGap" id="eduGap" onchange="eduGapDetails(this)"><label for="eduGap">&nbsp;Taken a break from education</label></div>
+    <div><input type="checkbox" name="eduGap" id="eduGap" onchange="eduGapDetails(this)"><label for="eduGap">&nbsp;Taken
+        a break from education</label></div>
     <div style="display: none;" class="detail-label-and-field non-resizable-field" id="educationGap">
       <label class="detail-title" for="input-edu-gap">Reason for gap in your education</label>
-  
       <textarea type="text" id="input-edu-gap" class="detail-field user-detail-text"
         placeholder="Describe about the gap in your education period"></textarea>
     </div>
     <hr />
 
-      <div class="heading-container">
-        <h3>Certifications</h3><h4  class="edit-button remove-add-button"  onclick="addCertificationRow()">Add</h4>
-      </div>
-      
-      <div class="field-container personal-information" id="certification-container">
-       <div class="multiple-detail-container wide-input">
+    <div class="heading-container">
+      <h3>Certifications</h3>
+      <h4 class="edit-button remove-add-button" onclick="addCertificationRow()">Add</h4>
+    </div>
+
+    <div class="field-container personal-information" id="certification-container">
+      <div class="three-detail-container wide-input">
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certificate1">Certification Name</label>
           <input type="text" required id="input-certificate1" class="detail-field"
             placeholder="Machine Learning" />
+        </div>
+        <div class="detail-label-and-field">
+          <label class="detail-title" for="input-issuing-authority">Issuing Authority</label>
+          <input type="text" required id="input-issuing-authority" class="detail-field" placeholder="Coursera" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certupload1">Upload certificate</label>
@@ -388,12 +399,12 @@
             placeholder="Upload 10th certificate" />
         </div>
         <div class="detail-label-and-field">
-          <label class="detail-title hide" >.</label>
-                  <h4 class="edit-button remove-add-button" onclick="removeRow(this)">Remove</h4>
-        </div>
+          <label class="detail-title hide">.</label>
+          <h4 class="edit-button remove-add-button" onclick="removeRow(this)">Remove</h4>
         </div>
       </div>
-  
+    </div>
+
     <hr />
   
 
@@ -416,29 +427,81 @@
         placeholder="Describe your technical skills"></textarea>
     </div>
     <div class="detail-label-and-field non-resizable-field">
-      <label class="detail-title" for="input-projects">Projects</label>
-      <div class="project-meta-data">
-        <input type="text" required id="input-project-title" class="detail-field" placeholder="Project title" />
-        <select name="project-contribution-type" class="detail-field" required id="project-contribution-type">
-          <option value="Team">Team</option>
-          <option value="Individual">Individual</option>
-        </select>
+      <div class="heading-container">
+        <label class="detail-title" for="input-internships">Projects</label>
+        <h4 class="edit-button remove-add-button" onclick="addProjectRow()">Add</h4>
       </div>
-      <textarea type="text" id="input-projects" class="detail-field user-detail-text"
-        placeholder="About project  and its description"></textarea>
-      <input type="text" required id="input-project-impact" class="detail-field" placeholder="Impact of project" />
-      <input type="text" required id="input-project-tech" class="detail-field"
-        placeholder="Tech Stack used in project" />
+      <div class="field-container personal-information" id="project-container">
+        <div class="field-container personal-information non-resizable-field">
+          <div class="three-detail-container wide-input">
+
+            <div class="detail-label-and-field non-resizable-field">
+              <label class="detail-title" for="input-project-title">Project title</label>
+              <input type="text" required id="input-project-title" class="detail-field"
+                placeholder="Project title" />
+
+            </div>
+            <div class="detail-label-and-field non-resizable-field">
+              <label class="detail-title" for="input-project-contribution">Project contribution</label>
+              <select name="project-contribution-type" class="detail-field" required
+                id="project-contribution-type">
+                <option value="Team">Team</option>
+                <option value="Individual">Individual</option>
+              </select>
+
+            </div>
+            <div class="detail-label-and-field">
+              <label class="detail-title hide">.</label>
+              <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">Remove</h4>
+            </div>
+          </div>
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="detail-title" for="input-project-description">Project Description</label>
+            <textarea type="text" id="input-projects" class="detail-field user-detail-text"
+              placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
+  <br>
   <div class="detail-label-and-field non-resizable-field">
-    <label class="detail-title" for="input-internships">Internships</label>
+    <div class="heading-container">
+      <label class="detail-title" for="input-internships">Internships</label>
+      <h4 class="edit-button remove-add-button" onclick="addInternshipRow()">Add</h4>
+    </div>
+    <div>
+      <div class="field-container personal-information" id="internship-container">
+        <div class="field-container personal-information non-resizable-field">
+          <div class="three-detail-container wide-input">
+            <div class="detail-label-and-field">
+              <label class="detail-title" for="input-role">Role</label>
+              <input type="text" required id="input-role" class="detail-field" placeholder="Machine Learning" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="detail-title" for="input-company">Company</label>
+              <input type="text" required id="input-company" class="detail-field" placeholder="Coursera" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="detail-title" for="input-duration">Duration</label>
+              <input type="text" required id="input-duration" class="detail-field" placeholder="6 months" />
+            </div>
+            <div class="detail-label-and-field">
+              <label class="detail-title hide">.</label>
+              <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">Remove</h4>
+            </div>
+          </div>
 
-    <textarea type="text" id="input-internships" class="detail-field user-detail-text"
-      placeholder="Describe Company, Role, Responsibitily"></textarea>
+          <div class="detail-label-and-field non-resizable-field">
+            <label class="detail-title" for="input-certupload1">Description</label>
+            <textarea type="text" id="input-internships" class="detail-field user-detail-text"
+              placeholder="Describe Company, Role, Responsibitily"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
   <hr />
   <div class="detail-label-and-field non-resizable-field">
     <label class="detail-title" for="input-awards">Awards/Recognitions received</label>
@@ -462,14 +525,32 @@
   </div>
   <hr />
   <div class="detail-label-and-field non-resizable-field">
-    <label class="detail-title" for="input-social-profile-links">Social Profiles</label>
-    <select name="input-social-profile-links" class="detail-field" required id="input-social-profile-links">
-      <option value="GitHub">GitHub</option>
-      <option value="LinkedIn">LinkedIn</option>
-      <option value="StackOverFlow">Stack Over Flow</option>
-      <option value="Others">Others</option>
-    </select>
-    <input type="url" required id="social-profile-link" class="detail-field" placeholder="github profile link" />
+    <div class="heading-container">
+      <label class="detail-title" for="input-social-profile-links">Social Profiles</label>
+      <h4 class="edit-button remove-add-button" onclick="addSocialProfilesRow()">Add</h4>
+    </div>
+    <div class="field-container personal-information" id="social-profiles-container">
+      <div class="field-container personal-information non-resizable-field">
+        <div class="three-detail-container wide-input">
+
+          <select name="input-social-profile-links" class="detail-field" required id="input-social-profile-links">
+            <option value="GitHub">GitHub</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="StackOverFlow">Stack Over Flow</option>
+            <option value="Others">Others</option>
+          </select>
+
+          <h4 class="edit-button remove-add-button" onclick="removeRow(this)">Remove</h4>
+
+        </div>
+
+        <div class="detail-label-and-field">
+          <input type="url" required id="social-profile-link" class="detail-field"
+            placeholder="github profile link" />
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
   <hr />
   <div class="detail-label-and-field non-resizable-field">
@@ -482,9 +563,9 @@
   <h3 class="required">Confirm the correctness of your details</h3>
   <div class="personal-information">
     <input type="checkbox" id="aggrement-check" name="aggrementCheck" style="display:inline" />
-      <span class="detail-title" for="aggrement-check"> I agree that the details provided above are true and
-        correct to the best of my knowledge. If any information I have provided is incorrect, I understand that I
-        will be barred from attending any recruitment drives.</span>
+    <span class="detail-title" for="aggrement-check"> I agree that the details provided above are true and
+      correct to the best of my knowledge. If any information I have provided is incorrect, I understand that I
+      will be barred from attending any recruitment drives.</span>
   </div>
   </div>
 

@@ -1,0 +1,29 @@
+#backlogLimitations,#hrContactInformation{
+  display: none;
+  animation: zoom-in-zoom-out 1s ease 1;
+  width: 100%;
+}
+
+.checkbox-items {
+  display: flex;
+  .item {
+    width: 20%;
+  }
+}
+
+#ctcHelp {
+  color: gray;
+  font-size: 0.7rem;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.099, 1.099);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
