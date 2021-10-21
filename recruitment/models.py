@@ -1,8 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.db.models.base import Model, ModelState
+from django.contrib.postgres.fields import ArrayField
 
 from recruitment.lib.file_path import certificate_path, certifications_path, marksheet_path, resume_path
+
+BRANCHES = (
+        ('CSE', 'Computer Science and Engineering'),
+        ('ECE', 'Electronics and Communication Engineering'),
+        ('EEE', 'Electrical and Electronics Engineering'),
+        ('MECH', 'Mechanical Engineering'),
+        ('CIVIL', 'Civil Engineering'),
+        ('CHEM', 'Chemical Engineering'),
+        ('BIOT', 'Biotechnology'),
+        ('MME', 'Metallurgical and Materials Engineering'),
+    )
 
 class User(AbstractUser):
     email = models.EmailField('email address', unique=True)
@@ -39,16 +50,7 @@ class StudentProfile(models.Model):
     )
     programme = models.CharField(max_length=10, choices=PROGRAMME_CHOICES)
 
-    FIELD_OF_STUDY_CHOICES = (
-        ('CSE', 'Computer Science and Engineering'),
-        ('ECE', 'Electronics and Communication Engineering'),
-        ('EEE', 'Electrical and Electronics Engineering'),
-        ('MECH', 'Mechanical Engineering'),
-        ('CIVIL', 'Civil Engineering'),
-        ('CHEM', 'Chemical Engineering'),
-        ('BIOT', 'Biotechnology'),
-        ('MME', 'Metallurgical and Materials Engineering'),
-    )
+    FIELD_OF_STUDY_CHOICES = BRANCHES
     field_of_study = models.CharField(max_length=10)
 
     address = models.OneToOneField(Address, on_delete=models.SET_NULL, null=True, blank=True)
@@ -128,4 +130,51 @@ class SocialProfile(models.Model):
     name = models.CharField('Name of the site. Like GitHub, LinkedIn etc.', max_length=128)
     link = models.URLField()
 
+class Job(models.Model):
+    title = models.CharField(max_length=128)
+    company = models.CharField(max_length=128)
+    description = models.TextField('Job description')
+    description_link = models.URLField()
+    ctc = models.DecimalField('Cost to Company', max_digits=5, decimal_places=2)
+    location = models.CharField('Job location', max_length=128)
 
+    QUALIFICATION_CHOICES = (
+        ('B.Tech', 'Bachelor of Technology'),
+        ('M.Tech', 'Master of Technology'),
+    )
+    minimum_qualification = models.CharField(max_length=10, choices=QUALIFICATION_CHOICES)
+    year_of_graduation = models.CharField(max_length=4)
+
+    mandatory_skills = models.TextField()
+    desirable_skills = models.TextField()
+
+    ug_cutoff = models.DecimalField('Undergraduate CGPA cutoff', max_digits=4, decimal_places=2)
+    masters_cutoff = models.DecimalField('Masters CGPA cutoff', max_digits=4, decimal_places=2)
+
+    backlogs_allowed = models.BooleanField()
+    max_num_of_backlogs_allowed = models.SmallIntegerField('Maximum number of backlogs allowed', null=True, default=None)  # None for any nymber of backlogs allowed
+    
+    branches_allowed = ArrayField(models.CharField(max_length=10, choices=BRANCHES))
+
+    files = ArrayField(models.FileField('Attached file'))
+    deadline = models.DateTimeField()
+
+    hr_name = models.CharField(max_length=128)
+    hr_email = models.EmailField()
+    hr_phone = models.CharField(max_length=15)
+
+class JobRound(models.Model):
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds')
+    round_number = models.SmallIntegerField('Round number')
+    start_time = models.DateTimeField()
+    deadline = models.DateTimeField()
+    selected = models.ManyToManyField(User)
+    description = models.TextField()
+
+    contact_num = models.CharField(max_length=15, blank=True, null=True)
+    contact_email = models.EmailField(blank=True, null=True)
+
+class JobAlert(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='job_alerts')
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_alerts')
+    created_at = models.DateTimeField(auto_now_add=True)
