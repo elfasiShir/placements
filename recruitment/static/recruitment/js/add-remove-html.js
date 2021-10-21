@@ -121,7 +121,11 @@ function addRound() {
 </div>
 </div>
 <hr/>
-      </form>`)}
+      </form>`)
+    let elemarr = document.getElementsByClassName("add-round-form");
+  let elem = elemarr[elemarr.length - 1];
+  scrolltoelement(elem);
+    }
 function addInternshipRow() {
   document.querySelector("#internship-container").insertAdjacentHTML(
     "afterbegin",
@@ -213,9 +217,7 @@ function addSocialProfilesRow(){
   </div>
     `
   );
-  let elemarr = document.getElementsByClassName("add-round-form");
-  let elem = elemarr[elemarr.length - 1];
-  scrolltoelement(elem);
+  
 }
 
 

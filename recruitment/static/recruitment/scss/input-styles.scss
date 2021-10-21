@@ -109,8 +109,12 @@ label {
 }
 
 .remove-add-button {
+  background-color: $purple;
+  color: white;
+  cursor: pointer;
   width: min-content;
   padding: 0.6rem;
+  border-radius: 0.375rem;
 }
 .heading-container {
   display: flex;
