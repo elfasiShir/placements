@@ -139,6 +139,6 @@ SASS_PRECISION = 8
 SASS_PROCESSOR_ROOT = 'compiled_css'
 
 GRAPH_MODELS = {
-    'pygraphviz': True,
+    'pydot': True,
     'group_models': True,
 }
