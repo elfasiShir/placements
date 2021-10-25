@@ -36,11 +36,13 @@ function scrolltoelement(element) {
     behavior: "smooth",
   });
 }
+
+
 function addRound() {
   document.querySelector("#forms-parent").insertAdjacentHTML(
     "beforeend",
-    `       <form action="" method="post" class=" flex-col add-round-form" >
-        <h3>Round 1 </h3>
+    `             <form action="" method="post" class=" flex-col add-round-form" >
+        <h2>Round 1 </h2>
         <div class="flex-row">
           <div class="flex-col">
             <label class="detail-title required" for="input-round-name">Round Name</label>
@@ -73,9 +75,9 @@ function addRound() {
         </div>
         
         
-        <div class="flex-row">
+        
         <div class="flex-col">
-          <label class="detail-title required " for="input-round-from-day">Starting From</label>
+          <label class="detail-title required " for="input-round-from-day">Reporting time</label>
           <div class="flex-row">
               <input type="date"  id="input-round-from-day" class="detail-field" 
               placeholder="" />
@@ -83,16 +85,8 @@ function addRound() {
               placeholder="10:00 AM" value="23:59:00" />           
           </div>
         </div>
-        <div class="flex-col">
-          <label class="detail-title required " for="input-round-to-day">Deadline</label>
-          <div class="flex-row">
-              <input type="date"  id="input-round-to-day" class="detail-field" 
-              placeholder="" /> 
-              <input type="time"  id="input-round-to-time" class="detail-field" 
-              placeholder="10:00 AM" value="23:59:00" /> 
-          </div>
-        </div>
-        </div>
+        
+        
         <label class="detail-title " for="input-round-query">For Any Queries</label>
         <div class="flex-row">
             
@@ -112,7 +106,8 @@ function addRound() {
 
 <div class="flex-row flex-spbw">
   <div >
-    <h4 class="edit-button remove-add-button" >Add Students</h4>
+    <a href="#add-students-modal" rel="modal:open"> <h4 class="edit-button remove-add-button" >Add Students</h4></a>
+   
   </div>
   <div >
   <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
@@ -126,6 +121,9 @@ function addRound() {
   let elem = elemarr[elemarr.length - 1];
   scrolltoelement(elem);
     }
+
+
+
 function addInternshipRow() {
   document.querySelector("#internship-container").insertAdjacentHTML(
     "afterbegin",

@@ -56,3 +56,16 @@ function removeStudent(element) {
     let student_input = student_list.querySelector(`input[value="${student_id}"]`);
     student_input.remove();
 }
+
+function addAllStudents() {
+    $("#student-list").find(".student-row-button").each(function () {
+        addStudent(this);
+    });
+
+}
+
+function removeAllStudents() {
+    $("#added-student-list").find(".student-row-button").each(function () {
+        removeStudent(this);
+    });
+}

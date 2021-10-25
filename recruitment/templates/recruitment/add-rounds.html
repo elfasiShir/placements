@@ -1,0 +1,262 @@
+{% extends 'recruitment/student_base.html' %}
+ {% load sass_tags %} 
+ {%  load static%}
+ {% block metadata %}
+
+ <link rel="stylesheet" href="{% sass_src 'recruitment/scss/navbar-styles.scss' %}"/>
+ <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}"/>
+ <link rel="stylesheet" href="{% sass_src 'recruitment/scss/applied-styles.scss' %}"/>
+ <link rel="stylesheet" href="{% sass_src 'recruitment/scss/rounds.scss' %}"/>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+ <link rel="stylesheet" href="{% sass_src 'recruitment/scss/modal-styles.scss' %}"/>
+<script defer src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
+  <!-- Remember to include jQuery : -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<!-- jQuery Modal -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script defer src="{% static 'recruitment/js/add-students-modal.js'%}"></script>
+
+{% endblock %} 
+{% block content %}
+  <section class="round-details-container general-container">
+    <div class="opportunity-details-container">
+      <div class="job-details">
+      <div class="pic-comp-position-container">
+        <div class="Placement-profile-pic">
+          <svg
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 122.88 121.51"
+            xml:space="preserve"
+          >
+            <style type="text/css"></style>
+            <g>
+              <path
+                class="st0"
+                d="M9.85,100.1h15.78c0.17,0,0.31,0.14,0.31,0.31v4.52c0,0.17-0.14,0.31-0.31,0.31H9.85 c-0.17,0-0.31-0.14-0.31-0.31v-4.52C9.54,100.24,9.68,100.1,9.85,100.1L9.85,100.1L9.85,100.1z M96.99,68.59h15.78 c0.17,0,0.31,0.14,0.31,0.31v4.51c0,0.17-0.14,0.31-0.31,0.31H96.99c-0.17,0-0.31-0.14-0.31-0.31V68.9 C96.69,68.73,96.82,68.59,96.99,68.59L96.99,68.59z M96.99,100.34h15.78c0.17,0,0.31,0.14,0.31,0.31v4.52 c0,0.17-0.14,0.31-0.31,0.31H96.99c-0.17,0-0.31-0.14-0.31-0.31v-4.52C96.69,100.48,96.82,100.34,96.99,100.34L96.99,100.34z M96.99,89.05h15.78c0.17,0,0.31,0.14,0.31,0.31v4.52c0,0.17-0.14,0.31-0.31,0.31H96.99c-0.17,0-0.31-0.14-0.31-0.31v-4.52 C96.69,89.19,96.82,89.05,96.99,89.05L96.99,89.05z M96.99,78.82h15.78c0.17,0,0.31,0.14,0.31,0.31v4.52 c0,0.17-0.14,0.31-0.31,0.31H96.99c-0.17,0-0.31-0.14-0.31-0.31v-4.52C96.69,78.96,96.82,78.82,96.99,78.82L96.99,78.82z M86.65,118.63V21.05L36,2.88v115.75l0,0l-2.88,0V51.68L2.88,43.42v75.21L86.65,118.63L86.65,118.63L86.65,118.63z M1.44,121.51 c-0.8,0-1.44-0.65-1.44-1.44V42.65c0-0.58,0.24-1.11,0.62-1.5c0.38-0.38,0.91-0.62,1.5-0.62l31,8.26V2.53 c0-1.41,1.1-2.53,2.53-2.53L87,18.17c1.39,0,2.54,1.14,2.54,2.53v28.09l31.22-8.26c0.58,0,1.11,0.24,1.49,0.62l0.01,0.01 c0.38,0.38,0.62,0.91,0.62,1.49v77.42c0,0.8-0.65,1.44-1.44,1.44H1.44L1.44,121.51L1.44,121.51z M71.67,99.35h8.49 c0.13,0,0.24,0.11,0.24,0.24v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49c-0.13,0-0.24-0.11-0.24-0.24v-8.49 C71.43,99.46,71.54,99.35,71.67,99.35L71.67,99.35L71.67,99.35L71.67,99.35z M57.08,99.35h8.49c0.13,0,0.24,0.11,0.24,0.24v8.49 c0,0.13-0.11,0.24-0.24,0.24h-8.49c-0.13,0-0.24-0.11-0.24-0.24v-8.49C56.84,99.46,56.95,99.35,57.08,99.35L57.08,99.35 L57.08,99.35L57.08,99.35z M42.49,99.35h8.49c0.13,0,0.24,0.11,0.24,0.24v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49 c-0.13,0-0.24-0.11-0.24-0.24v-8.49C42.25,99.46,42.36,99.35,42.49,99.35L42.49,99.35L42.49,99.35L42.49,99.35z M9.71,89.17h15.9 c0.13,0,0.24,0.08,0.24,0.17v4.7c0,0.09-0.11,0.18-0.24,0.18H9.71c-0.13,0-0.24-0.08-0.24-0.18v-4.7 C9.47,89.25,9.58,89.17,9.71,89.17L9.71,89.17L9.71,89.17L9.71,89.17z M42.46,13.65L80.2,26.64c0.63,0,1.15,0.52,1.15,1.15v29.52 c0,0.63-0.52,1.15-1.15,1.15H42.46c-0.63,0-1.15-0.52-1.15-1.15V14.8C41.3,14.16,41.83,13.65,42.46,13.65L42.46,13.65L42.46,13.65z M9.71,78.9h15.9c0.13,0,0.24,0.08,0.24,0.18v4.7c0,0.09-0.11,0.18-0.24,0.18H9.71c-0.13,0-0.24-0.08-0.24-0.18v-4.7 C9.47,78.97,9.58,78.9,9.71,78.9L9.71,78.9L9.71,78.9L9.71,78.9z M9.71,68.62h15.9c0.13,0,0.24,0.08,0.24,0.18v4.7 c0,0.09-0.11,0.18-0.24,0.18H9.71c-0.13,0-0.24-0.08-0.24-0.18v-4.7C9.47,68.7,9.58,68.62,9.71,68.62L9.71,68.62L9.71,68.62 L9.71,68.62z M71.67,84.46h8.49c0.13,0,0.24,0.11,0.24,0.24v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49c-0.13,0-0.24-0.11-0.24-0.24 V84.7C71.43,84.57,71.54,84.46,71.67,84.46L71.67,84.46L71.67,84.46L71.67,84.46z M57.08,84.46h8.49c0.13,0,0.24,0.11,0.24,0.24 v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49c-0.13,0-0.24-0.11-0.24-0.24V84.7C56.84,84.57,56.95,84.46,57.08,84.46L57.08,84.46 L57.08,84.46L57.08,84.46z M42.49,84.46h8.49c0.13,0,0.24,0.11,0.24,0.24v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49 c-0.13,0-0.24-0.11-0.24-0.24V84.7C42.25,84.57,42.36,84.46,42.49,84.46L42.49,84.46L42.49,84.46L42.49,84.46z M71.67,67.98h8.49 c0.13,0,0.24,0.11,0.24,0.24v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49c-0.13,0-0.24-0.11-0.24-0.24v-8.49 C71.43,68.09,71.54,67.98,71.67,67.98L71.67,67.98L71.67,67.98L71.67,67.98z M57.08,67.98h8.49c0.13,0,0.24,0.11,0.24,0.24v8.49 c0,0.13-0.11,0.24-0.24,0.24h-8.49c-0.13,0-0.24-0.11-0.24-0.24v-8.49C56.84,68.09,56.95,67.98,57.08,67.98L57.08,67.98 L57.08,67.98L57.08,67.98z M42.49,67.98h8.49c0.13,0,0.24,0.11,0.24,0.24v8.49c0,0.13-0.11,0.24-0.24,0.24h-8.49 c-0.13,0-0.24-0.11-0.24-0.24v-8.49C42.25,68.09,42.36,67.98,42.49,67.98L42.49,67.98L42.49,67.98L42.49,67.98z"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <div class="details-container">
+          <div class="comp-viewmore">
+            <h1>Infosys</h1>
+            
+          </div>
+          <h4>Frontend Developer</h4>
+          
+        </div>
+        
+
+      </div>
+      <div class="details-container">
+        <h2>Job Details</h2>
+        <h4>CTC: 10LPA</h4>
+        <h4>location: Hyderabad</h4>
+        <h4>Day of Posting: 11th Oct 2021</h4>
+      
+
+
+        
+        </div>
+      <div class="details-container">
+        <h2>HR Details</h2>
+        <h4>name: hello</h4>
+        <h4>email: hello</h4>
+        <h4>contact: +91 6303523219</h4>
+      
+
+
+        
+        </div>
+        <div class="details-container ">
+          <h2>Student Details</h2>
+          <h4> Participated: 86</h4>
+          <h4> current round: 12</h4>
+          <h4>disqualified: 74</h4>
+
+        </div>
+        <div class="details-container">
+          <h2>More Details</h2>
+          <h4 class="general-button1">Opportunity Details</h4>
+          <h4 class="general-button1">Student Details</h4>
+          <h4 class="general-button1">Previous Apperances</h4>
+        </div>
+    </div>
+
+
+
+    
+    <div class="options-container">
+      <h4 class="general-button">Close the opportunity</h4>
+       <a href="#send-reminder-modal" rel="modal:open"> <h4 class="general-button">send reminder</h4></a>
+      
+      <h4 class="general-button">previous rounds history</h4>
+    </div>
+    
+    
+    <div class="added-rounds" id="added-rounds-container">
+      <div class="flex-row  round-header">
+      <h2> Rounds</h2>
+      <h4  class="edit-button remove-add-button"  onclick="addRound()">Add Round</h4>
+    </div>
+  <hr/>
+      
+      
+      <div id="forms-parent">
+        
+      <form action="" method="post" class=" flex-col add-round-form" >
+        <h2>Round 1 </h2>
+        <div class="flex-row">
+          <div class="flex-col">
+            <label class="detail-title required" for="input-round-name">Round Name</label>
+            <input type="text" name="input-round-name" class="detail-field" id="input-round-name" required placeholder="Technical round">
+            
+          </div>
+          
+          <div class="flex-col ">
+             <label class="detail-title " for="input-round-venue">Venue</label>
+             <input type="text"  id="input-round-venue" class="detail-field" 
+               placeholder="Academic block room 19" />
+             
+          </div>
+          <div class="flex-col ">
+             <label class="detail-title " for="input-round-link">Link</label>
+             <input type="url"  id="input-round-link" class="detail-field" 
+               placeholder="" />
+             
+          </div>
+           
+
+        </div>
+        <div class="flex-row">
+          <div class="flex-col " style="width: 100%;">
+             <label class="detail-title  " for="input-round-procedure">Procedure</label>
+             <textarea  id="input-round-procedure" class="detail-field user-detail-text" 
+               placeholder="" ></textarea>
+             
+          </div>
+        </div>
+        
+        
+        
+        <div class="flex-col">
+          <label class="detail-title required " for="input-round-from-day">Reporting time</label>
+          <div class="flex-row">
+              <input type="date"  id="input-round-from-day" class="detail-field" 
+              placeholder="" />
+              <input type="time"  id="input-round-from-time" class="detail-field" 
+              placeholder="10:00 AM" value="23:59:00" />           
+          </div>
+        </div>
+        
+        
+        <label class="detail-title " for="input-round-query">For Any Queries</label>
+        <div class="flex-row">
+            
+            <div class="flex-col">
+              <label class="detail-title " for="input-round-contact">Contact No.</label>
+              <input type="tel" name="input-round-contact" class="detail-field" id="input-round-contact" >
+              
+            </div>
+            <div class="flex-col">
+              <label class="detail-title " for="input-round-email">Email</label>
+              <input type="email" name="input-round-email" class="detail-field" id="input-round-email" >
+              
+            </div>
+          </div>
+        <div class="flex-row"></div>
+
+
+<div class="flex-row flex-spbw">
+  <div >
+    <a href="#add-students-modal" rel="modal:open"> <h4 class="edit-button remove-add-button" >Add Students</h4></a>
+   
+  </div>
+  <div >
+  <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
+  
+  <input type="submit" class="edit-button remove-add-button" value="Save Round">
+</div>
+</div>
+<hr/>
+      </form>
+      </div>
+    </div>
+    </div>
+
+<div id="add-students-modal" class="modal">
+  <div class="flex-row parent-list-container">
+  <div class="flex-col" style="gap: 1.5rem;">
+    <h2>Select Students For Next Round</h2>
+  <div class="flex-row" style="align-items: center; gap: 2rem;">
+    <label for="student-search-field" class="detail-title">Search Students</label>
+
+    <input type="search" id="student-search-field" class="detail-field" onkeyup="filter(this)" />
+    <h4 class="remove-add-button wide-button" onclick="addAllStudents()">Add All Students</h4>
+    
+  </div>
+
+  <div class="flex-col">
+    <ul id="student-list" class="list-container">
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number ">411887</h3> <h3 class="student-name">Tyrone Schlecht</h3> <div class="student-row-button remove-add-button" onclick="addStudent(this)">&#43;</div> </div></li>
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">411881</h3> <h3 class="student-name">Dinesh ch</h3><div class="student-row-button remove-add-button"onclick="addStudent(this)">&#43;</div> </div></li>
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">411883</h3> <h3 class="student-name"> Lalith</h3> <div class="student-row-button remove-add-button"onclick="addStudent(this)">&#43;</div></div></li>
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">311887</h3> <h3 class="student-name"> Srinija</h3><div class="student-row-button remove-add-button"onclick="addStudent(this)">&#43;</div> </div></li>
+
+</ul>
+  </div>
+  </div>
+  <div class="flex-col" style="gap: 1.5rem;">
+     <h2>Selected Students</h2>
+  <div class="flex-row" style="align-items: center; gap: 2rem;">
+    <label for="added-student-search-field" class="detail-title">Search Students</label>
+
+    <input type="search" id="added-student-search-field "  class="detail-field"onkeyup="selectedFilter(this)" />
+    <h4 class="remove-add-button wide-button" onclick="removeAllStudents()">Remove All Students</h4>
+    
+  </div>
+  <div class="flex-col">
+    <ul id="added-student-list" class="list-container">
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">311887</h3> <h3 class="student-name">Tyrone Schlecht</h3>  <div class="student-row-button remove-add-button" onclick="removeStudent(this)">&#10005;</div></div></li>
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">511881</h3> <h3 class="student-name">Dinesh ch</h3><div class="student-row-button remove-add-button"onclick="removeStudent(this)">&#10005;</div> </div></li>
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">611883</h3> <h3 class="student-name"> Lalith</h3> <div class="student-row-button remove-add-button "onclick="removeStudent(this)">&#10005;</div></div></li>
+    <li><div class="flex-row student-row"> <h3 class="student-roll-number">321887</h3> <h3 class="student-name"> Srinija</h3> <div class="student-row-button remove-add-button"onclick="removeStudent(this)">&#10005;</div></div></li>
+
+</ul>
+  </div>
+  </div>
+  </div>
+
+</div>
+<div id="send-reminder-modal" class="modal content-fit-modal">
+  <div class="flex-col">
+
+    <h1>Send Reminder</h1>
+    
+      <form action="" method="post" class="flex-col">
+
+        <label class="detail-title required" for="input-reminder-text">Reminder Text</label>
+        <textarea  id="input-reminder-text" class="detail-field user-detail-text"
+        placeholder="type your message here"></textarea>
+        <div class="flex-row flex-end">
+
+          <input type="submit" value="Send" class="remove-add-button">
+        </div>
+        
+      </form>
+    </div>
+
+</div>
+
+
+    
+    
+
+  
+  
+  </section>
+{% endblock %}

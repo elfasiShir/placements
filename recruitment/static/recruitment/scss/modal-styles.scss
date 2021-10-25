@@ -6,11 +6,14 @@
   .parent-list-container{
     justify-content: space-evenly;
     background-color: $another-tinted-white;
+    height: 100%;
+       overflow-y: auto;
+   
   }
 
 .list-container{
   width: 100%;
-
+ 
     li{
       width: 100%;
       list-style: none;
@@ -45,7 +48,20 @@
     .student-row{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        
         
       }
+      
+  }
+
+}
+.content-fit-modal{
+  height: max-content;
+}
+#close-opportunity-modal{
+  .parent-list-container{
+    max-height: 80%;
+
   }
 }

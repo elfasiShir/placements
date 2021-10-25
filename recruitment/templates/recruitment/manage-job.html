@@ -80,11 +80,10 @@
 
     <div class="options-container">
       <h4 class="general-button">Close the opportunity</h4>
-      <h4 class="general-button">send reminder</h4>
+      <a href="#send-reminder-modal" rel="modal:open">
+        <h4 class="general-button">send reminder</h4>
+      </a>
       <h4 class="general-button">previous rounds history</h4>
-      <h4 class="general-button">add round</h4>
-
-
     </div>
 
 
@@ -100,6 +99,25 @@
     </div>
   </div>
   {% include "recruitment/add_students_modal.html" %}
+  <div id="send-reminder-modal" class="modal content-fit-modal">
+    <div class="flex-col">
+
+      <h1>Send Reminder</h1>
+
+      <form action="" method="post" class="flex-col">
+
+        <label class="detail-title required" for="input-reminder-text">Reminder Text</label>
+        <textarea id="input-reminder-text" class="detail-field user-detail-text"
+          placeholder="type your message here"></textarea>
+        <div class="flex-row flex-end">
+
+          <input type="submit" value="Send" class="remove-add-button">
+        </div>
+
+      </form>
+    </div>
+
+  </div>
 </section>
 {% endif %}
 {% endblock %}

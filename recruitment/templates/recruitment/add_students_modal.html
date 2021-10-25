@@ -1,4 +1,4 @@
-<div id="add-students-modal" class="modal ">
+<div id="add-students-modal" class="modal">
     <div class="flex-row parent-list-container">
         <div class="flex-col" style="gap: 1.5rem;">
             <h2>Select Students For Next Round</h2>
@@ -6,7 +6,7 @@
                 <label for="student-search-field" class="detail-title">Search Students</label>
 
                 <input type="search" id="student-search-field" class="detail-field" onkeyup="filter(this)" />
-
+                <h4 class="remove-add-button wide-button" onclick="addAllStudents()">Add All Students</h4>
             </div>
             <div class="flex-col">
                 <ul id="student-list" class="list-container">
@@ -49,7 +49,7 @@
 
                 <input type="search" id="added-student-search-field " class="detail-field"
                     onkeyup="selectedFilter(this)" />
-
+                <h4 class="remove-add-button wide-button" onclick="removeAllStudents()">Remove All Students</h4>
             </div>
             <div class="flex-col">
                 <ul id="added-student-list" class="list-container">
