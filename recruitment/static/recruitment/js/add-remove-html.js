@@ -132,8 +132,8 @@ function addInternshipRow() {
     `<div class="field-container personal-information non-resizable-field">
     <div class="three-detail-container wide-input">
     <div class="detail-label-and-field">
-      <label class="detail-title" for="input-role">Role</label>
-      <input type="text" required id="input-role" class="detail-field" placeholder="Machine Learning" />
+      <label class="detail-title" for="input-area-of-internship">Area of Internship</label>
+      <input type="text" required id="input-area-of-internship" class="detail-field" placeholder="Machine Learning" />
     </div>
     <div class="detail-label-and-field">
       <label class="detail-title" for="input-company">Company</label>
