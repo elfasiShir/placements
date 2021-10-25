@@ -42,7 +42,7 @@ function addRound() {
   document.querySelector("#forms-parent").insertAdjacentHTML(
     "beforeend",
     `      <form action="" method="post" class=" flex-col add-round-form" >
-        <select class="detail-field is-last-round" data-target=".selective-round-view-container">
+        <select class="detail-field is-last-round"   data-target=".selective-round-view-container">
           <option value="notLastRound" data-show=".not-last-round-option">Not last round</option>
           <option value="lastRound" data-show=".last-round-option">Is last round</option>
         </select>
@@ -110,8 +110,8 @@ function addRound() {
               
             </div>
           </div>
-        <div class="flex-row"></div>
-<hr/>
+        
+
       
 
         </div>
@@ -145,11 +145,13 @@ function addRound() {
   <input type="submit" class="edit-button remove-add-button" value="Save Round">
 </div>
         </div>
+        <hr/>
       </form>`)
     let elemarr = document.getElementsByClassName("add-round-form");
   let elem = elemarr[elemarr.length - 1];
-  scrolltoelement(elem);
+  
    $(document).find('.is-last-round').last().trigger('change');
+   scrolltoelement(elem);
 
     }
 
