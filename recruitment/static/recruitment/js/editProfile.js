@@ -6,17 +6,21 @@ function eduGapDetails(checkbox){
     }
 }
 
+function set_display_property(el_id, display) {
+    document.getElementById(el_id).style.display = display;
+}
+
 function backlogs(){
     var check = document.getElementById("input-backlogs");
     if(check.value == "OutstandingBacklogs"){
-        document.getElementById("outBacklogs").style.display="flex";
-        document.getElementById("backlogs-cleared").style.display="none";
+        set_display_property("outBacklogs", "flex");
+        set_display_property("backlogs-cleared", "none");
     }else if(check.value == "NoOutstandingBacklogs"){
-        document.getElementById("backlogs-cleared").style.display="flex";
-        document.getElementById("outBacklogs").style.display="none";
+        set_display_property("backlogs-cleared", "flex");
+        set_display_property("outBacklogs", "none");
     }
     else{
-        document.getElementById("outBacklogs").style.display="none";
-        document.getElementById("backlogs-cleared").style.display="none";
+        set_display_property("outBacklogs", "none");
+        set_display_property("backlogs-cleared", "none");
     }
 }
