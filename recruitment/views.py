@@ -1,6 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+def home(request):
+    if not request.user.is_authenticated:
+        return redirect(reverse('login'))
+
+    if request.user.from_tnp:
+        return redirect(reverse('hiring_status'))
+
+    return redirect(reverse('edit_profile'))
+
+# TODO: Add @login_required to all views below this line.
+
 def student_profile(request):
     return render(request, "recruitment/student-profile.html")
 
@@ -24,9 +36,3 @@ def applied_jobs(request):
 
 def stats(request):
     return render(request, "recruitment/stats.html")
-
-def login(request):
-    return render(request, "recruitment/login.html")
-
-def redirect_dummy(request):
-    return render(request, "recruitment/redirect_dummy.html")

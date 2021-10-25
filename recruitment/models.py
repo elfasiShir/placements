@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import UserManager
 
 from recruitment.lib.file_path import certificate_path, certifications_path, marksheet_path, resume_path
 
@@ -18,13 +19,14 @@ BRANCHES = (
 class User(AbstractBaseUser):
     email = models.EmailField('email address', unique=True)
     USERNAME_FIELD = 'email'
+    EMAIL_FIELD = 'email'
 
     first_name = models.CharField(max_length=128)
     last_name = models.CharField(max_length=128)
 
     from_tnp = models.BooleanField(default=False)  # Everyone who's not from TnP is a student. Only they'll have a StudentProfile.
     mobile_number = models.CharField(max_length=10, blank=True)
-    
+    objects = UserManager()
 
 class Address(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
