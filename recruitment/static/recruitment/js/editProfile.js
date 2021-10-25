@@ -1,8 +1,8 @@
 function eduGapDetails(checkbox){
     if(checkbox.checked == true){
-        document.getElementById("educationGap").style.display="flex";
+        document.getElementById("education-gap").style.display="flex";
     }else{
-        document.getElementById("educationGap").style.display="none";
+        document.getElementById("education-gap").style.display="none";
     }
 }
 
@@ -12,15 +12,15 @@ function set_display_property(el_id, display) {
 
 function backlogs(){
     var check = document.getElementById("input-backlogs");
-    if(check.value == "OutstandingBacklogs"){
-        set_display_property("outBacklogs", "flex");
+    if(check.value == "outstanding-backlogs"){
+        set_display_property("out-backlogs", "flex");
         set_display_property("backlogs-cleared", "none");
-    }else if(check.value == "NoOutstandingBacklogs"){
+    }else if(check.value == "no-outstanding-backlogs"){
         set_display_property("backlogs-cleared", "flex");
-        set_display_property("outBacklogs", "none");
+        set_display_property("out-backlogs", "none");
     }
     else{
-        set_display_property("outBacklogs", "none");
+        set_display_property("out-backlogs", "none");
         set_display_property("backlogs-cleared", "none");
     }
 }

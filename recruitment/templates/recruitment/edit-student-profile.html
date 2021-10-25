@@ -266,22 +266,22 @@
           class="detail-field" placeholder="8.54" />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="input-minor-degree">Minor Degree</label>
+        <label class="detail-title" for="input-minor-degree">Minor Degree</label>
         <input type="text" required id="input-minor-degree" class="detail-field"
           placeholder="Software Engineering" />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="input-minor-degree-score">Minor Degree CGPA</label>
+        <label class="detail-title" for="input-minor-degree-score">Minor Degree CGPA</label>
         <input type="number" step="0.01" min="0" max="10" required id="input-minor-degree-score"
           class="detail-field" placeholder="8.54" />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="input-honors-degree">Honors Degree</label>
+        <label class="detail-title" for="input-honors-degree">Honors Degree</label>
         <input type="text" required id="input-honors-degree" class="detail-field"
           placeholder="Software Engineering" />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="input-honors-degree-score">Honors Degree CGPA</label>
+        <label class="detail-title" for="input-honors-degree-score">Honors Degree CGPA</label>
         <input type="number" step="0.01" min="0" max="10" required id="input-honors-degree-score"
           class="detail-field" placeholder="8.54" />
       </div>
@@ -405,10 +405,10 @@
       <div class="detail-label-and-field">
         <label class="detail-title required" for="input-backlogs">Do you have any backlogs?</label>
         <select name="input-backlogs" class="detail-field" required id="input-backlogs" onchange="backlogs()">
-          <option value="NoBacklogs">I have no backlogs</option>
-          <option value="NoOutstandingBacklogs">I do not have any outstanding backlogs but I had a few backlogs that I
+          <option value="no-backlogs">I have no backlogs</option>
+          <option value="no-outstanding-backlogs">I do not have any outstanding backlogs but I had a few backlogs that I
             cleared</option>
-          <option value="OutstandingBacklogs">I have some outstanding backlogs</option>
+          <option value="outstanding-backlogs">I have some outstanding backlogs</option>
         </select>
       </div>
       <div style="display: none;" class="detail-label-and-field non-resizable-field" id="backlogs-cleared">
@@ -418,7 +418,7 @@
           <input type="number" required id="input-backlogs-clear" class="detail-field" placeholder="3" />
         </div>
       </div>
-      <div style="display: none;" class="detail-label-and-field non-resizable-field" id="outBacklogs">
+      <div style="display: none;" class="detail-label-and-field non-resizable-field" id="out-backlogs">
         <label class="detail-title" for="input-out-backlogs">Outstanding Backlogs</label>
         <div class="multiple-detail-container">
         <div>
@@ -436,9 +436,9 @@
     </div>
     <hr>
     <h3>Education Gap</h3><br>
-    <div><input type="checkbox" name="eduGap" id="eduGap" onchange="eduGapDetails(this)"><label for="eduGap">&nbsp;Taken
+    <div><input type="checkbox" name="edu-gap" id="edu-gap" onchange="eduGapDetails(this)"><label for="edu-gap">&nbsp;Taken
         a break from education</label></div>
-    <div style="display: none;" class="detail-label-and-field non-resizable-field" id="educationGap">
+    <div style="display: none;" class="detail-label-and-field non-resizable-field" id="education-gap">
       <div class="multiple-detail-container wide-input user-details">
         <div class="detail-label-and-field">
           <label class="detail-title required" for="input-gap-from">From Date</label>
