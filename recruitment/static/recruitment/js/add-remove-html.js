@@ -41,7 +41,16 @@ function scrolltoelement(element) {
 function addRound() {
   document.querySelector("#forms-parent").insertAdjacentHTML(
     "beforeend",
-    `             <form action="" method="post" class=" flex-col add-round-form" >
+    `      <form action="" method="post" class=" flex-col add-round-form" >
+        <select class="detail-field is-last-round" data-target=".selective-round-view-container">
+          <option value="notLastRound" data-show=".not-last-round-option">Not last round</option>
+          <option value="lastRound" data-show=".last-round-option">Is last round</option>
+        </select>
+
+<div class="selective-round-view-container">
+          <div class="flex-col not-last-round-option hide">
+
+       
         <h2>Round 1 </h2>
         <div class="flex-row">
           <div class="flex-col">
@@ -102,9 +111,30 @@ function addRound() {
             </div>
           </div>
         <div class="flex-row"></div>
+<hr/>
+      
+
+        </div>
+         <div class="flex-col last-round-option hide">
+           <div class="flex-col">
+             <label for="upload-offer-letter" class="detail-label">Upload Offer Letter for Selected Students</label>
+             <input type="file" name="" id="upload-offer-letter" class="detail-field" accept="application/pdf" placeholder="upload offer letter">
+            </div>
+            <div class="flex-col">
+              <label class="detail-title required" for="input-congrats-message">Congratulations Message for Selected Students</label>
+        <textarea  id="input-congrats-message" class="detail-field user-detail-text"
+        placeholder="type your message here"></textarea>
+            </div>
 
 
-<div class="flex-row flex-spbw">
+        </div>
+
+</div>
+        
+
+
+       
+        <div class="flex-row flex-spbw ">
   <div >
     <a href="#add-students-modal" rel="modal:open"> <h4 class="edit-button remove-add-button" >Add Students</h4></a>
    
@@ -114,12 +144,13 @@ function addRound() {
   
   <input type="submit" class="edit-button remove-add-button" value="Save Round">
 </div>
-</div>
-<hr/>
+        </div>
       </form>`)
     let elemarr = document.getElementsByClassName("add-round-form");
   let elem = elemarr[elemarr.length - 1];
   scrolltoelement(elem);
+   $(document).find('.is-last-round').last().trigger('change');
+
     }
 
 

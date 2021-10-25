@@ -60,7 +60,7 @@
   color: $greyish-blue;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 .detail-field {
   border-radius: 0.375rem;

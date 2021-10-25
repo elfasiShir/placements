@@ -9,11 +9,12 @@
  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/rounds.scss' %}"/>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/modal-styles.scss' %}"/>
+ <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+ <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script defer src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
+<script defer src="{% static 'recruitment/js/last-round.js'%}"></script>
   <!-- Remember to include jQuery : -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <!-- jQuery Modal -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script defer src="{% static 'recruitment/js/add-students-modal.js'%}"></script>
 
 {% endblock %} 
@@ -109,6 +110,15 @@
       <div id="forms-parent">
         
       <form action="" method="post" class=" flex-col add-round-form" >
+        <select class="detail-field is-last-round"   data-target=".selective-round-view-container">
+          <option value="notLastRound" data-show=".not-last-round-option">Not last round</option>
+          <option value="lastRound" data-show=".last-round-option">Is last round</option>
+        </select>
+
+<div class="selective-round-view-container">
+          <div class="flex-col not-last-round-option hide">
+
+       
         <h2>Round 1 </h2>
         <div class="flex-row">
           <div class="flex-col">
@@ -168,10 +178,31 @@
               
             </div>
           </div>
-        <div class="flex-row"></div>
+        
+
+      
+
+        </div>
+         <div class="flex-col last-round-option hide">
+           <div class="flex-col">
+             <label for="upload-offer-letter" class="detail-label">Upload Offer Letter for Selected Students</label>
+             <input type="file" name="" id="upload-offer-letter" class="detail-field" accept="application/pdf" placeholder="upload offer letter">
+            </div>
+            <div class="flex-col">
+              <label class="detail-title required" for="input-congrats-message">Congratulations Message for Selected Students</label>
+        <textarea  id="input-congrats-message" class="detail-field user-detail-text"
+        placeholder="type your message here"></textarea>
+            </div>
 
 
-<div class="flex-row flex-spbw">
+        </div>
+
+</div>
+        
+
+
+       
+        <div class="flex-row flex-spbw ">
   <div >
     <a href="#add-students-modal" rel="modal:open"> <h4 class="edit-button remove-add-button" >Add Students</h4></a>
    
@@ -181,8 +212,8 @@
   
   <input type="submit" class="edit-button remove-add-button" value="Save Round">
 </div>
-</div>
-<hr/>
+        </div>
+        <hr/>
       </form>
       </div>
     </div>
