@@ -179,7 +179,6 @@ class Job(models.Model):
 
     branches_allowed = ArrayField(models.CharField(max_length=10, choices=BRANCHES))
 
-    files = ArrayField(models.FileField('Attached file'))
     deadline = models.DateTimeField()
 
     hr_name = models.CharField(max_length=128)

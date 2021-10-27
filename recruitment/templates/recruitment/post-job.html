@@ -9,12 +9,17 @@
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/recruiter-form-styles.scss' %}" />
-<script src="{% static 'recruitment/js/postJob.js' %}"></script>
+<script src="{% static 'recruitment/js/postJob.js' %}" defer></script>
 
 {% endblock %}
 
 {% block content %}
-<form class="user-details-container" action="/postjob" method="post">
+<form class="user-details-container" enctype="multipart/form-data" action="{% url 'post_job' %}" method="post">
+  {% csrf_token %}
+  {% for error_field, error_message in form.errors.items %}
+    {{ error_field|striptags }}: {{ error_message|striptags }}
+    <br>
+{% endfor %}
   <div class="container-header">
     <h2 class="container-title">RECRUITING FORM</h2>
   </div>
@@ -27,6 +32,7 @@
           required
           id="input-location"
           class="detail-field"
+          name="company"
           placeholder="Name of the company"
         />
       </div>
@@ -41,6 +47,7 @@
           id="input-location"
           class="detail-field"
           placeholder="Enter Job tilte here"
+          name="title"
         />
       </div>
     </div>
@@ -58,9 +65,10 @@
           id="input-job-description"
           class="detail-field user-detail-text"
           placeholder="Detailed description about job"
+          name="description"
         ></textarea>
         <label class="detail-title">Link for better description</label>
-        <input type="url" class="detail-field" placeholder="URL">
+        <input type="url" class="detail-field" placeholder="URL" name="description_link">
       </div>
     </div>
     <hr />
@@ -79,6 +87,7 @@
           class="detail-field"
           placeholder="12.25"
           aria-describedby="ctcHelp"
+          name="ctc"
         />
         <div id="ctcHelp">Please enter the figure in lakhs only</div>
       </div>
@@ -91,13 +100,13 @@
           >Qualification</label
         >
         <select
-          name="input-min-qualification"
+          name="minimum_qualification"
           class="detail-field"
           required
           id="input-personal-branch"
         >
-          <option value="B Tech">B Tech</option>
-          <option value="M Tech">M Tech</option>
+          <option value="B.Tech">B Tech</option>
+          <option value="M.Tech">M Tech</option>
           <option value="PhD">PhD</option>
         </select>
       </div>
@@ -111,6 +120,7 @@
           id="year-detail"
           class="detail-field"
           placeholder="2023"
+          name="year_of_graduation"
         />
       </div>
     </div>
@@ -123,6 +133,7 @@
         >
         <textarea
           type="text"
+          name="mandatory_skills"
           id="input-procedure"
           class="detail-field user-detail-text"
           placeholder="Describe your procedure "
@@ -134,6 +145,7 @@
         </label>
         <textarea
           type="text"
+          name="desirable_skills"
           id="input-skills"
           class="detail-field user-detail-text"
           placeholder="Experience with Python"
@@ -152,6 +164,7 @@
         <input
           type="text"
           required
+          name="location"
           id="input-location"
           class="detail-field"
           placeholder="willing to move to banglore "
@@ -169,6 +182,7 @@
         </label>
         <input
           type="number"
+          name="ug_cutoff"
           step="0.01"
           min="0"
           max="10"
@@ -185,6 +199,7 @@
         >
         <input
           type="number"
+          name="masters_cutoff"
           step="0.01"
           min="0"
           max="10"
@@ -193,28 +208,14 @@
           placeholder="8"
         />
       </div>
-      <div class="detail-label-and-field">
-        <label class="detail-title" for="input-tenth-score"
-          >PG-Cutoff</label
-        >
-        <input
-          type="number"
-          step="0.01"
-          id="input-tenth-score"
-          class="detail-field"
-          min="0"
-          max="10"
-          placeholder="7.9"
-        />
-      </div>
     </div>
     <div class="backlogs-checkbox">
-      <input type="checkbox" id="backlogCheckBox" name="backlogCheckBox" onchange="addDiv(this,backlogLimitations)">
+      <input type="checkbox" id="backlogCheckBox" name="backlogs_allowed" onchange="addDiv(this,backlogLimitations)">
           <label for="backlogCheckBox">Backlogs allowed</label>
     </div>
     <div class="detail-label-and-field" id="backlogLimitations">
       <label class="detail-title required" for="input-programme">Minimum number of backlogs</label>
-      <select class="detail-field" id="backlog-limitations-dropdown" name="backlog-limitations-dropdown">
+      <select class="detail-field" id="backlog-limitations-dropdown" name="max_num_of_backlogs_allowed">
         <option value="1">Only one backlog</option>
         <option value="2">Atmost two backlogs</option>
         <option value="3">Atmost 3 backlogs</option>
@@ -223,45 +224,46 @@
     <hr />
     <h3>College Information</h3>
     <div class="field-container contact-information">
-      <div class="detail-label-and-field">
+      <div class="detail-label-and-field" id="branches_allowed_checkboxes">
         <label
           class="detail-title required"
           for="input-personal-branch"
           >Branches Allowed</label
         >
+        <input type="hidden" name="branches_allowed" id="branches_allowed_input">
         <div class="checkbox-items">
           <div class="item">
-            <input type="checkbox" id="cse" name="cse">
+            <input type="checkbox" branch="CSE">
             <label for="cse">CSE</label>
           </div>
           <div class="item">
-            <input type="checkbox" id="ece" name="ece">
+            <input type="checkbox" branch="ECE">
             <label for="ece">ECE</label>
           </div>
           <div class="item">
-            <input type="checkbox" id="eee" name="cse">
+            <input type="checkbox" branch="EEE">
             <label for="eee">EEE</label>
           </div>
           <div class="item">
-            <input type="checkbox" id="biotech" name="biotech">
-            <label for="biotech">BIO</label>
+            <input type="checkbox" branch="BIOT">
+            <label for="biotech">BIOT</label>
           </div>
           <div class="item">
-            <input type="checkbox" id="mme" name="mme">
+            <input type="checkbox" branch="MME">
             <label for="mme">MME</label>
           </div>
         </div>
         <div class="checkbox-items">
           <div class="item">
-            <input type="checkbox" id="mech" name="mech">
+            <input type="checkbox" branch="MECH">
             <label for="mech">MECH</label>
           </div>
           <div class="item">
-            <input type="checkbox" id="civil" name="civil">
+            <input type="checkbox" branch="CIVIL">
             <label for="civil">CIVIL</label>
           </div>
           <div class="item">
-            <input type="checkbox" id="chem" name="chem">
+            <input type="checkbox" branch="CHEM">
             <label for="chem">CHEM</label>
           </div>
         </div>
@@ -276,6 +278,7 @@
         >
         <input
           type="file"
+          name="files"
           required
           id="input-intro"
           class="detail-field"
@@ -313,6 +316,7 @@
           class="detail-field"
           placeholder="6:00 PM IST"
         />
+        <input type="hidden" name="deadline" id="deadline">
       </div>
     </div>
     <hr />
@@ -330,7 +334,7 @@
           <input
             type="text"
             id="hrName"
-            name="hrName"
+            name="hr_name"
             class="detail-field"
             placeholder="Name of HR"
           />
@@ -342,7 +346,7 @@
           <input
             type="tel"
             id="hrMobile"
-            name="hrMobile"
+            name="hr_phone"
             class="detail-field"
             placeholder="-"
           />
@@ -354,7 +358,7 @@
         <input
           type="email"
           id="hremail"
-          name="hremail"
+          name="hr_email"
           class="detail-field"
           placeholder="@"
         />

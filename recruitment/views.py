@@ -2,6 +2,8 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
+from recruitment.forms import JobForm
+
 def home(request):
     if not request.user.is_authenticated:
         return redirect(reverse('login'))
@@ -23,7 +25,14 @@ def recruiter_registration(request):
     return render(request, "recruitment/recruiter-register.html")
 
 def post_job(request):
-    return render(request, "recruitment/post-job.html")
+    if request.method == "POST":
+        form = JobForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+    else:
+        form = JobForm()
+    return render(request, "recruitment/post-job.html", {'form': form})
 
 def hiring_status(request):
     return render(request, "recruitment/hiring-status.html")
