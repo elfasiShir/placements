@@ -15,7 +15,7 @@
     />
   </head>
   <body>
-    <section class="login-container">
+    <form class="login-container">
       <div class="container-header">
         <h2 class="container-title">Login</h2>
       </div>
@@ -47,15 +47,18 @@
                 required
               />
             </div>
+            <div class="field-container personal-information">
+              <a href="#"><em>Forgot Password ?</em></a>
+            </div>
             {% if form.errors %}
               <p>Your username and password didn't match. Please try again.</p>
             {% endif %}
             <input type="hidden" name="next" value="{{ next }}">
-            <input type="submit" value="login" class="login-button">Login</button>
+            <button type="submit" class="login-button">Login</button>
           </form>
         </div>
       </div>
-    </section>
+    </form>
   </body>
 </html>
 
