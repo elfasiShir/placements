@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-from recruitment.forms import JobForm
-from recruitment.models import Job, User
+from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, ProjectForm, SocialProfileForm, StudentProfileForm
+from recruitment.models import BTechExtras, Job, User
 
 def home(request):
     if not request.user.is_authenticated:
@@ -37,6 +37,48 @@ def student_profile(request):
     return render(request, "recruitment/student-profile.html")
 
 def edit_profile(request):
+    if request.method == "POST":
+        profileForm = StudentProfileForm(request.POST, request.FILES,prefix='StudentProfile')
+        permanentAddressForm = AddressForm(request.POST,prefix='permanentAddress')
+        hostelAddressForm = AddressForm(request.POST,prefix='hostelAddress')
+        pgForm = EducationForm(request.POST, request.FILES,prefix='postGraduation')
+        ugForm = EducationForm(request.POST, request.FILES,prefix='underGraduation')
+        interForm = EducationForm(request.POST, request.FILES,prefix='intermediate')
+        tenthForm = EducationForm(request.POST, request.FILES,prefix='tenthGrade')
+        btechExtras = BTechExtrasForm(request.POST, request.FILES,prefix='btechExtras')
+        certificatesCount = request.POST['certificate-count']
+        internshipsCount = request.POST['internship-count']
+        projectsCount = request.POST['project-count']
+        socialProfilesCount = request.POST['social-profile-count']
+        for i in range(certificatesCount):
+            certForm = CertificationForm(request.POST, request.FILES,prefix='certificate'+str(i))
+            if certForm.is_valid():
+                certForm.save()
+        for i in range(internshipsCount):
+            internForm = InternshipForm(request.POST,prefix='internship'+str(i))
+            if internForm.is_valid():
+                internForm.save()
+        for i in range(projectsCount):
+            proForm = ProjectForm(request.POST,prefix='project'+str(i))
+            if proForm.is_valid():
+                proForm.save()
+        for i in range(socialProfilesCount):
+            spForm = SocialProfileForm(request.POST,prefix='socialProfile'+str(i))
+            if spForm.is_valid():
+                spForm.save()
+
+        if profileForm.is_valid() and permanentAddressForm.is_valid() and hostelAddressForm.is_valid() and pgForm.is_valid() and ugForm.is_valid() and interForm.is_valid() and tenthForm.is_valid() and btechExtras.is_valid():
+            profileForm.save()
+            permanentAddressForm.save()
+            hostelAddressForm.save()
+            pgForm.save()
+            ugForm.save()
+            interForm.save()
+            tenthForm.save()
+            btechExtras.save()
+    else:
+        form = StudentProfileForm()
+    
     return render(request, "recruitment/edit-student-profile.html")
 
 def recruiter_registration(request):

@@ -13,7 +13,12 @@
 {% endblock %}
 
 {% block content %}
-<form class="user-details-container">
+<form class="user-details-container" enctype="multipart/form-data" action="{% url 'edit_profile' %}" method="post">
+  {% csrf_token %}
+  {% for error_field, error_message in form.errors.items %}
+    {{ error_field|striptags }}: {{ error_message|striptags }}
+    <br>
+{% endfor %}
   <div class="profile-picture-container">
     <img src="https://t4.ftcdn.net/jpg/03/46/93/61/360_F_346936114_RaxE6OQogebgAWTalE1myseY1Hbb5qPM.jpg"
       alt="user image" />
@@ -70,10 +75,6 @@
         <select name="input-programme" class="detail-field" required id="input-programme">
           <option value="BTECH">B.Tech</option>
           <option value="MTECH">M.Tech</option>
-          <option value="UGDEGREE">Undergraduate Degree</option>
-          <option value="PGDEGREE">Postgraduate Degree</option>
-
-
         </select>
       </div>
       <div class="detail-label-and-field">
@@ -93,12 +94,17 @@
     <hr />
     <h3>Permanent Address</h3>
     <div class="field-container contact-information">
+     
       <div class="detail-label-and-field">
-        <label class="detail-title wide-input required" for="input-address">Address</label>
-        <input type="text" required id="input-adress" class="detail-field"
+        <label class="detail-title wide-input required" for="input-address1">Address line 1</label>
+        <input type="text" required id="input-address1" class="detail-field"
           placeholder="Tilak Marg, Mandi House,New Delhi" />
       </div>
-
+      <div class="detail-label-and-field">
+        <label class="detail-title wide-input required" for="input-address2">Address line 2</label>
+        <input type="text" required id="input-address2" class="detail-field"
+          placeholder="Tilak Marg, Mandi House,New Delhi" />
+      </div>
       <div class="detail-label-and-field">
         <label class="detail-title required" for="input-city">City</label>
         <input type="text" required id="input-city" class="detail-field" placeholder="New Delhi" />
@@ -111,21 +117,23 @@
         <label class="detail-title required" for="input-personal-pincode">Postal Code</label>
         <input type="number" required id="input-personal-pincode" class="detail-field" placeholder="110001" />
       </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-country">Country</label>
+        <input type="text" required id="input-country" class="detail-field" placeholder="India" />
+      </div>
+      <input type="hidden" name="permanent_address_type" value="P">
     </div>
     <hr />
     <h3>Hostel Address</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label class="detail-title wide-input required" for="input-room">Room number</label>
-        <input type="text" required id="input-room" class="detail-field" placeholder="F16" />
+        <label class="detail-title" for="input-hostel-address1">Room number and Block</label>
+        <input type="text" required id="input-hostel-address1" class="detail-field" value="F-16, Godavari"
+          disabled />
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="input-block">Block name</label>
-        <input type="text" required id="input-block" class="detail-field" placeholder="Krishnaveni" />
-      </div>
-      <div class="detail-label-and-field">
-        <label class="detail-title" for="input-hostel-address">Address</label>
-        <input type="text" required id="input-hostel-address" class="detail-field" value="NIT Andhra Pradesh"
+        <label class="detail-title" for="input-hostel-address2">Address</label>
+        <input type="text" required id="input-hostel-address2" class="detail-field" value="NIT Andhra Pradesh"
           disabled />
       </div>
       <div class="detail-label-and-field">
@@ -142,6 +150,12 @@
         <input type="number" required id="input-hostel-pincode" class="detail-field" value="534101"
           disabled />
       </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-hostel-country">Country</label>
+        <input type="text" required id="input-hostel-country" class="detail-field" value="India"
+          disabled />
+      </div>
+      <input type="hidden" name="hostel-address-type" value="H">
     </div>
     <hr />
     <h3>Education</h3><br>
@@ -186,6 +200,7 @@
           <label class="detail-title" for="input-yearOfGraduation">Year of Graduation</label>
           <input type="number" step="1" required id="input-yogpg" class="detail-field" placeholder="2020" />
         </div>
+        <input type="hidden" name="post-graduation" value="PG">
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-postgraduate-score">CGPA</label>
           <input type="number" step="0.01" min="0" max="10" required id="input-postgraduate-score"
@@ -258,7 +273,7 @@
         <label class="detail-title required" for="input-yogug">Year of Graduation</label>
         <input type="number" step="1" required id="input-yogug" class="detail-field" placeholder="2020" />
       </div>
-
+      <input type="hidden" name="under-graduation" value="UG">
       <div class="detail-label-and-field">
         <label class="detail-title required" for="input-undergraduate-score">CGPA</label>
         <input type="number" step="0.01" min="0" max="10" required id="input-undergraduate-score"
@@ -333,6 +348,7 @@
         <label class="detail-title required" for="input-yoc-inter">Year of Completion</label>
         <input type="number" step="1" required id="input-yoc-inter" class="detail-field" placeholder="2020" />
       </div>
+      <input type="hidden" name="intermediate" value="inter">
       <div class="detail-label-and-field">
         <label class="detail-title required" for="input-intermediate-score">Score</label>
         <input type="number" step="0.01" min="0" max="100" required id="input-intermediate-score"
@@ -374,7 +390,7 @@
         <label class="detail-title required" for="input-yoc-tenth">Year of Completion</label>
         <input type="number" step="1" required id="input-yoc-tenth" class="detail-field" placeholder="2020" />
       </div>
-
+      <input type="hidden" name="tenth" value="10th">
       <div class="detail-label-and-field">
         <label class="detail-title required" for="input-tenth-score">CGPA/Score</label>
         <input type="number" step="0.01" min="0" max="100" required id="input-tenth-score" class="detail-field"
@@ -446,6 +462,7 @@
 
       <div class="heading-container">
         <h3>Certifications</h3>
+        <input type="hidden" id="certificate-count" name="certificate-count" value="1">
         <button type="button" class="remove-add-button" onclick="addCertificationRow()">Add</button>
       </div>
       <div class="field-container personal-information" id="certification-container">
@@ -496,6 +513,7 @@
       <div class="heading-container">
         <label class="detail-title" for="input-internships">Projects</label>
         <h4 class="edit-button remove-add-button" onclick="addProjectRow()">Add</h4>
+        <input type="hidden" id="project-count" name="project-count" value="1">
       </div>
       <div class="field-container personal-information" id="project-container">
         <div class="field-container personal-information non-resizable-field">
@@ -536,6 +554,7 @@
     <div class="heading-container">
       <label class="detail-title" for="input-internships">Internships</label>
       <h4 class="edit-button remove-add-button" onclick="addInternshipRow()">Add</h4>
+      <input type="hidden" id="internship-count" name="internship-count" value="1">
     </div>
     <div>
       <div class="field-container personal-information" id="internship-container">
@@ -594,6 +613,7 @@
     <div class="heading-container">
       <label class="detail-title" for="input-social-profile-links">Social Profiles</label>
       <h4 class="edit-button remove-add-button" onclick="addSocialProfilesRow()">Add</h4>
+      <input type="hidden" id="social-profile-count" name="social-profile-count" value="1">
     </div>
     <div class="field-container personal-information" id="social-profiles-container">
       <div class="field-container personal-information non-resizable-field">

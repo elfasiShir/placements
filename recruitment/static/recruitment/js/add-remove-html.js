@@ -1,6 +1,13 @@
 var NumberofCertifications = 1;
 var NumberofExperiences = 1;
+var CertificateCount = 1;
+var InternshipCount = 1;
+var ProjectCount = 1;
+var SocialProfileCount = 1;
 function addCertificationRow() {
+  CertificateCount+=1;
+  var certCount = document.getElementById("certificate-count");
+  certCount.value = CertificateCount;
   document.querySelector("#certification-container").insertAdjacentHTML(
     "afterbegin",
     `
@@ -37,6 +44,7 @@ function scrolltoelement(element) {
   });
 }
 function addRound() {
+ 
   document.querySelector("#forms-parent").insertAdjacentHTML(
     "beforeend",
     `       <form action="" method="post" class=" flex-col add-round-form" >
@@ -127,6 +135,9 @@ function addRound() {
   scrolltoelement(elem);
     }
 function addInternshipRow() {
+  InternshipCount+=1;
+  var internCount = document.getElementById("internship-count");
+  internCount.value = InternshipCount;
   document.querySelector("#internship-container").insertAdjacentHTML(
     "afterbegin",
     `<div class="field-container personal-information non-resizable-field">
@@ -158,6 +169,9 @@ function addInternshipRow() {
   );
 }
 function addProjectRow() {
+  ProjectCount+=1;
+  var projectsCount = document.getElementById("project-count");
+  projectsCount.value = ProjectCount;
   document.querySelector("#project-container").insertAdjacentHTML(
     "afterbegin", `
     <div class="field-container personal-information non-resizable-field">
@@ -194,6 +208,9 @@ function addProjectRow() {
 }
 
 function addSocialProfilesRow(){
+  SocialProfileCount+=1;
+  var profileCount = document.getElementById("internship-count");
+  profileCount.value = SocialProfileCount;
   document.querySelector("#social-profiles-container").insertAdjacentHTML(
     "afterbegin",
     `<div class="field-container personal-information non-resizable-field">
