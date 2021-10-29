@@ -187,6 +187,9 @@ class Job(models.Model):
     hr_email = models.EmailField()
     hr_phone = models.CharField(max_length=15)
 
+    applied_by = models.ManyToManyField(User, related_name='applied_jobs')
+    num_of_students_applied = models.IntegerField(default=0)
+
 class JobRound(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds',blank=True, null=True)
     round_number = models.SmallIntegerField('Round number')
