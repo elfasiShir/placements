@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 from recruitment.forms import JobForm
+from recruitment.models import Job
 
 def home(request):
     if not request.user.is_authenticated:
@@ -37,8 +38,12 @@ def post_job(request):
 def hiring_status(request):
     return render(request, "recruitment/hiring-status.html")
 
-def add_rounds(request):
-    return render(request, "recruitment/add-rounds.html")
+def manage_job(request, job_id):
+    try:
+        job = Job.objects.get(id=job_id)
+        return render(request, "recruitment/manage-job.html", {'job': job})
+    except Job.DoesNotExist:
+        return render(request, "recruitment/manage-job.html", {'no_job_error': 'Job does not exist'})
 
 def applied_jobs(request):
     return render(request, "recruitment/applied-jobs.html")
