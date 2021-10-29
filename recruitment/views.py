@@ -117,8 +117,12 @@ def hiring_status(request):
     jobs = Job.objects.all()
     return render(request, "recruitment/hiring-status.html",{"jobs":jobs})
 
-def add_rounds(request):
-    return render(request, "recruitment/add-rounds.html")
+def manage_job(request, job_id):
+    try:
+        job = Job.objects.get(id=job_id)
+        return render(request, "recruitment/manage-job.html", {'job': job})
+    except Job.DoesNotExist:
+        return render(request, "recruitment/manage-job.html", {'no_job_error': 'Job does not exist'})
 
 def applied_jobs(request):
     return render(request, "recruitment/applied-jobs.html")
