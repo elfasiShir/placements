@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, ProjectForm, SocialProfileForm, StudentProfileForm
+from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, JobRoundForm, ProjectForm, SocialProfileForm, StudentProfileForm
 from recruitment.models import BTechExtras, Job, User
 
 def home(request):
@@ -106,7 +106,6 @@ def recruiter_registration(request):
 def post_job(request):
     if request.method == "POST":
         form = JobForm(request.POST, request.FILES)
-
         if form.is_valid():
             form.save()
     else:
@@ -120,7 +119,14 @@ def hiring_status(request):
 def manage_job(request, job_id):
     try:
         job = Job.objects.get(id=job_id)
-        return render(request, "recruitment/manage-job.html", {'job': job})
+        if request.method == "POST":
+            form = JobRoundForm(request.POST)
+            print(request.POST)
+            if form.is_valid():
+                form.save()
+        else:
+            form = JobRoundForm()
+        return render(request, "recruitment/manage-job.html", {'job': job, 'form': form})
     except Job.DoesNotExist:
         return render(request, "recruitment/manage-job.html", {'no_job_error': 'Job does not exist'})
 
