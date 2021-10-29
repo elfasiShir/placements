@@ -180,6 +180,7 @@ class Job(models.Model):
     branches_allowed = ArrayField(models.CharField(max_length=10, choices=BRANCHES))
 
     deadline = models.DateTimeField()
+    date_posted = models.DateTimeField(auto_now_add=True)
 
     hr_name = models.CharField(max_length=128)
     hr_email = models.EmailField()
