@@ -22,7 +22,8 @@
 {% if no_job_error %}
   <p>{{ no_job_error }}</p>
 {% else %}
-  <section class="round-details-container general-container">
+  <form class="round-details-container general-container"  action="" method="post">
+    {% csrf_token %}
     <div class="opportunity-details-container">
       <div class="job-details">
       <div class="pic-comp-position-container">
@@ -53,8 +54,6 @@
           <h4>{{ job.title }}</h4>
           
         </div>
-        
-
       </div>
       <div class="details-container">
         <h2>Job Details</h2>
@@ -64,7 +63,6 @@
       
 
 
-        
         </div>
       <div class="details-container">
         <h2>HR Details</h2>
@@ -115,19 +113,19 @@
         <div class="flex-row">
           <div class="flex-col">
             <label class="detail-title required" for="input-round-name">Round Name</label>
-            <input type="text" name="input-round-name" class="detail-field" id="input-round-name" required placeholder="Technical round">
+            <input type="number" name="round_number" class="detail-field" id="input-round-name" required placeholder="Technical round">
             
           </div>
           
           <div class="flex-col ">
              <label class="detail-title " for="input-round-venue">Venue</label>
-             <input type="text"  id="input-round-venue" class="detail-field" 
+             <input type="text"  id="input-round-venue" name="venue"  class="detail-field" 
                placeholder="Academic block room 19" />
              
           </div>
           <div class="flex-col ">
              <label class="detail-title " for="input-round-link">Link</label>
-             <input type="url"  id="input-round-link" class="detail-field" 
+             <input type="url"  name="round_link" id="input-round-link" class="detail-field" 
                placeholder="" />
              
           </div>
@@ -137,7 +135,7 @@
         <div class="flex-row">
           <div class="flex-col " style="width: 100%;">
              <label class="detail-title  " for="input-round-procedure">Procedure</label>
-             <textarea  id="input-round-procedure" class="detail-field user-detail-text" 
+             <textarea  id="input-round-procedure" name="description" class="detail-field user-detail-text" 
                placeholder="" ></textarea>
              
           </div>
@@ -169,12 +167,12 @@
             
             <div class="flex-col">
               <label class="detail-title " for="input-round-contact">Contact No.</label>
-              <input type="tel" name="input-round-contact" class="detail-field" id="input-round-contact" >
+              <input type="tel" name="contact_num" class="detail-field" id="input-round-contact" >
               
             </div>
             <div class="flex-col">
               <label class="detail-title " for="input-round-email">Email</label>
-              <input type="email" name="input-round-email" class="detail-field" id="input-round-email" >
+              <input type="email" name="contact_email" class="detail-field" id="input-round-email" >
               
             </div>
           </div>
@@ -188,8 +186,7 @@
   </div>
   <div >
   <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
-  
-  <input type="submit" class="edit-button remove-add-button" value="Save Round">
+  <button type="submit" class="edit-button remove-add-button">Save Round</button>
 </div>
 </div>
 <hr/>
@@ -223,7 +220,7 @@
   <div class="flex-row" style="align-items: center; gap: 2rem;">
     <label for="added-student-search-field" class="detail-title">Search Students</label>
 
-    <input type="search" id="added-student-search-field "  class="detail-field"onkeyup="selectedFilter(this)" />
+    <input type="search" id="added-student-search-field "  class="detail-field" onkeyup="selectedFilter(this)" />
     
   </div>
   <div class="flex-col">
@@ -239,6 +236,6 @@
   </div>
 
 </div>
-</section>
+</form>
 {% endif %}
 {% endblock %}
