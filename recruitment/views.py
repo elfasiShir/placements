@@ -22,9 +22,6 @@ def student_profile(request):
 def edit_profile(request):
     return render(request, "recruitment/edit-student-profile.html")
 
-def recruiter_registration(request):
-    return render(request, "recruitment/recruiter-register.html")
-
 def post_job(request):
     if request.method == "POST":
         form = JobForm(request.POST, request.FILES)
