@@ -1,9 +1,16 @@
 <form action="" method="post" class="flex-col add-round-form" >
+    {% csrf_token %}
+    {% for error_field, error_message in form.errors.items %}
+    {{ error_field|striptags }}: {{ error_message|striptags }}
+    <br>
+{% endfor %}
+    <input type="hidden" name="job" value="{{ job.id }}">
     <h2>Round 1 </h2>
+    <input type="hidden" name="round_number" value="1">
     <div class="flex-row">
       <div class="flex-col">
         <label class="detail-title required" for="input-round-name">Round Name</label>
-        <input type="number" name="round_number" class="detail-field" id="input-round-name" required placeholder="Technical round">
+        <input type="text" name="name" class="detail-field" id="input-round-name" required placeholder="Technical round">
       </div>
       
       <div class="flex-col ">
@@ -71,8 +78,9 @@
 </div>
 <div >
 <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
+<input type='hidden' name="selected" value="1">
 <button type="submit" class="edit-button remove-add-button">Save Round</button>
 </div>
 </div>
 <hr/>
-  </form>
+</form>
