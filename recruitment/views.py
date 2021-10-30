@@ -95,7 +95,7 @@ def edit_profile(request):
         spForm = SocialProfileForm(prefix='social0')
         
     
-    return render(request, "recruitment/edit-student-profile.html")
+    return render(request, "recruitment/edit-student-profile.html", {'profileForm': profileForm ,'permanentAddressForm': permanentAddressForm , 'hostelAddressForm': hostelAddressForm , 'pgForm': pgForm , 'ugForm': ugForm , 'interForm': interForm , 'tenthForm': tenthForm , 'btechExtras': btechExtras , 'certForm': certForm , 'internForm': internForm , 'proForm': proForm , 'spForm': spForm })
 
 def recruiter_registration(request):
     return render(request, "recruitment/recruiter-register.html")
