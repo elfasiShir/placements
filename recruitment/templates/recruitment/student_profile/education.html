@@ -69,6 +69,7 @@
             <input type="file" name="pg-certificate" id="input-pgdegree-certificate" class="detail-field"
                 accept="application/pdf" placeholder="Upload M.Tech Certificate" />
         </div>
+        <input type="hidden" name="pg-student" value="{{ request.user.id }}">
 
 
     </div>
@@ -161,6 +162,7 @@
         <input type="file" name="ug-certificate" required id="input-ugdegree-certificate" class="detail-field"
             accept="application/pdf" placeholder="Upload Under Graduation Degree Certificate" />
     </div>
+    <input type="hidden" name="ug-student" value="{{ request.user.id }}">
 </div>
 <h4>Intermediate</h4>
 <div class="multiple-detail-container wide-input user-details">
@@ -228,6 +230,7 @@
         <input type="file" name="inter-certificate" required id="input-inter" class="detail-field"
             accept="application/pdf" placeholder="Upload intermediate certificate" />
     </div>
+    <input type="hidden" name="inter-student" value="{{ request.user.id }}">
 
 </div>
 <h4>Tenth Grade</h4>
@@ -274,4 +277,5 @@
         <input type="file" name="tenth-certificate" required id="input-tenth" class="detail-field"
             accept="application/pdf" placeholder="Upload 10th certificate" />
     </div>
+    <input type="hidden" name="tenth-student" value="{{ request.user.id }}">
 </div>
