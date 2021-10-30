@@ -61,18 +61,18 @@
       <div class="multiple-detail-container wide-input">
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certificate1">Certification Name</label>
-          <input type="text" name="cert0_name" id="input-certificate1" class="detail-field" placeholder="Machine Learning" />
+          <input type="text" name="cert0-name" id="input-certificate1" class="detail-field" placeholder="Machine Learning" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-issuing-authority">Issuing Authority</label>
-          <input type="text" name="cert0_issuing_authority" id="input-issuing-authority" class="detail-field" placeholder="Coursera" />
+          <input type="text" name="cert0-issuing_authority" id="input-issuing-authority" class="detail-field" placeholder="Coursera" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certupload1">Upload certificate</label>
-          <input type="file" name="cert0_certificate" id="input-certupload1" class="detail-field" accept="application/pdf"
+          <input type="file" name="cert0-certificate" id="input-certupload1" class="detail-field" accept="application/pdf"
             placeholder="Upload 10th certificate" />
         </div>
-        <input type="hidden" name="cert0_student" value="{{ request.user.id }}"
+        <input type="hidden" name="cert0-student" value="{{ request.user.id }}">
         <div class="detail-label-and-field">
           <label class="detail-title hide">.</label>
           <button type="button" class="edit-button remove-add-button" onclick="removeRow(this)">-</button>
@@ -81,7 +81,6 @@
     </div>
 
     <hr />
-
 
     <h3>Upload Resume (only pdf)</h3>
     <div class="field-container personal-information">

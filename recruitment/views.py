@@ -46,22 +46,26 @@ def edit_profile(request):
         interForm = EducationForm(request.POST, request.FILES,prefix='inter')
         tenthForm = EducationForm(request.POST, request.FILES,prefix='tenth')
         btechExtras = BTechExtrasForm(request.POST, request.FILES)
-        certificatesCount = request.POST['certificate_count']
-        internshipsCount = request.POST['internship_count']
-        projectsCount = request.POST['project_count']
-        socialProfilesCount = request.POST['social_profile_count']
+        certificatesCount = int(request.POST['certificate-count'])
+        internshipsCount = int(request.POST.get('internship-count') or 0)
+        projectsCount = int(request.POST['project-count'])
+        socialProfilesCount = int(request.POST['social-profile-count'])
+
         for i in range(certificatesCount):
             certForm = CertificationForm(request.POST, request.FILES,prefix='cert'+str(i))
             if certForm.is_valid():
                 certForm.save()
+
         for i in range(internshipsCount):
             internForm = InternshipForm(request.POST,prefix='internship'+str(i))
             if internForm.is_valid():
                 internForm.save()
+
         for i in range(projectsCount):
             proForm = ProjectForm(request.POST,prefix='project'+str(i))
             if proForm.is_valid():
                 proForm.save()
+
         for i in range(socialProfilesCount):
             spForm = SocialProfileForm(request.POST,prefix='social'+str(i))
             if spForm.is_valid():
