@@ -1,65 +1,50 @@
 {% load sass_tags %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
 
-    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
-    <link rel="stylesheet" href="{% sass_src 'recruitment/scss/login-styles.scss' %}" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <form class="login-container">
-      <div class="container-header">
-        <h2 class="container-title">Login</h2>
-      </div>
-      <div class="user-details">
-        <form method="post" action="{% url 'login' %}">
-          {% csrf_token %}
-          <h3>Email</h3>
-          <div class="field-container personal-information">
-            <div class="detail-label-and-field">
-              <input
-                type="text"
-                name="username"
-                required
-                id="input-name"
-                class="detail-field"
-                placeholder="Email"
-              />
-            </div>
+  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
+  <link rel="stylesheet" href="{% sass_src 'recruitment/scss/login-styles.scss' %}" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <form class="login-container">
+    <div class="container-header">
+      <h2 class="container-title">Login</h2>
+    </div>
+    <div class="user-details">
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h3>Email</h3>
+        <div class="field-container personal-information">
+          <div class="detail-label-and-field">
+            <input type="text" name="username" required id="input-name" class="detail-field" placeholder="Email" />
           </div>
-          <br />
-          <h3>Password</h3>
-          <div class="field-container personal-information">
-              <input
-                class="detail-field"
-                type="password"
-                id="input-company"
-                name="password"
-                placeholder="password"
-                required
-              />
-            </div>
-            <div class="field-container personal-information">
-              <a href="#"><em>Forgot Password ?</em></a>
-            </div>
-            {% if form.errors %}
-              <p>Your username and password didn't match. Please try again.</p>
-            {% endif %}
-            <input type="hidden" name="next" value="{{ next }}">
-            <button type="submit" class="login-button">Login</button>
-          </form>
         </div>
-      </div>
-    </form>
-  </body>
+        <br />
+        <h3>Password</h3>
+        <div class="field-container personal-information">
+          <input class="detail-field" type="password" id="input-company" name="password" placeholder="password"
+            required />
+        </div>
+        <div class="field-container personal-information">
+          <a href="#"><em>Forgot Password ?</em></a>
+        </div>
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit" class="login-button">Login</button>
+      </form>
+    </div>
+    </div>
+  </form>
+</body>
+
 </html>
-
-

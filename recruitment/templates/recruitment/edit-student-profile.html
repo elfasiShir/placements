@@ -61,16 +61,18 @@
       <div class="multiple-detail-container wide-input">
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certificate1">Certification Name</label>
-          <input type="text" name="cert0-name" id="input-certificate1" class="detail-field" placeholder="Machine Learning" />
+          <input type="text" name="cert0-name" id="input-certificate1" class="detail-field"
+            placeholder="Machine Learning" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-issuing-authority">Issuing Authority</label>
-          <input type="text" name="cert0-issuing_authority" id="input-issuing-authority" class="detail-field" placeholder="Coursera" />
+          <input type="text" name="cert0-issuing_authority" id="input-issuing-authority" class="detail-field"
+            placeholder="Coursera" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certupload1">Upload certificate</label>
-          <input type="file" name="cert0-certificate" id="input-certupload1" class="detail-field" accept="application/pdf"
-            placeholder="Upload 10th certificate" />
+          <input type="file" name="cert0-certificate" id="input-certupload1" class="detail-field"
+            accept="application/pdf" placeholder="Upload 10th certificate" />
         </div>
         <input type="hidden" name="cert0-student" value="{{ request.user.id }}">
         <div class="detail-label-and-field">
@@ -112,7 +114,8 @@
 
               <div class="detail-label-and-field non-resizable-field">
                 <label class="detail-title" for="input-project-title">Project title</label>
-                <input type="text" name="project0-title" id="input-project-title" class="detail-field" placeholder="Project title" />
+                <input type="text" name="project0-title" id="input-project-title" class="detail-field"
+                  placeholder="Project title" />
 
               </div>
               <div class="detail-label-and-field non-resizable-field">
@@ -131,7 +134,8 @@
             </div>
             <div class="detail-label-and-field non-resizable-field">
               <label class="detail-title" for="input-project-description">Project Description</label>
-              <textarea type="text" name="project0-description" id="input-projects" class="detail-field user-detail-text"
+              <textarea type="text" name="project0-description" id="input-projects"
+                class="detail-field user-detail-text"
                 placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
             </div>
           </div>
@@ -157,11 +161,13 @@
               </div>
               <div class="detail-label-and-field">
                 <label class="detail-title" for="input-company">Company</label>
-                <input type="text" name="internship0-company" id="input-company" class="detail-field" placeholder="Coursera" />
+                <input type="text" name="internship0-company" id="input-company" class="detail-field"
+                  placeholder="Coursera" />
               </div>
               <div class="detail-label-and-field">
                 <label class="detail-title" for="input-duration">Duration</label>
-                <input type="text" name="internship0-duration" id="input-duration" class="detail-field" placeholder="6 months" />
+                <input type="text" name="internship0-duration" id="input-duration" class="detail-field"
+                  placeholder="6 months" />
               </div>
               <div class="detail-label-and-field">
                 <label class="detail-title hide">.</label>
@@ -171,8 +177,8 @@
             <input type="hidden" name="internship0-student" value="{{ request.user.id }}">
             <div class="detail-label-and-field non-resizable-field">
               <label class="detail-title" for="input-certupload1">Description</label>
-              <textarea type="text" name="internship0-description" id="input-internships" class="detail-field user-detail-text"
-                placeholder="Describe Company, Role, Responsibitily"></textarea>
+              <textarea type="text" name="internship0-description" id="input-internships"
+                class="detail-field user-detail-text" placeholder="Describe Company, Role, Responsibitily"></textarea>
             </div>
           </div>
         </div>
@@ -223,7 +229,8 @@
           <input type="hidden" name="social0-student" value="{{ request.user.id }}">
 
           <div class="detail-label-and-field">
-            <input type="url" name="social0-link" id="social-profile-link" class="detail-field" placeholder="github profile link" />
+            <input type="url" name="social0-link" id="social-profile-link" class="detail-field"
+              placeholder="github profile link" />
           </div>
         </div>
       </div>
