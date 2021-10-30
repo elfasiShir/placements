@@ -76,11 +76,12 @@ class StudentProfile(models.Model):
     backlogs_status = models.CharField(max_length=3, default='NB')
     backlogs_cleared = models.SmallIntegerField(blank=True)
     outstanding_backlogs = models.SmallIntegerField(blank=True)
-
+    backlogs_history = models.TextField()
     gap_in_education = models.BooleanField()
     reason_for_gap_in_education = models.TextField()
 
     resume = models.FileField(resume_path)
+    technical_skills = models.TextField('Technical Skills')
     achievements = models.TextField('Awards/Recognitions received')
     publications = models.TextField('Papers published')
     hackathons_participated = models.TextField('Hackathons Participated')

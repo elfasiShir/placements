@@ -38,20 +38,20 @@ def student_profile(request):
 
 def edit_profile(request):
     if request.method == "POST":
-        profileForm = StudentProfileForm(request.POST, request.FILES,prefix='StudentProfile')
-        permanentAddressForm = AddressForm(request.POST,prefix='permanentAddress')
-        hostelAddressForm = AddressForm(request.POST,prefix='hostelAddress')
-        pgForm = EducationForm(request.POST, request.FILES,prefix='postGraduation')
-        ugForm = EducationForm(request.POST, request.FILES,prefix='underGraduation')
-        interForm = EducationForm(request.POST, request.FILES,prefix='intermediate')
-        tenthForm = EducationForm(request.POST, request.FILES,prefix='tenthGrade')
-        btechExtras = BTechExtrasForm(request.POST, request.FILES,prefix='btechExtras')
-        certificatesCount = request.POST['certificate-count']
-        internshipsCount = request.POST['internship-count']
-        projectsCount = request.POST['project-count']
-        socialProfilesCount = request.POST['social-profile-count']
+        profileForm = StudentProfileForm(request.POST, request.FILES)
+        permanentAddressForm = AddressForm(request.POST,prefix='permanent')
+        hostelAddressForm = AddressForm(request.POST,prefix='hostel')
+        pgForm = EducationForm(request.POST, request.FILES,prefix='pg')
+        ugForm = EducationForm(request.POST, request.FILES,prefix='ug')
+        interForm = EducationForm(request.POST, request.FILES,prefix='inter')
+        tenthForm = EducationForm(request.POST, request.FILES,prefix='tenth')
+        btechExtras = BTechExtrasForm(request.POST, request.FILES)
+        certificatesCount = request.POST['certificate_count']
+        internshipsCount = request.POST['internship_count']
+        projectsCount = request.POST['project_count']
+        socialProfilesCount = request.POST['social_profile_count']
         for i in range(certificatesCount):
-            certForm = CertificationForm(request.POST, request.FILES,prefix='certificate'+str(i))
+            certForm = CertificationForm(request.POST, request.FILES,prefix='cert'+str(i))
             if certForm.is_valid():
                 certForm.save()
         for i in range(internshipsCount):
@@ -63,7 +63,7 @@ def edit_profile(request):
             if proForm.is_valid():
                 proForm.save()
         for i in range(socialProfilesCount):
-            spForm = SocialProfileForm(request.POST,prefix='socialProfile'+str(i))
+            spForm = SocialProfileForm(request.POST,prefix='social'+str(i))
             if spForm.is_valid():
                 spForm.save()
 
@@ -77,7 +77,19 @@ def edit_profile(request):
             tenthForm.save()
             btechExtras.save()
     else:
-        form = StudentProfileForm()
+        profileForm = StudentProfileForm()
+        permanentAddressForm = AddressForm(prefix='permanent')
+        hostelAddressForm = AddressForm(prefix='hostel')
+        pgForm = EducationForm(prefix='pg')
+        ugForm = EducationForm(prefix='ug')
+        interForm = EducationForm(prefix='inter')
+        tenthForm = EducationForm(prefix='tenth')
+        btechExtras = BTechExtrasForm()
+        certForm = CertificationForm(prefix='cert0')
+        internForm = InternshipForm(prefix='internship0')
+        proForm = ProjectForm(prefix='project0')
+        spForm = SocialProfileForm(prefix='social0')
+        
     
     return render(request, "recruitment/edit-student-profile.html")
 
