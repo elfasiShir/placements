@@ -1,5 +1,5 @@
 def user_directory_path(instance, filename=None):
-    return f'{instance.user.email}'
+    return f'{instance.student.email}'
 
 def certificate_path(instance, filename):
     base = user_directory_path(instance)
