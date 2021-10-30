@@ -45,7 +45,7 @@ class Address(models.Model):
 
 
 class StudentProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    student = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     roll_number = models.CharField(max_length=10, unique=True)
     registration_number = models.CharField(max_length=10, unique=True)
 
@@ -200,6 +200,6 @@ class JobRound(models.Model):
     contact_email = models.EmailField(blank=True, null=True)
 
 class JobAlert(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='job_alerts')
+    student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='job_alerts')
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_alerts')
     created_at = models.DateTimeField(auto_now_add=True)
