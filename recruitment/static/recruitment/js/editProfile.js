@@ -12,14 +12,13 @@ function set_display_property(el_id, display) {
 
 function backlogs(){
     var check = document.getElementById("input-backlogs");
-    if(check.value == "outstanding-backlogs"){
+    if(check.value == "OB"){  // Outstanding backlogs
         set_display_property("out-backlogs", "flex");
         set_display_property("backlogs-cleared", "none");
-    }else if(check.value == "no-outstanding-backlogs"){
+    }else if(check.value == "NOB"){  // No outstanding backlogs
         set_display_property("backlogs-cleared", "flex");
         set_display_property("out-backlogs", "none");
-    }
-    else{
+    }else{
         set_display_property("out-backlogs", "none");
         set_display_property("backlogs-cleared", "none");
     }

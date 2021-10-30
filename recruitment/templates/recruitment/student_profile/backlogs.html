@@ -1,0 +1,37 @@
+<h3>Backlogs</h3>
+<div class="field-detail-container wide-input user-details">
+    <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-backlogs">Do you have any backlogs?</label>
+        <select name="backlogs_status" class="detail-field" required id="input-backlogs" onchange="backlogs()">
+            <option value="NB">I have no backlogs</option>
+            <option value="NOB">I do not have any outstanding backlogs but I had a few backlogs that I
+                cleared</option>
+            <option value="OB">I have some outstanding backlogs</option>
+        </select>
+    </div>
+    <div style="display: none;" class="detail-label-and-field non-resizable-field" id="backlogs-cleared">
+        <label class="detail-title" for="input-out-backlogs">Backlogs Cleared</label>
+        <div>
+            <label class="detail-title" for="input-backlogs-clear">Number of Backlogs cleared</label>
+            <input type="number" name="backlogs_cleared" id="input-backlogs-clear" class="detail-field"
+                placeholder="3" />
+        </div>
+    </div>
+    <div style="display: none;" class="detail-label-and-field non-resizable-field" id="out-backlogs">
+        <label class="detail-title" for="input-out-backlogs">Outstanding Backlogs</label>
+        <div class="multiple-detail-container">
+            <div>
+                <label class="detail-title" for="input-backlogs-cleared">Number of Backlogs cleared</label>
+                <input type="number" name="backlogs_cleared" id="input-backlogs-cleared" class="detail-field"
+                    placeholder="3" />
+            </div>
+            <div>
+                <label class="detail-title" for="input-outstanding-backlogs">Number of Outstanding Backlogs</label>
+                <input type="number" name="outstanding_backlogs" id="input-outstanding-backlogs"
+                    class="detail-field" placeholder="3" />
+            </div>
+        </div>
+        <textarea type="text" name="backlogs_history" id="input-backlog-history" class="detail-field user-detail-text"
+            placeholder="Course names for which you have/had backlogs"></textarea>
+    </div>
+</div>
