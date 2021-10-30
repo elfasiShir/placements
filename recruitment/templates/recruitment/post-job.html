@@ -17,9 +17,9 @@
 <form class="user-details-container" enctype="multipart/form-data" action="{% url 'post_job' %}" method="post">
   {% csrf_token %}
   {% for error_field, error_message in form.errors.items %}
-    {{ error_field|striptags }}: {{ error_message|striptags }}
-    <br>
-{% endfor %}
+  {{ error_field|striptags }}: {{ error_message|striptags }}
+  <br>
+  {% endfor %}
   <div class="container-header">
     <h2 class="container-title">RECRUITING FORM</h2>
   </div>
@@ -27,46 +27,26 @@
     <h3 class="required">Company Name</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <input
-          type="text"
-          required
-          id="input-location"
-          class="detail-field"
-          name="company"
-          placeholder="Name of the company"
-        />
+        <input type="text" required id="input-location" class="detail-field" name="company"
+          placeholder="Name of the company" />
       </div>
     </div>
     <hr>
     <h3 class="required">Job title</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <input
-          type="text"
-          required
-          id="input-location"
-          class="detail-field"
-          placeholder="Enter Job tilte here"
-          name="title"
-        />
+        <input type="text" required id="input-location" class="detail-field" placeholder="Enter Job tilte here"
+          name="title" />
       </div>
     </div>
     <hr />
     <h3 class="required">Job description</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label
-          class="detail-title wide-input"
-          for="input-job-description"
-          >Important details and specifications about job</label
-        >
-        <textarea
-          type="text"
-          id="input-job-description"
-          class="detail-field user-detail-text"
-          placeholder="Detailed description about job"
-          name="description"
-        ></textarea>
+        <label class="detail-title wide-input" for="input-job-description">Important details and specifications about
+          job</label>
+        <textarea type="text" id="input-job-description" class="detail-field user-detail-text"
+          placeholder="Detailed description about job" name="description"></textarea>
         <label class="detail-title">Link for better description</label>
         <input type="url" class="detail-field" placeholder="URL" name="description_link">
       </div>
@@ -75,20 +55,9 @@
     <h3>Cost To Company</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label class="detail-title required wide-input" for="input-ctc"
-          >Expected figures of CTC</label
-        >
-        <input
-          type="number"
-          step="0.01"
-          required
-          id="input-ctc"
-          min = 0
-          class="detail-field"
-          placeholder="12.25"
-          aria-describedby="ctcHelp"
-          name="ctc"
-        />
+        <label class="detail-title required wide-input" for="input-ctc">Expected figures of CTC</label>
+        <input type="number" step="0.01" required id="input-ctc" min=0 class="detail-field" placeholder="12.25"
+          aria-describedby="ctcHelp" name="ctc" />
         <div id="ctcHelp">Please enter the figure in lakhs only</div>
       </div>
     </div>
@@ -96,130 +65,70 @@
     <h3>Minimum Qualification</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="min-qualification"
-          >Qualification</label
-        >
-        <select
-          name="minimum_qualification"
-          class="detail-field"
-          required
-          id="input-personal-branch"
-        >
+        <label class="detail-title required" for="min-qualification">Qualification</label>
+        <select name="minimum_qualification" class="detail-field" required id="input-personal-branch">
           <option value="B.Tech">B Tech</option>
           <option value="M.Tech">M Tech</option>
           <option value="PhD">PhD</option>
         </select>
       </div>
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="year-detail"
-          >Year of graduation</label
-        >
-        <input
-          type="text"
-          required
-          id="year-detail"
-          class="detail-field"
-          placeholder="2023"
-          name="year_of_graduation"
-        />
+        <label class="detail-title required" for="year-detail">Year of graduation</label>
+        <input type="text" required id="year-detail" class="detail-field" placeholder="2023"
+          name="year_of_graduation" />
       </div>
     </div>
     <hr />
     <h3>Required Skills</h3>
     <div class="field-container">
       <div class="detail-label-and-field non-resizable-field">
-        <label class="detail-title required" for="input-procedure"
-          >Mandatory Technical Skills</label
-        >
-        <textarea
-          type="text"
-          name="mandatory_skills"
-          id="input-procedure"
-          class="detail-field user-detail-text"
-          placeholder="Describe your procedure "
-        ></textarea>
+        <label class="detail-title required" for="input-procedure">Mandatory Technical Skills</label>
+        <textarea type="text" name="mandatory_skills" id="input-procedure" class="detail-field user-detail-text"
+          placeholder="Describe your procedure "></textarea>
       </div>
       <div class="detail-label-and-field non-resizable-field">
-        <label class="detail-title" for="input-skills"
-          >Desirable Skills
+        <label class="detail-title" for="input-skills">Desirable Skills
         </label>
-        <textarea
-          type="text"
-          name="desirable_skills"
-          id="input-skills"
-          class="detail-field user-detail-text"
-          placeholder="Experience with Python"
-        ></textarea>
+        <textarea type="text" name="desirable_skills" id="input-skills" class="detail-field user-detail-text"
+          placeholder="Experience with Python"></textarea>
       </div>
     </div>
     <hr />
     <h3>Location</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label
-          class="detail-title required wide-input"
-          for="input-location"
-          >Job Location</label
-        >
-        <input
-          type="text"
-          required
-          name="location"
-          id="input-location"
-          class="detail-field"
-          placeholder="willing to move to banglore "
-        />
+        <label class="detail-title required wide-input" for="input-location">Job Location</label>
+        <input type="text" required name="location" id="input-location" class="detail-field"
+          placeholder="willing to move to banglore " />
       </div>
     </div>
     <hr />
     <h3>Education</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label
-          class="detail-title"
-          for="input-undergraduate-score"
-          >Undergraduate CGPA Cutoff
+        <label class="detail-title" for="input-undergraduate-score">Undergraduate CGPA Cutoff
         </label>
-        <input
-          type="number"
-          name="ug_cutoff"
-          step="0.01"
-          min="0"
-          max="10"
-          id="input-undergraduate-score"
-          class="detail-field"
-          placeholder="8.54"
-        />
+        <input type="number" name="ug_cutoff" step="0.01" min="0" max="10" id="input-undergraduate-score"
+          class="detail-field" placeholder="8.54" />
       </div>
       <div class="detail-label-and-field">
-        <label
-          class="detail-title"
-          for="input-mtech-score"
-          >M-Tech Cutoff</label
-        >
-        <input
-          type="number"
-          name="masters_cutoff"
-          step="0.01"
-          min="0"
-          max="10"
-          id="input-pg-score"
-          class="detail-field"
-          placeholder="8"
-        />
+        <label class="detail-title" for="input-mtech-score">M-Tech Cutoff</label>
+        <input type="number" name="masters_cutoff" step="0.01" min="0" max="10" id="input-pg-score" class="detail-field"
+          placeholder="8" />
       </div>
     </div>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <div class="backlogs-checkbox">
-          <input type="checkbox" id="backlogCheckBox" name="backlogs_allowed" onchange="addDiv(this,backlogLimitations)">
-              <label for="backlogCheckBox">Backlogs allowed</label>
+          <input type="checkbox" id="backlogCheckBox" name="backlogs_allowed"
+            onchange="addDiv(this,backlogLimitations)">
+          <label for="backlogCheckBox">Backlogs allowed</label>
         </div>
       </div>
       <div class="detail-label-and-field">
         <div class="breaks-checkbox">
-          <input type="checkbox"  name="breaks_allowed">
-              <label for="backlogCheckBox">Breaks in academic career allowed </label>
+          <input type="checkbox" name="breaks_allowed">
+          <label for="backlogCheckBox">Breaks in academic career allowed </label>
         </div>
       </div>
     </div>
@@ -235,11 +144,7 @@
     <h3>College Information</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field" id="branches_allowed_checkboxes">
-        <label
-          class="detail-title required"
-          for="input-personal-branch"
-          >Branches Allowed</label
-        >
+        <label class="detail-title required" for="input-personal-branch">Branches Allowed</label>
         <input type="hidden" name="branches_allowed" id="branches_allowed_input">
         <div class="checkbox-items">
           <div class="item">
@@ -283,50 +188,20 @@
     <h3>Files</h3>
     <div class="field-container personal-information">
       <div class="detail-label-and-field">
-        <label class="detail-title required" for="input-intro"
-          >Introduction/info about the opportunity</label
-        >
-        <input
-          type="file"
-          name="files"
-          required
-          id="input-intro"
-          class="detail-field"
-          placeholder="Upload any introduction"
-          accept="application/pdf"
-        />
+        <label class="detail-title required" for="input-intro">Introduction/info about the opportunity</label>
+        <input type="file" name="files" required id="input-intro" class="detail-field"
+          placeholder="Upload any introduction" accept="application/pdf" />
       </div>
     </div>
     <hr />
     <h3>Deadline</h3>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
-        <label
-          class="detail-title required wide-input"
-          for="input-application-deadline"
-          >Date</label
-        >
-        <input
-          type="date"
-          required
-          id="input-application-deadline"
-          class="detail-field"
-          placeholder="20-08-2001"
-        />
-        <label
-          class="detail-title wide-input"
-          for="input-application-deadline-time"
-          >Time</label
-        >
-        <input
-          type="time"
-          required
-          value="23:59:00"
-          id="input-application-deadline-time"
-          class="detail-field"
-          placeholder="6:00 PM IST"
-          aria-describedby="timeHelp"
-        />
+        <label class="detail-title required wide-input" for="input-application-deadline">Date</label>
+        <input type="date" required id="input-application-deadline" class="detail-field" placeholder="20-08-2001" />
+        <label class="detail-title wide-input" for="input-application-deadline-time">Time</label>
+        <input type="time" required value="23:59:00" id="input-application-deadline-time" class="detail-field"
+          placeholder="6:00 PM IST" aria-describedby="timeHelp" />
         <div id="timeHelp">Indian Standard Time (IST) only</div>
         <input type="hidden" name="deadline" id="deadline">
       </div>
@@ -336,42 +211,12 @@
       <h3>HR contact details</h3>
       <div class="field-container contact-information">
         <div class="detail-label-and-field">
-          <label
-            class="detail-title wide-input"
-            for="hrName"
-            >Name</label
-          >
-          <input
-            type="text"
-            id="hrName"
-            name="hr_name"
-            class="detail-field"
-            placeholder="Name of HR"
-          />
-          <label
-            class="detail-title wide-input"
-            for="hrName"
-            >Mobile Number</label
-          >
-          <input
-            type="tel"
-            id="hrMobile"
-            name="hr_phone"
-            class="detail-field"
-            placeholder="-"
-          />
-          <label
-          class="detail-title wide-input"
-          for="hrName"
-          >Email</label
-        >
-        <input
-          type="email"
-          id="hremail"
-          name="hr_email"
-          class="detail-field"
-          placeholder="@"
-        />
+          <label class="detail-title wide-input" for="hrName">Name</label>
+          <input type="text" id="hrName" name="hr_name" class="detail-field" placeholder="Name of HR" />
+          <label class="detail-title wide-input" for="hrName">Mobile Number</label>
+          <input type="tel" id="hrMobile" name="hr_phone" class="detail-field" placeholder="-" />
+          <label class="detail-title wide-input" for="hrName">Email</label>
+          <input type="email" id="hremail" name="hr_email" class="detail-field" placeholder="@" />
         </div>
       </div>
     </div>
