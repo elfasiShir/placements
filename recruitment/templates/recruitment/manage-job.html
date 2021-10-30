@@ -22,8 +22,7 @@
 {% if no_job_error %}
   <p>{{ no_job_error }}</p>
 {% else %}
-  <form class="round-details-container general-container"  action="" method="post">
-    {% csrf_token %}
+  <section class="round-details-container general-container">
     <div class="opportunity-details-container">
       <div class="job-details">
       <div class="pic-comp-position-container">
@@ -109,6 +108,6 @@
     </div>
     </div>
     {% include "recruitment/add_students_modal.html" %}
-</form>
+</section>
 {% endif %}
 {% endblock %}
