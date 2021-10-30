@@ -4,12 +4,12 @@
     <div class="multiple-detail-container wide-input user-details">
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-postgraduate">Post Graduate Institute</label>
-            <input type="text" name="pg_institute" id="input-postgraduate" class="detail-field"
+            <input type="text" name="pg-institute" id="input-postgraduate" class="detail-field"
                 placeholder="National Institute of Technology, AP" />
         </div>
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-postgraduate-programme">Programme</label>
-            <select name="pg_programme" class="detail-field" id="input-pg-programme">
+            <select name="pg-programme" class="detail-field" id="input-pg-programme">
                 <option value="MTech">M.Tech</option>
                 <option value="MS">M.S</option>
                 <option value="MBA">M.B.A</option>
@@ -17,7 +17,7 @@
         </div>
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-postgraduate-degree-specailization">Specialization</label>
-            <select name="pg_field_of_study" class="detail-field" id="input-postgraduate-degree-specailization">
+            <select name="pg-field_of_study" class="detail-field" id="input-postgraduate-degree-specailization">
                 <option value="BioProcess Engineering">BioProcess Engineering</option>
                 <option value="Chemical Engineering">Chemical Engineering</option>
                 <option value="Geotechnical Engineering">Geotechnical Engineering</option>
@@ -33,24 +33,24 @@
 
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-yearOfEnrollment">Year of Enrollment</label>
-            <input type="number" name="pg_year_of_enrollment" step="1" id="input-yoepg" class="detail-field"
+            <input type="number" name="pg-year_of_enrollment" step="1" id="input-yoepg" class="detail-field"
                 placeholder="2016" />
         </div>
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-yearOfGraduation">Year of Graduation</label>
-            <input type="number" name="pg_year_of_passing" step="1" id="input-yogpg" class="detail-field"
+            <input type="number" name="pg-year_of_passing" step="1" id="input-yogpg" class="detail-field"
                 placeholder="2020" />
         </div>
-        <input type="hidden" name="pg_level" value="PG">
-        <input type="hidden" name="pg_score_type" value="CGPA">
+        <input type="hidden" name="pg-level" value="PG">
+        <input type="hidden" name="pg-score_type" value="CGPA">
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-postgraduate-score">CGPA</label>
-            <input type="number" name="pg_score" step="0.01" min="0" max="10" id="input-postgraduate-score"
+            <input type="number" name="pg-score" step="0.01" min="0" max="10" id="input-postgraduate-score"
                 class="detail-field" placeholder="8.94" />
         </div>
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-inter-class">Class</label>
-            <select name="pg_passing_class" class="detail-field" id="input-pgdegree-class">
+            <select name="pg-passing_class" class="detail-field" id="input-pgdegree-class">
                 <option value="">-</option>
                 <option value="Distinction">Distinction</option>
                 <option value="First Class">First Class</option>
@@ -61,12 +61,12 @@
         </div>
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-mtech">Post Graduate Degree Consolidated Marksheets</label>
-            <input type="file" name="pg_marksheet" id="input-pgdegree-marksheet" class="detail-field"
+            <input type="file" name="pg-marksheet" id="input-pgdegree-marksheet" class="detail-field"
                 accept="application/pdf" placeholder="Upload M.Tech Marksheets" />
         </div>
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-mtech">Post Graduate Degree Certificate</label>
-            <input type="file" name="pg_certificate" id="input-pgdegree-certificate" class="detail-field"
+            <input type="file" name="pg-certificate" id="input-pgdegree-certificate" class="detail-field"
                 accept="application/pdf" placeholder="Upload M.Tech Certificate" />
         </div>
 
@@ -79,12 +79,12 @@
 
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-undergraduate">Under Graduate Institute</label>
-        <input type="text" name="ug_institute" required id="input-undergraduate" class="detail-field"
+        <input type="text" name="ug-institute" required id="input-undergraduate" class="detail-field"
             placeholder="National Institute of Technology, AP" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-undergraduate-degree">Programme</label>
-        <select name="ug_programme" class="detail-field" required id="input-ug-degree">
+        <select name="ug-programme" class="detail-field" required id="input-ug-degree">
             <option value="BTech">B.Tech</option>
             <option value="BE">B.E</option>
             <option value="BSc">B.Sc</option>
@@ -93,7 +93,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-undergraduate-degree-specialization">Specialization</label>
-        <select name="ug_field_of_study" class="detail-field" required id="input-undergraduate-degree-specialization">
+        <select name="ug-field_of_study" class="detail-field" required id="input-undergraduate-degree-specialization">
             <option value="CSE">CSE</option>
             <option value="ECE">ECE</option>
             <option value="EEE">EEE</option>
@@ -106,19 +106,19 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-yoeug">Year of Enrollment</label>
-        <input type="number" name="ug_year_of_enrollment" step="1" required id="input-yoeug" class="detail-field"
+        <input type="number" name="ug-year_of_enrollment" step="1" required id="input-yoeug" class="detail-field"
             placeholder="2016" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-yogug">Year of Graduation</label>
-        <input type="number" name="ug_year_of_passing" step="1" required id="input-yogug" class="detail-field"
+        <input type="number" name="ug-year_of_passing" step="1" required id="input-yogug" class="detail-field"
             placeholder="2020" />
     </div>
     <input type="hidden" name="level" value="UG">
     <input type="hidden" name="score_type" value="CGPA">
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-undergraduate-score">CGPA</label>
-        <input type="number" name="ug_score" step="0.01" min="0" max="10" required id="input-undergraduate-score"
+        <input type="number" name="ug-score" step="0.01" min="0" max="10" required id="input-undergraduate-score"
             class="detail-field" placeholder="8.54" />
     </div>
     <div class="detail-label-and-field">
@@ -143,7 +143,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title" for="input-ugdegree-class">Class</label>
-        <select name="ug_passing_class" class="detail-field" required id="input-ugdegree-class">
+        <select name="ug-passing_class" class="detail-field" required id="input-ugdegree-class">
             <option value="">-</option>
             <option value="Distinction">Distinction</option>
             <option value="First">First Class</option>
@@ -153,12 +153,12 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-ugdegree">Under Graduate Degree Consolidated Marksheets</label>
-        <input type="file" name="ug_marksheet" required id="input-ugdegree-marksheets" class="detail-field"
+        <input type="file" name="ug-marksheet" required id="input-ugdegree-marksheets" class="detail-field"
             accept="application/pdf" placeholder="Upload Under Graduation Degree Marksheets" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-ugdegree">Under Graduate Degree Certificate</label>
-        <input type="file" name="ug_certificate" required id="input-ugdegree-certificate" class="detail-field"
+        <input type="file" name="ug-certificate" required id="input-ugdegree-certificate" class="detail-field"
             accept="application/pdf" placeholder="Upload Under Graduation Degree Certificate" />
     </div>
 </div>
@@ -168,12 +168,12 @@
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-12th">Intermediate College
         </label>
-        <input type="text" name="inter_institute" required id="input-intermediate" class="detail-field"
+        <input type="text" name="inter-institute" required id="input-intermediate" class="detail-field"
             placeholder="albakra Junior College" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-inter-board">Board</label>
-        <select name="inter_programme" class="detail-field" required id="input-inter-board">
+        <select name="inter-programme" class="detail-field" required id="input-inter-board">
             <option value="State">State Board</option>
             <option value="CBSE">CBSE</option>
             <option value="ICSE">ICSE</option>
@@ -181,7 +181,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-intermediate-group">Group</label>
-        <select name="inter_field_of_study" class="detail-field" required id="input-intermediate-group">
+        <select name="inter-field_of_study" class="detail-field" required id="input-intermediate-group">
             <option value="MPC">MPC</option>
             <option value="MBiPC">MBiPC</option>
             <option value="MEC">MEC</option>
@@ -192,30 +192,30 @@
 
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-yoe-inter">Year of Enrollment</label>
-        <input type="number" name="inter_year_of_enrollment" step="1" required id="input-yoe-inter" class="detail-field"
+        <input type="number" name="inter-year_of_enrollment" step="1" required id="input-yoe-inter" class="detail-field"
             placeholder="2016" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-yoc-inter">Year of Completion</label>
-        <input type="number" name="inter_year_of_passing" step="1" required id="input-yoc-inter" class="detail-field"
+        <input type="number" name="inter-year_of_passing" step="1" required id="input-yoc-inter" class="detail-field"
             placeholder="2020" />
     </div>
-    <input type="hidden" name="inter_level" value="inter">
+    <input type="hidden" name="inter-level" value="inter">
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-inter-score-type">Score type</label>
-        <select name="inter_score_type" class="detail-field" required id="input-inter-score-type">
+        <select name="inter-score_type" class="detail-field" required id="input-inter-score-type">
             <option value="CGPA">CGPA</option>
             <option value="PERCENTAGE">Percentage</option>
         </select>
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-intermediate-score">Score</label>
-        <input type="number" name="inter_score" step="0.01" min="0" max="100" required id="input-intermediate-score"
+        <input type="number" name="inter-score" step="0.01" min="0" max="100" required id="input-intermediate-score"
             class="detail-field" placeholder="69.42" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title" for="input-inter-class">Class</label>
-        <select name="inter_passing_class" class="detail-field" required id="input-inter-class">
+        <select name="inter-passing_class" class="detail-field" required id="input-inter-class">
             <option value="">-</option>
             <option value="Distinction">Distinction</option>
             <option value="First">First Class</option>
@@ -225,7 +225,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-inter">Intermediate certificate</label>
-        <input type="file" name="inter_certificate" required id="input-inter" class="detail-field"
+        <input type="file" name="inter-certificate" required id="input-inter" class="detail-field"
             accept="application/pdf" placeholder="Upload intermediate certificate" />
     </div>
 
@@ -235,12 +235,12 @@
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-tenth">10th School
         </label>
-        <input type="text" name="tenth_institute" required id="input-tenth" class="detail-field"
+        <input type="text" name="tenth-institute" required id="input-tenth" class="detail-field"
             placeholder="shakti bhakti school" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-tenth-board">Board</label>
-        <select name="tenth_programme" class="detail-field" required id="input-tenth-board">
+        <select name="tenth-programme" class="detail-field" required id="input-tenth-board">
             <option value="State">State Board</option>
             <option value="CBSE">CBSE</option>
             <option value="ICSE">ICSE</option>
@@ -248,19 +248,19 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-yoc-tenth">Year of Completion</label>
-        <input type="number" name="tenth_year_of_passing" step="1" required id="input-yoc-tenth" class="detail-field"
+        <input type="number" name="tenth-year_of_passing" step="1" required id="input-yoc-tenth" class="detail-field"
             placeholder="2020" />
     </div>
     <input type="hidden" name="level" value="10th">
     <input type="hidden" name="score_type" value="CGPA">
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-tenth-score">CGPA/Score</label>
-        <input type="number" name="tenth_score" step="0.01" min="0" max="100" required id="input-tenth-score"
+        <input type="number" name="tenth-score" step="0.01" min="0" max="100" required id="input-tenth-score"
             class="detail-field" placeholder="9.5" />
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title" for="input-tenth-class">Class</label>
-        <select name="tenth_passing_class" class="detail-field" required id="input-tenth-class">
+        <select name="tenth-passing_class" class="detail-field" required id="input-tenth-class">
             <option value="">-</option>
             <option value="Distinction">Distinction</option>
             <option value="First">First Class</option>
@@ -271,7 +271,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-tenth">10th Standard certificate</label>
-        <input type="file" name="tenth_certificate" required id="input-tenth" class="detail-field"
+        <input type="file" name="tenth-certificate" required id="input-tenth" class="detail-field"
             accept="application/pdf" placeholder="Upload 10th certificate" />
     </div>
 </div>

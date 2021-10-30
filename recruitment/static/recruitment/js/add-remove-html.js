@@ -15,17 +15,17 @@ function addCertificationRow() {
       
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certificate1">Certification Name</label>
-          <input type="text" name="cert`+(CertificateCount-1)+`_name" required id="input-certificate1" class="detail-field"
+          <input type="text" name="cert`+(CertificateCount-1)+`-name" required id="input-certificate1" class="detail-field"
             placeholder="Machine Learning" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-issuing-authority">Issuing Authority</label>
-          <input type="text" name="cert`+(CertificateCount-1)+`_issuing_authority" required id="input-issuing-authority" class="detail-field"
+          <input type="text" name="cert`+(CertificateCount-1)+`-issuing_authority" required id="input-issuing-authority" class="detail-field"
             placeholder="Coursera" />
         </div>
         <div class="detail-label-and-field">
           <label class="detail-title" for="input-certupload1">Upload certificate</label>
-          <input type="file" name="cert`+(CertificateCount-1)+`_certificate" required id="input-certupload1" class="detail-field" accept="application/pdf"
+          <input type="file" name="cert`+(CertificateCount-1)+`-certificate" required id="input-certupload1" class="detail-field" accept="application/pdf"
             placeholder="Upload 10th certificate" />
         </div>
         <div class="detail-label-and-field">
@@ -144,15 +144,15 @@ function addInternshipRow() {
     <div class="three-detail-container wide-input">
     <div class="detail-label-and-field">
       <label class="detail-title" for="input-area-of-internship">Area of Internship</label>
-      <input type="text" name="internship`+(InternshipCount-1)+`area" id="input-area-of-internship" class="detail-field" placeholder="Machine Learning" />
+      <input type="text" name="internship`+(InternshipCount-1)+`-area" id="input-area-of-internship" class="detail-field" placeholder="Machine Learning" />
     </div>
     <div class="detail-label-and-field">
       <label class="detail-title" for="input-company">Company</label>
-      <input type="text" name="internship`+(InternshipCount-1)+`company" id="input-company" class="detail-field" placeholder="Coursera" />
+      <input type="text" name="internship`+(InternshipCount-1)+`-company" id="input-company" class="detail-field" placeholder="Coursera" />
     </div>
     <div class="detail-label-and-field">
       <label class="detail-title" for="input-duration">Duration</label>
-      <input type="text" name="internship`+(InternshipCount-1)+`duration" id="input-duration" class="detail-field" placeholder="6 months" />
+      <input type="text" name="internship`+(InternshipCount-1)+`-duration" id="input-duration" class="detail-field" placeholder="6 months" />
     </div>
     <div class="detail-label-and-field">
       <label class="detail-title hide">.</label>
@@ -162,7 +162,7 @@ function addInternshipRow() {
 
   <div class="detail-label-and-field non-resizable-field">
     <label class="detail-title" for="input-certupload1">Description</label>
-    <textarea type="text" name="internship`+(InternshipCount-1)+`description" id="input-internships" class="detail-field user-detail-text"
+    <textarea type="text" name="internship`+(InternshipCount-1)+`-description" id="input-internships" class="detail-field user-detail-text"
       placeholder="Describe Company, Role, Responsibitily"></textarea>
   </div></div>
     `
@@ -179,13 +179,13 @@ function addProjectRow() {
 
       <div class="detail-label-and-field non-resizable-field">
         <label class="detail-title" for="input-project-title">Project title</label>
-        <input type="text" name="project`+(ProjectCount-1)+`title" id="input-project-title" class="detail-field"
+        <input type="text" name="project`+(ProjectCount-1)+`-title" id="input-project-title" class="detail-field"
           placeholder="Project title" />
 
       </div>
       <div class="detail-label-and-field non-resizable-field">
         <label class="detail-title" for="input-project-contribution">Project contribution</label>
-        <select name="project`+(ProjectCount-1)+`is_team_project" class="detail-field" required
+        <select name="project`+(ProjectCount-1)+`-is_team_project" class="detail-field" required
           id="project-contribution-type">
           <option value="Team">Team</option>
           <option value="Individual">Individual</option>
@@ -199,7 +199,7 @@ function addProjectRow() {
     </div>
     <div class="detail-label-and-field non-resizable-field">
       <label class="detail-title" for="input-project-description">Project Description</label>
-      <textarea type="text" name="project`+(ProjectCount-1)+`description" id="input-projects" class="detail-field user-detail-text"
+      <textarea type="text" name="project`+(ProjectCount-1)+`-description" id="input-projects" class="detail-field user-detail-text"
         placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
     </div>
   </div>
@@ -216,7 +216,7 @@ function addSocialProfilesRow(){
     `<div class="field-container personal-information non-resizable-field">
     <div class="three-detail-container wide-input">
 
-      <select name="social`+(SocialProfileCount-1)+`name" class="detail-field" required id="input-social-profile-links">
+      <select name="social`+(SocialProfileCount-1)+`-name" class="detail-field" required id="input-social-profile-links">
         <option value="GitHub">GitHub</option>
         <option value="LinkedIn">LinkedIn</option>
         <option value="StackOverFlow">Stack Over Flow</option>
@@ -228,7 +228,7 @@ function addSocialProfilesRow(){
     </div>
 
     <div class="detail-label-and-field">
-      <input type="url" name="social`+(SocialProfileCount-1)+`link" required id="social-profile-link" class="detail-field"
+      <input type="url" name="social`+(SocialProfileCount-1)+`-link" required id="social-profile-link" class="detail-field"
         placeholder="github profile link" />
     </div>
   </div>
