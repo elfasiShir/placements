@@ -1,0 +1,41 @@
+<div id="add-students-modal" class="modal ">
+    <div class="flex-row parent-list-container">
+    <div class="flex-col" style="gap: 1.5rem;">
+      <h2>Select Students For Next Round</h2>
+    <div class="flex-row" style="align-items: center; gap: 2rem;">
+      <label for="student-search-field" class="detail-title">Search Students</label>
+  
+      <input type="search" id="student-search-field" class="detail-field" onkeyup="filter(this)" />
+      
+    </div>
+    <div class="flex-col">
+      <ul id="student-list" class="list-container">
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number ">411887</h3> <h3 class="student-name">Tyrone Schlecht</h3> <div class="student-row-button remove-add-button" onclick="addStudent(this)">&#43;</div> </div></li>
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">411881</h3> <h3 class="student-name">Dinesh ch</h3><div class="student-row-button remove-add-button"onclick="addStudent(this)">&#43;</div> </div></li>
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">411883</h3> <h3 class="student-name"> Lalith</h3> <div class="student-row-button remove-add-button"onclick="addStudent(this)">&#43;</div></div></li>
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">311887</h3> <h3 class="student-name"> Srinija</h3><div class="student-row-button remove-add-button"onclick="addStudent(this)">&#43;</div> </div></li>
+  
+  </ul>
+    </div>
+    </div>
+    <div class="flex-col" style="gap: 1.5rem;">
+       <h2>Selected Students</h2>
+    <div class="flex-row" style="align-items: center; gap: 2rem;">
+      <label for="added-student-search-field" class="detail-title">Search Students</label>
+  
+      <input type="search" id="added-student-search-field "  class="detail-field" onkeyup="selectedFilter(this)" />
+      
+    </div>
+    <div class="flex-col">
+      <ul id="added-student-list" class="list-container">
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">311887</h3> <h3 class="student-name">Tyrone Schlecht</h3>  <div class="student-row-button remove-add-button" onclick="removeStudent(this)">&#10005;</div></div></li>
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">511881</h3> <h3 class="student-name">Dinesh ch</h3><div class="student-row-button remove-add-button"onclick="removeStudent(this)">&#10005;</div> </div></li>
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">611883</h3> <h3 class="student-name"> Lalith</h3> <div class="student-row-button remove-add-button "onclick="removeStudent(this)">&#10005;</div></div></li>
+      <li><div class="flex-row student-row"> <h3 class="student-roll-number">321887</h3> <h3 class="student-name"> Srinija</h3> <div class="student-row-button remove-add-button"onclick="removeStudent(this)">&#10005;</div></div></li>
+  
+  </ul>
+    </div>
+    </div>
+    </div>
+  
+  </div>
