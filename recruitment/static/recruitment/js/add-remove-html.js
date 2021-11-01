@@ -4,6 +4,7 @@ var CertificateCount = 1;
 var InternshipCount = 1;
 var ProjectCount = 1;
 var SocialProfileCount = 1;
+let user_id = document.getElementById("user_id").innerHTML;
 function addCertificationRow() {
   CertificateCount+=1;
   var certCount = document.getElementById("certificate-count");
@@ -33,6 +34,7 @@ function addCertificationRow() {
           <button type="button" class="edit-button remove-add-button" onclick="removeRow(this)">-</button>
         </div>
         </div>
+        <input type="hidden" name="cert${CertificateCount-1}-student" value="{{ request.user.id }}">
     `
   );
 }
@@ -165,6 +167,7 @@ function addInternshipRow() {
     <textarea type="text" name="internship`+(InternshipCount-1)+`-description" id="input-internships" class="detail-field user-detail-text"
       placeholder="Describe Company, Role, Responsibitily"></textarea>
   </div></div>
+  <input type="hidden" name="internship${InternshipCount-1}-student" value="{{ request.user.id }}">
     `
   );
 }
@@ -179,13 +182,13 @@ function addProjectRow() {
 
       <div class="detail-label-and-field non-resizable-field">
         <label class="detail-title" for="input-project-title">Project title</label>
-        <input type="text" name="project`+(ProjectCount-1)+`-title" id="input-project-title" class="detail-field"
+        <input type="text" name="project${ProjectCount-1}-title" id="input-project-title" class="detail-field"
           placeholder="Project title" />
 
       </div>
       <div class="detail-label-and-field non-resizable-field">
         <label class="detail-title" for="input-project-contribution">Project contribution</label>
-        <select name="project`+(ProjectCount-1)+`-is_team_project" class="detail-field" required
+        <select name="project${ProjectCount-1}-is_team_project" class="detail-field" required
           id="project-contribution-type">
           <option value="Team">Team</option>
           <option value="Individual">Individual</option>
@@ -199,9 +202,10 @@ function addProjectRow() {
     </div>
     <div class="detail-label-and-field non-resizable-field">
       <label class="detail-title" for="input-project-description">Project Description</label>
-      <textarea type="text" name="project`+(ProjectCount-1)+`-description" id="input-projects" class="detail-field user-detail-text"
+      <textarea type="text" name="project${ProjectCount-1}-description" id="input-projects" class="detail-field user-detail-text"
         placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
     </div>
+    <input type="hidden" name="project${ProjectCount-1}-student" value="{{ request.user.id }}">
   </div>
     `
   );
@@ -242,6 +246,8 @@ function addSocialProfilesRow(){
 function removeRow(input) {
   input.parentNode.parentNode.remove();
 }
+
 function removepppRow(input) {
   input.parentNode.parentNode.parentNode.remove();
 }
+

@@ -41,8 +41,7 @@
             <input type="number" name="pg-year_of_passing" step="1" id="input-yogpg" class="detail-field"
                 placeholder="2020" />
         </div>
-        <input type="hidden" name="pg-level" value="PG">
-        <input type="hidden" name="pg-score_type" value="CGPA">
+        
         <div class="detail-label-and-field">
             <label class="detail-title" for="input-postgraduate-score">CGPA</label>
             <input type="number" name="pg-score" step="0.01" min="0" max="10" id="input-postgraduate-score"
@@ -70,7 +69,8 @@
                 accept="application/pdf" placeholder="Upload M.Tech Certificate" />
         </div>
         <input type="hidden" name="pg-student" value="{{ request.user.id }}">
-
+        <input type="hidden" name="pg-level" value="PG">
+        <input type="hidden" name="pg-score_type" value="CGPA">
 
     </div>
 
@@ -115,8 +115,6 @@
         <input type="number" name="ug-year_of_passing" step="1" required id="input-yogug" class="detail-field"
             placeholder="2020" />
     </div>
-    <input type="hidden" name="level" value="UG">
-    <input type="hidden" name="score_type" value="CGPA">
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-undergraduate-score">CGPA</label>
         <input type="number" name="ug-score" step="0.01" min="0" max="10" required id="input-undergraduate-score"
@@ -144,7 +142,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title" for="input-ugdegree-class">Class</label>
-        <select name="ug-passing_class" class="detail-field" required id="input-ugdegree-class">
+        <select name="ug-passing_class" class="detail-field" id="input-ugdegree-class">
             <option value="">-</option>
             <option value="Distinction">Distinction</option>
             <option value="First">First Class</option>
@@ -152,6 +150,8 @@
             <option value="Third">Third Class</option>
         </select>
     </div>
+    <input type="hidden" name="ug-level" value="UG">
+    <input type="hidden" name="ug-score_type" value="CGPA">
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-ugdegree">Under Graduate Degree Consolidated Marksheets</label>
         <input type="file" name="ug-marksheet" required id="input-ugdegree-marksheets" class="detail-field"
@@ -210,6 +210,7 @@
             <option value="PERCENTAGE">Percentage</option>
         </select>
     </div>
+   
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-intermediate-score">Score</label>
         <input type="number" name="inter-score" step="0.01" min="0" max="100" required id="input-intermediate-score"
@@ -217,7 +218,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title" for="input-inter-class">Class</label>
-        <select name="inter-passing_class" class="detail-field" required id="input-inter-class">
+        <select name="inter-passing_class" class="detail-field" id="input-inter-class">
             <option value="">-</option>
             <option value="Distinction">Distinction</option>
             <option value="First">First Class</option>
@@ -254,8 +255,7 @@
         <input type="number" name="tenth-year_of_passing" step="1" required id="input-yoc-tenth" class="detail-field"
             placeholder="2020" />
     </div>
-    <input type="hidden" name="level" value="10th">
-    <input type="hidden" name="score_type" value="CGPA">
+    
     <div class="detail-label-and-field">
         <label class="detail-title required" for="input-tenth-score">CGPA/Score</label>
         <input type="number" name="tenth-score" step="0.01" min="0" max="100" required id="input-tenth-score"
@@ -263,7 +263,7 @@
     </div>
     <div class="detail-label-and-field">
         <label class="detail-title" for="input-tenth-class">Class</label>
-        <select name="tenth-passing_class" class="detail-field" required id="input-tenth-class">
+        <select name="tenth-passing_class" class="detail-field" id="input-tenth-class">
             <option value="">-</option>
             <option value="Distinction">Distinction</option>
             <option value="First">First Class</option>
@@ -278,4 +278,8 @@
             accept="application/pdf" placeholder="Upload 10th certificate" />
     </div>
     <input type="hidden" name="tenth-student" value="{{ request.user.id }}">
+    <input type="hidden" name="tenth-year_of_enrollment" value="0">
+    <input type="hidden" name="tenth-field_of_study" value="NULL">
+    <input type="hidden" name="tenth-score_type" value="CGPA">
+    <input type="hidden" name="tenth-level" value="10th">
 </div>

@@ -210,7 +210,7 @@
         <div class="field-container personal-information non-resizable-field">
           <div class="three-detail-container wide-input">
 
-            <select name="social0_name" class="detail-field" required id="input-social-profile-links">
+            <select name="social0-name" class="detail-field" required id="input-social-profile-links">
               <option value="GitHub">GitHub</option>
               <option value="LinkedIn">LinkedIn</option>
               <option value="StackOverFlow">Stack Over Flow</option>
@@ -223,7 +223,7 @@
           <input type="hidden" name="social0-student" value="{{ request.user.id }}">
 
           <div class="detail-label-and-field">
-            <input type="url" name="social0_link" id="social-profile-link" class="detail-field" placeholder="github profile link" />
+            <input type="url" name="social0-link" id="social-profile-link" class="detail-field" placeholder="github profile link" />
           </div>
         </div>
       </div>
@@ -245,6 +245,8 @@
       will be barred from attending any recruitment drives.</span>
   </div><br><br>
   </div>
+
+  <div id="user_id" style="visibility: hidden;">{{request.user.id}}</div>
 
   </div>
   </div>

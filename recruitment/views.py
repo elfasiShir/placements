@@ -56,38 +56,34 @@ def edit_profile(request):
             if certForm.is_valid():
                 certForm.save()
             else:
-                print('cf', certForm.errors)
+                print('cf',i,  certForm.errors)
 
         for i in range(internshipsCount):
             internForm = InternshipForm(request.POST,prefix='internship'+str(i))
             if internForm.is_valid():
                 internForm.save()
             else:
-                print('if',interForm.errors)
+                print('if', i, interForm.errors)
 
         for i in range(projectsCount):
             proForm = ProjectForm(request.POST,prefix='project'+str(i))
             if proForm.is_valid():
                 proForm.save()
             else:
-                print('pr', proForm.errors)
+                print('pr', i, proForm.errors)
 
         for i in range(socialProfilesCount):
             spForm = SocialProfileForm(request.POST,prefix='social'+str(i))
             if spForm.is_valid():
                 spForm.save()
             else:
-                print('sp',spForm.errors)
+                print('sp', i, spForm.errors)
 
-        if profileForm.is_valid() and permanentAddressForm.is_valid() and hostelAddressForm.is_valid() and pgForm.is_valid() and ugForm.is_valid() and interForm.is_valid() and tenthForm.is_valid() and btechExtras.is_valid():
-            profileForm.save()
-            permanentAddressForm.save()
-            hostelAddressForm.save()
-            pgForm.save()
-            ugForm.save()
-            interForm.save()
-            tenthForm.save()
-            btechExtras.save()
+        for form in [profileForm, permanentAddressForm, hostelAddressForm, pgForm, ugForm, interForm, tenthForm, btechExtras]:
+            if form.is_valid():
+                form.save()
+            else:
+                print(form,form.errors)
     else:
         profileForm = StudentProfileForm()
         permanentAddressForm = AddressForm(prefix='permanent')

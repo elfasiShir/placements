@@ -74,18 +74,18 @@ class StudentProfile(models.Model):
         ('OB', 'Outstanding backlogs'),
     )
     backlogs_status = models.CharField(max_length=3, default='NB')
-    backlogs_cleared = models.SmallIntegerField(blank=True)
-    outstanding_backlogs = models.SmallIntegerField(blank=True)
-    backlogs_history = models.TextField()
+    backlogs_cleared = models.SmallIntegerField( null=True,blank=True)
+    outstanding_backlogs = models.SmallIntegerField(null=True,blank=True)
+    backlogs_history = models.TextField( null=True, blank=True)
     gap_in_education = models.BooleanField()
-    reason_for_gap_in_education = models.TextField()
+    reason_for_gap_in_education = models.TextField( null=True, blank=True)
 
     resume = models.FileField(resume_path)
     technical_skills = models.TextField('Technical Skills')
-    achievements = models.TextField('Awards/Recognitions received')
-    publications = models.TextField('Papers published')
-    hackathons_participated = models.TextField('Hackathons Participated')
-    extra_curricular_activities = models.TextField('Extra Curricular Activities')
+    achievements = models.TextField('Awards/Recognitions received', null=True, blank=True)
+    publications = models.TextField('Papers published', null=True, blank=True)
+    hackathons_participated = models.TextField('Hackathons Participated', null=True, blank=True)
+    extra_curricular_activities = models.TextField('Extra Curricular Activities', null=True, blank=True)
 
 
 class Education(models.Model):
