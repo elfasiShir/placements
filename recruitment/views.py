@@ -46,30 +46,38 @@ def edit_profile(request):
         interForm = EducationForm(request.POST, request.FILES,prefix='inter')
         tenthForm = EducationForm(request.POST, request.FILES,prefix='tenth')
         btechExtras = BTechExtrasForm(request.POST, request.FILES)
-        certificatesCount = int(request.POST['certificate-count'])
-        internshipsCount = int(request.POST.get('internship-count') or 0)
-        projectsCount = int(request.POST['project-count'])
-        socialProfilesCount = int(request.POST['social-profile-count'])
+        certificatesCount = int(request.POST.get('certificate_count') or 0)
+        internshipsCount = int(request.POST.get('internship_count') or 0)
+        projectsCount = int(request.POST.get('project_count') or 0)
+        socialProfilesCount = int(request.POST.get('social_profile_count') or 0)
 
         for i in range(certificatesCount):
             certForm = CertificationForm(request.POST, request.FILES,prefix='cert'+str(i))
             if certForm.is_valid():
                 certForm.save()
+            else:
+                print('cf', certForm.errors)
 
         for i in range(internshipsCount):
             internForm = InternshipForm(request.POST,prefix='internship'+str(i))
             if internForm.is_valid():
                 internForm.save()
+            else:
+                print('if',interForm.errors)
 
         for i in range(projectsCount):
             proForm = ProjectForm(request.POST,prefix='project'+str(i))
             if proForm.is_valid():
                 proForm.save()
+            else:
+                print('pr', proForm.errors)
 
         for i in range(socialProfilesCount):
             spForm = SocialProfileForm(request.POST,prefix='social'+str(i))
             if spForm.is_valid():
                 spForm.save()
+            else:
+                print('sp',spForm.errors)
 
         if profileForm.is_valid() and permanentAddressForm.is_valid() and hostelAddressForm.is_valid() and pgForm.is_valid() and ugForm.is_valid() and interForm.is_valid() and tenthForm.is_valid() and btechExtras.is_valid():
             profileForm.save()
@@ -93,9 +101,8 @@ def edit_profile(request):
         internForm = InternshipForm(prefix='internship0')
         proForm = ProjectForm(prefix='project0')
         spForm = SocialProfileForm(prefix='social0')
-        
-    
-    return render(request, "recruitment/edit-student-profile.html", {'profileForm': profileForm ,'permanentAddressForm': permanentAddressForm , 'hostelAddressForm': hostelAddressForm , 'pgForm': pgForm , 'ugForm': ugForm , 'interForm': interForm , 'tenthForm': tenthForm , 'btechExtras': btechExtras , 'certForm': certForm , 'internForm': internForm , 'proForm': proForm , 'spForm': spForm })
+
+    return render(request, "recruitment/edit-student-profile.html")
 
 def recruiter_registration(request):
     return render(request, "recruitment/recruiter-register.html")
