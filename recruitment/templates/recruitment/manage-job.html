@@ -1,4 +1,4 @@
-{% extends 'recruitment/student_base.html' %}
+{% extends 'recruitment/base.html' %}
 {% load sass_tags %}
 {%  load static%}
 {% block metadata %}
@@ -96,6 +96,7 @@
       <hr />
         {% for job_round in job_rounds %}
           {% include "recruitment/display_round.html" with job_round=job_round %}
+          <hr />
         {% endfor %}
       <div id="forms-parent">
           {% include "recruitment/add_round_form.html" %}
