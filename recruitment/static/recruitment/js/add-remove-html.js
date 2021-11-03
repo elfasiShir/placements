@@ -49,89 +49,94 @@ function addRound() {
  
   document.querySelector("#forms-parent").insertAdjacentHTML(
     "beforeend",
-    `       <form action="" method="post" class=" flex-col add-round-form" >
-        <h3>Round 1 </h3>
-        <div class="flex-row">
-          <div class="flex-col">
+    `
+    <form action="" method="post" class="flex-col add-round-form">
+    {% csrf_token %}
+    {% for error_field, error_message in form.errors.items %}
+    {{ error_field|striptags }}: {{ error_message|striptags }}
+    <br>
+    {% endfor %}
+    <input type="hidden" name="job" value="{{ job.id }}">
+    <h2>Round 1 </h2>
+    <input type="hidden" name="round_number" value="1">
+    <div class="flex-row">
+        <div class="flex-col">
             <label class="detail-title required" for="input-round-name">Round Name</label>
-            <input type="text" name="input-round-name" class="detail-field" id="input-round-name" required placeholder="Technical round">
-            
-          </div>
-          
-          <div class="flex-col ">
-             <label class="detail-title " for="input-round-venue">Venue</label>
-             <input type="text"  id="input-round-venue" class="detail-field" 
-               placeholder="Academic block room 19" />
-             
-          </div>
-          <div class="flex-col ">
-             <label class="detail-title " for="input-round-link">Link</label>
-             <input type="url"  id="input-round-link" class="detail-field" 
-               placeholder="" />
-             
-          </div>
-           
+            <input type="text" name="name" class="detail-field" id="input-round-name" required
+                placeholder="Technical round">
+        </div>
+
+        <div class="flex-col ">
+            <label class="detail-title " for="input-round-venue">Venue</label>
+            <input type="text" id="input-round-venue" name="venue" class="detail-field"
+                placeholder="Academic block room 19" />
+        </div>
+        <div class="flex-col ">
+            <label class="detail-title " for="input-round-link">Link</label>
+            <input type="url" name="round_link" id="input-round-link" class="detail-field" placeholder="" />
+        </div>
+    </div>
+    <div class="flex-row">
+        <div class="flex-col " style="width: 100%;">
+            <label class="detail-title  " for="input-round-procedure">Procedure</label>
+            <textarea id="input-round-procedure" name="description" class="detail-field user-detail-text"
+                placeholder=""></textarea>
 
         </div>
-        <div class="flex-row">
-          <div class="flex-col " style="width: 100%;">
-             <label class="detail-title  " for="input-round-procedure">Procedure</label>
-             <textarea  id="input-round-procedure" class="detail-field user-detail-text" 
-               placeholder="" ></textarea>
-             
-          </div>
-        </div>
-        
-        
-        <div class="flex-row">
+    </div>
+
+
+    <div class="flex-row">
         <div class="flex-col">
-          <label class="detail-title required " for="input-round-from-day">Starting From</label>
-          <div class="flex-row">
-              <input type="date"  id="input-round-from-day" class="detail-field" 
-              placeholder="" />
-              <input type="time"  id="input-round-from-time" class="detail-field" 
-              placeholder="10:00 AM" value="23:59:00" />           
-          </div>
+            <label class="detail-title required " for="input-round-from-day">Starting From</label>
+            <div class="flex-row">
+                <input type="date" id="input-round-from-day" class="detail-field" placeholder="" />
+                <input type="time" id="input-round-from-time" class="detail-field" placeholder="10:00 AM"
+                    value="23:59:00" />
+            </div>
         </div>
         <div class="flex-col">
-          <label class="detail-title required " for="input-round-to-day">Deadline</label>
-          <div class="flex-row">
-              <input type="date"  id="input-round-to-day" class="detail-field" 
-              placeholder="" /> 
-              <input type="time"  id="input-round-to-time" class="detail-field" 
-              placeholder="10:00 AM" value="23:59:00" /> 
-          </div>
-        </div>
-        </div>
-        <label class="detail-title " for="input-round-query">For Any Queries</label>
-        <div class="flex-row">
-            
-            <div class="flex-col">
-              <label class="detail-title " for="input-round-contact">Contact No.</label>
-              <input type="tel" name="input-round-contact" class="detail-field" id="input-round-contact" >
-              
+            <label class="detail-title required " for="input-round-to-day">Deadline</label>
+            <div class="flex-row">
+                <input type="date" id="input-round-to-day" class="detail-field" placeholder="" />
+                <input type="time" id="input-round-to-time" class="detail-field" placeholder="10:00 AM"
+                    value="23:59:00" />
             </div>
-            <div class="flex-col">
-              <label class="detail-title " for="input-round-email">Email</label>
-              <input type="email" name="input-round-email" class="detail-field" id="input-round-email" >
-              
-            </div>
-          </div>
-        <div class="flex-row"></div>
+        </div>
+    </div>
+    <label class="detail-title " for="input-round-query">For Any Queries</label>
+    <div class="flex-row">
+
+        <div class="flex-col">
+            <label class="detail-title " for="input-round-contact">Contact No.</label>
+            <input type="tel" name="contact_num" class="detail-field" id="input-round-contact">
+
+        </div>
+        <div class="flex-col">
+            <label class="detail-title " for="input-round-email">Email</label>
+            <input type="email" name="contact_email" class="detail-field" id="input-round-email">
+
+        </div>
+    </div>
+    <div class="flex-row"></div>
 
 
-<div class="flex-row flex-spbw">
-  <div >
-    <h4 class="edit-button remove-add-button" >Add Students</h4>
-  </div>
-  <div >
-  <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
-  
-  <input type="submit" class="edit-button remove-add-button" value="Save Round">
-</div>
-</div>
-<hr/>
-      </form>`)
+    <div class="flex-row flex-spbw">
+        <div>
+            <a href="#add-students-modal" rel="modal:open">
+                <h4 class="edit-button remove-add-button">Add Students</h4>
+            </a>
+        </div>
+        <div id="selected-student-list-input"></div>
+        <div>
+            <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
+            <input type='hidden' name="selected" value="1">
+            <button type="submit" class="edit-button remove-add-button">Save Round</button>
+        </div>
+    </div>
+    <hr />
+</form>
+    `)
     let elemarr = document.getElementsByClassName("add-round-form");
   let elem = elemarr[elemarr.length - 1];
   scrolltoelement(elem);

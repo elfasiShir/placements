@@ -94,8 +94,11 @@
         <h4 class="edit-button remove-add-button" onclick="addRound()">Add Round</h4>
       </div>
       <hr />
+        {% for job_round in job_rounds %}
+          {% include "recruitment/display_round.html" with job_round=job_round %}
+        {% endfor %}
       <div id="forms-parent">
-        {% include "recruitment/add_round_form.html" %}
+          {% include "recruitment/add_round_form.html" %}
       </div>
     </div>
   </div>
