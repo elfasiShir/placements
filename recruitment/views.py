@@ -44,7 +44,8 @@ def manage_job(request, job_id):
                 form.save()
         else:
             form = JobRoundForm()
-        return render(request, "recruitment/manage-job.html", {'job': job, 'form': form})
+        job_rounds = job.job_rounds.filter()
+        return render(request, "recruitment/manage-job.html", {'job': job, 'form': form, "job_rounds": job_rounds})
     except Job.DoesNotExist:
         return render(request, "recruitment/manage-job.html", {'no_job_error': 'Job does not exist'})
 
