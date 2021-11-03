@@ -16,6 +16,7 @@ urlpatterns = [
     path('stats', views.stats, name='stats'),
 
     # Django's internal views default to the accounts/login/. So, we define it to avoid any errors.
+    path("register", views.register, name="register_page"),
     path('accounts/login/', LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('login/', LoginView.as_view(redirect_authenticated_user=True), name='login'),
     path('logout', LogoutView.as_view(), name='logout'),

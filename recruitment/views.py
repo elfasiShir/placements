@@ -1,6 +1,9 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 from recruitment.forms import JobForm
 from .models import Job
@@ -14,6 +17,17 @@ def home(request):
 
     return redirect(reverse('edit_profile'))
 
+def register(request):
+    if request.method == 'POST':
+        email = request.POST['user_email']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        password = request.POST['password']
+        user = User.objects.create(email=email, first_name=first_name, last_name=last_name)
+        user.set_password(password)
+        user.save()
+    return render(request, 'registration/register.html')
+    
 # TODO: Add @login_required to all views below this line.
 
 def student_profile(request):

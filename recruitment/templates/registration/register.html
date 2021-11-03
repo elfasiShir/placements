@@ -1,0 +1,105 @@
+{% extends 'recruitment/recruiter_base.html' %}
+{% load sass_tags %}
+{% load static %}
+
+{% block metadata %}
+<title>Post Job</title>
+
+<link rel="stylesheet" href="{% sass_src 'recruitment/scss/navbar-styles.scss' %}" />
+<link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
+<link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
+<link rel="stylesheet" href="{% sass_src 'recruitment/scss/recruiter-form-styles.scss' %}" />
+
+{% endblock %}
+
+{% block content %}
+<form class="user-details-container"  action="{% url 'register_page' %}" method="post">
+  {% csrf_token %}
+  {% for error_field, error_message in form.errors.items %}
+    {{ error_field|striptags }}: {{ error_message|striptags }}
+    <br>
+{% endfor %}
+  <div class="container-header">
+    <h2 class="container-title">User Registration</h2>
+  </div>
+  <div class="user-details">
+    <div class="field-container contact-information">
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="firstName"
+          >First Name</label
+        >
+        <input
+          type="text"
+          required
+          id="firstName"
+          class="detail-field"
+          placeholder="Your first name"
+          name="first_name"
+        />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="lastName"
+          >Last Name</label
+        >
+        <input
+          type="text"
+          required
+          id="lastName"
+          class="detail-field"
+          placeholder="Your last name"
+          name="last_name"
+        />
+      </div>
+    </div>
+      <label class="detail-title required" for="userMail"
+          >User mail id</label
+        >
+    <div class="field-container contact-information">
+      <div class="detail-label-and-field">
+        <input
+          type="email"
+          required
+          id="userMail"
+          class="detail-field"
+          name="user_email"
+          placeholder="Mail address of the user"
+        />
+      </div>
+    </div>
+          <label class="detail-title required" for="password"
+        >Password</label
+      >
+    <div class="field-container contact-information">
+      <div class="detail-label-and-field">
+        <input
+          type="password"
+          required
+          id="password"
+          class="detail-field"
+          name="password"
+          placeholder="password"
+        />
+      </div>
+    </div>
+              <label class="detail-title required" for="confirmPassword"
+        >Confirm Password</label
+      >
+    <div class="field-container contact-information">
+      <div class="detail-label-and-field">
+        <input
+          type="password"
+          required
+          id="confirmPassword"
+          class="detail-field"
+          name="confirm_password"
+          placeholder="confirm password"
+        />
+      </div>
+    </div>
+    <hr />
+  <div class="edit-button-div">
+    <button class="edit-button" type="reset">RESET</button>
+    <button class="edit-button submit-button" type="submit">REGISTER</button>
+  </div>
+</form>
+{% endblock %}
