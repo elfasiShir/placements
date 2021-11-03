@@ -2,11 +2,10 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.auth import get_user_model
-User = get_user_model()
+from django.contrib.auth import authenticate, login
 
 from recruitment.forms import JobForm
-from .models import Job
+from recruitment.models import Job, User
 
 def home(request):
     if not request.user.is_authenticated:
@@ -26,6 +25,10 @@ def register(request):
         user = User.objects.create(email=email, first_name=first_name, last_name=last_name)
         user.set_password(password)
         user.save()
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect(reverse('home'))
     return render(request, 'registration/register.html')
     
 # TODO: Add @login_required to all views below this line.
