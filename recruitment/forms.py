@@ -8,7 +8,7 @@ class JobForm(forms.ModelForm):
     class Meta:
         model = Job
         fields = '__all__'
-        exclude = ['applied_by', 'num_of_students_applied']
+        exclude = ['applied_by', 'num_of_students_applied', 'status']
 
 class AddressForm(forms.ModelForm):
     class Meta:

@@ -104,7 +104,9 @@ def post_job(request):
     if request.method == "POST":
         form = JobForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            form.status = 'AO'  # Applications open
+            job = form.save()
+            return redirect(reverse('manage_job', kwargs={'job_id': job.id}))
     else:
         form = JobForm()
     return render(request, "recruitment/post-job.html", {'form': form})

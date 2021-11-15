@@ -169,10 +169,10 @@ class Job(models.Model):
     year_of_graduation = models.CharField(max_length=4)
 
     mandatory_skills = models.TextField()
-    desirable_skills = models.TextField()
+    desirable_skills = models.TextField(null=True, blank=True)
 
     ug_cutoff = models.DecimalField('Undergraduate CGPA cutoff', max_digits=4, decimal_places=2)
-    masters_cutoff = models.DecimalField('Masters CGPA cutoff', max_digits=4, decimal_places=2)
+    masters_cutoff = models.DecimalField('Masters CGPA cutoff', max_digits=4, decimal_places=2, null=True, blank=True)
 
     gap_in_education_allowed = models.BooleanField()
     backlogs_allowed = models.BooleanField()
@@ -192,6 +192,7 @@ class Job(models.Model):
 
     STATUS_CHOICES = (
         ('NS', 'Not started'),
+        ('AO', 'Applications open'),
         ('IP', 'In progress'),
         ('CO', 'Completed'),
         ('CL', 'Closed'),

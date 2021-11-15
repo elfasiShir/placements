@@ -1,4 +1,4 @@
-{% extends 'recruitment/recruiter_base.html' %}
+{% extends 'recruitment/base.html' %}
 {% load sass_tags %}
 {% load static %}
 
@@ -98,8 +98,7 @@
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
         <label class="detail-title required wide-input" for="input-location">Job Location</label>
-        <input type="text" required name="location" id="input-location" class="detail-field"
-          placeholder="willing to move to banglore " />
+        <input type="text" required name="location" id="input-location" class="detail-field"/>
       </div>
     </div>
     <hr />
@@ -119,16 +118,16 @@
     </div>
     <div class="field-container contact-information">
       <div class="detail-label-and-field">
+        <div class="breaks-checkbox">
+          <input type="checkbox" name="breaks_allowed">
+          <label for="backlogCheckBox">Breaks in academic career allowed </label>
+        </div>
+      </div>
+      <div class="detail-label-and-field">
         <div class="backlogs-checkbox">
           <input type="checkbox" id="backlogCheckBox" name="backlogs_allowed"
             onchange="addDiv(this,backlogLimitations)">
           <label for="backlogCheckBox">Backlogs allowed</label>
-        </div>
-      </div>
-      <div class="detail-label-and-field">
-        <div class="breaks-checkbox">
-          <input type="checkbox" name="breaks_allowed">
-          <label for="backlogCheckBox">Breaks in academic career allowed </label>
         </div>
       </div>
     </div>
