@@ -190,6 +190,14 @@ class Job(models.Model):
     applied_by = models.ManyToManyField(User, related_name='applied_jobs')
     num_of_students_applied = models.IntegerField(default=0)
 
+    STATUS_CHOICES = (
+        ('NS', 'Not started'),
+        ('IP', 'In progress'),
+        ('CO', 'Completed'),
+        ('CL', 'Closed'),
+    )
+    status = models.CharField("Status", max_length=2, choices=STATUS_CHOICES)
+
 class JobRound(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds',blank=True, null=True)
     round_number = models.SmallIntegerField('Round number')
