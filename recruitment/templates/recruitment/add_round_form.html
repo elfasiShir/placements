@@ -5,8 +5,8 @@
     <br>
     {% endfor %}
     <input type="hidden" name="job" value="{{ job.id }}">
-    <h2>Round 1 </h2>
-    <input type="hidden" name="round_number" value="1">
+    <h2>Round {{ new_round_number }} </h2>
+    <input type="hidden" name="round_number" value="{{ new_round_number }}">
     <div class="flex-row">
         <div class="flex-col">
             <label class="detail-title required" for="input-round-name">Round Name</label>
@@ -33,22 +33,14 @@
         </div>
     </div>
 
-
     <div class="flex-row">
         <div class="flex-col">
             <label class="detail-title required " for="input-round-from-day">Starting From</label>
             <div class="flex-row">
-                <input type="date" id="input-round-from-day" class="detail-field" placeholder="" />
-                <input type="time" id="input-round-from-time" class="detail-field" placeholder="10:00 AM"
+                <input type="date" id="input-reporting-date" class="detail-field" placeholder="" />
+                <input type="time" id="input-reporting-time" class="detail-field" placeholder="10:00 AM"
                     value="23:59:00" />
-            </div>
-        </div>
-        <div class="flex-col">
-            <label class="detail-title required " for="input-round-to-day">Deadline</label>
-            <div class="flex-row">
-                <input type="date" id="input-round-to-day" class="detail-field" placeholder="" />
-                <input type="time" id="input-round-to-time" class="detail-field" placeholder="10:00 AM"
-                    value="23:59:00" />
+                <input type="hidden" name="reporting_time" id="input-reporting_time-hidden">
             </div>
         </div>
     </div>
@@ -77,8 +69,6 @@
         </div>
         <div id="selected-student-list-input"></div>
         <div>
-            <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">remove Round</h4>
-            <input type='hidden' name="selected" value="1">
             <button type="submit" class="edit-button remove-add-button">Save Round</button>
         </div>
     </div>

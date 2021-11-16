@@ -22,7 +22,7 @@ body{
     }
 
   }
-  .job-details{
+  .job-details, .round-details{
       position: relative;
       
       margin: 1rem;
@@ -33,17 +33,21 @@ body{
     box-shadow: 20px 20px 60px #e6e6e6, -20px -20px 60px #ffffff;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: flex-start;
       width: 95%;
       gap: 3rem;
       padding: 1.5rem;
       .pic-comp-position-container{
           padding: 0;
       }
-      
-      
-
   }
+
+  .round-details {
+      h2 {
+          text-align: left;
+      }
+  }
+
   .added-rounds{
       display: flex;
       flex-direction: column;

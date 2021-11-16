@@ -126,7 +126,12 @@ def manage_job(request, job_id):
         else:
             form = JobRoundForm()
         job_rounds = job.job_rounds.filter()
-        return render(request, "recruitment/manage-job.html", {'job': job, 'form': form, "job_rounds": job_rounds})
+        new_round_number = job_rounds.count() + 1
+        return render(request, "recruitment/manage-job.html", {'job': job,
+                                                               'form': form,
+                                                                'job_rounds': job_rounds,
+                                                                'new_round_number': new_round_number,
+                                                                })
     except Job.DoesNotExist:
         return render(request, "recruitment/manage-job.html", {'no_job_error': 'Job does not exist'})
 

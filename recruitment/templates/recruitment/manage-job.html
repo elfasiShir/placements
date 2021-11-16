@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/modal-styles.scss' %}" />
 <script defer src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
+<script defer type="module" src="{% static 'recruitment/js/add_round.js'%}"></script>
 <!-- Remember to include jQuery : -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <!-- jQuery Modal -->
@@ -40,10 +41,8 @@
         <div class="details-container">
           <div class="comp-viewmore">
             <h1>{{ job.company}}</h1>
-
           </div>
           <h4>{{ job.title }}</h4>
-
         </div>
       </div>
       <div class="details-container">
@@ -84,14 +83,13 @@
     <div class="added-rounds" id="added-rounds-container">
       <div class="flex-row  round-header">
         <h2> Rounds</h2>
-        <h4 class="edit-button remove-add-button" onclick="addRound()">Add Round</h4>
       </div>
-      <hr />
         {% for job_round in job_rounds %}
-          {% include "recruitment/display_round.html" with job_round=job_round %}
+          {% include "recruitment/round_details.html" with job_round=job_round %}
           <hr />
         {% endfor %}
       <div id="forms-parent">
+          <h2>Add new round</h2>
           {% include "recruitment/add_round_form.html" %}
       </div>
     </div>

@@ -1,13 +1,13 @@
+import {
+  toDateTimeString
+} from 'utils';
+
 function addDiv(checkbox, divId) {
   if (checkbox.checked == true) {
     divId.style.display = "block";
   } else {
     divId.style.display = "none";
   }
-}
-
-function toDateTimeString(date, time) {
-  return date + " " + time;
 }
 
 function storeToDeadline() {
@@ -28,4 +28,3 @@ document.getElementById('branches_allowed_checkboxes').addEventListener('click',
   branches_allowed = Array.from(document.querySelectorAll('[branch]:checked')).map((el) => el.getAttribute('branch'));
   document.getElementById("branches_allowed_input").value = branches_allowed.join();
 })
-

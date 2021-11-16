@@ -200,17 +200,20 @@ class Job(models.Model):
     status = models.CharField("Status", max_length=2, choices=STATUS_CHOICES)
 
 class JobRound(models.Model):
-    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds',blank=True, null=True)
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds')
     round_number = models.SmallIntegerField('Round number')
     name = models.CharField(max_length=64)
     reporting_time = models.DateTimeField(blank=True, null=True)
     selected = models.ManyToManyField(User)
-    venue = models.CharField(max_length=128)
+    venue = models.CharField(max_length=128, blank=True, null=True)
     description = models.TextField()
     is_last_round = models.BooleanField(blank=True, null=True,default=False)
     contact_num = models.CharField(max_length=15, blank=True, null=True)
     contact_email = models.EmailField(blank=True, null=True)
     round_link = models.URLField(blank=True, null=True)
+
+    class Meta:
+        unique_together = ('job', 'round_number')
 
 
 class JobAlert(models.Model):
