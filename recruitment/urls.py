@@ -9,9 +9,12 @@ urlpatterns = [
     path('student/profile', views.student_profile, name='student_profile'),
     path('student/edit', views.edit_profile, name='edit_profile'),
     path('student/applied', views.applied_jobs, name='applied_jobs'),
+    path('student/apply/<str:company>/<int:job_id>', views.apply_to_job, name='apply_to_job'),
+
     path('recruiter/post', views.post_job, name='post_job'),
     path('manage/job/<int:job_id>/', views.manage_job, name='manage_job'),
     path('recruiter/hiringstatus', views.hiring_status, name='hiring_status'),
+
     path('stats', views.stats, name='stats'),
 
     # Django's internal views default to the accounts/login/. So, we define it to avoid any errors.

@@ -1,8 +1,10 @@
+from django.http.response import HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.core.exceptions import ObjectDoesNotExist
 
 from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, JobRoundForm, ProjectForm, SocialProfileForm, StudentProfileForm
 from recruitment.models import BTechExtras, Job, User
@@ -35,6 +37,18 @@ def register(request):
 
 def student_profile(request):
     return render(request, "recruitment/student-profile.html")
+
+def apply_to_job(request, company, job_id):
+    try:
+        job = Job.objects.get(id=job_id)
+    except ObjectDoesNotExist:
+        return HttpResponseNotFound('Invalid request')
+
+    # TODO: Add validation and check eligibility here
+
+    job.applied_by.add(request.user)
+    return render(request, 'recruitment/applied_success.html', context={'job': job})
+
 
 def edit_profile(request):
     if request.method == "POST":
