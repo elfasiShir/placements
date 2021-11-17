@@ -11,7 +11,11 @@
 </head>
 
 <body>
-    {% block recruiter_base %}{% endblock %}
-    {% block student_base %}{% endblock %}
+    {% if request.user.is_authenticated %}
+        {% if request.user.from_tnp %}
+        {% else %}
+            {% include "recruitment/navbar.html" %}
+        {% endif %}
+    {% endif %}
     {% block content %}{% endblock %}
 </body>
