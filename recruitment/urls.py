@@ -16,6 +16,7 @@ urlpatterns = [
     path('recruiter/hiringstatus', views.hiring_status, name='hiring_status'),
 
     path('stats', views.stats, name='stats'),
+    path('job-<int:job_id>/round-<int:round_number>/get_students/', views.get_students, name='get_students'),
 
     # Django's internal views default to the accounts/login/. So, we define it to avoid any errors.
     path("register", views.register, name="register_page"),

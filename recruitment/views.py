@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate, login
 from django.core.exceptions import ObjectDoesNotExist
 
 from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, JobRoundForm, ProjectForm, SocialProfileForm, StudentProfileForm
-from recruitment.models import BTechExtras, Job, User
+from recruitment.models import BTechExtras, Job, JobRound, User
+from recruitment.utils import jsonify_student_data
 
 def home(request):
     if not request.user.is_authenticated:
@@ -158,3 +159,25 @@ def manage_job(request, job_id):
 
 def stats(request):
     return render(request, "recruitment/stats.html")
+
+def get_students(request, job_id, round_number):
+    '''
+    A JSON api to get selected/applied students for a JobRound/Job
+    '''
+    try:
+        job = Job.objects.get(id=job_id)
+    except ObjectDoesNotExist:
+        return HttpResponse('{"error":"Job with given id does not exist"}', content_type='application/json', status=200)
+
+    if round_number == 0:
+        # Round numbers start from 1. Consider this as a request to get applied students for job.
+        jsonified_students_list = jsonify_student_data(job.applied_by.all())
+        return HttpResponse(jsonified_students_list, content_type='application/json', status=200)
+
+    try:
+        job_round = JobRound.objects.get(job=job, round_number=round_number)
+    except ObjectDoesNotExist:
+        return HttpResponse('{"error": "Round does not exist"}', content_type='application/json', status=200)
+
+    jsonified_students_list = jsonify_student_data(job_round.selected.all())
+    return HttpResponse(jsonified_students_list, content_type='application/json', status=200)
