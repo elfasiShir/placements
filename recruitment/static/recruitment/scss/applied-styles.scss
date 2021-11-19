@@ -2,6 +2,15 @@
 .placements-overview {
   display: flex;
   flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover, &:visited {
+      color: black;
+    }
+  }
 }
 
 .applied-container{

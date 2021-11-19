@@ -16,12 +16,14 @@
   </div>
   <div class="placements-overview">
     {% for job in jobs %}
+    <a href="{% url 'manage_job' job_id=job.id %}">
     <div class="Placement-card">
       <div class="pic-comp-position-container">
         <div class="details-container">
           <div class="comp-viewmore">
             <h1>{{job.company}}</h1>
-            <a href="/placements/1"><span>→</span></a>
+            <span>→</span>
+            {% comment %} <a href="{% url 'manage_job' job_id=job.id %}"></a> {% endcomment %}
           </div>
           <h4>{{job.title}}</h4>
           <div class="job-type job-detail">
@@ -91,6 +93,7 @@
         <span class="status-update success">Open</span>
       </div>
     </div>
+    </a>
     {% endfor %}
   </div>
   </div>
