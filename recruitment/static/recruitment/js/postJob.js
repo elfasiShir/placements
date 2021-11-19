@@ -1,6 +1,6 @@
 import {
   toDateTimeString
-} from 'utils';
+} from './utils.js';
 
 function addDiv(checkbox, divId) {
   if (checkbox.checked == true) {
@@ -25,6 +25,6 @@ document.getElementById('input-application-deadline-time').addEventListener('cha
 })
 
 document.getElementById('branches_allowed_checkboxes').addEventListener('click', () => {
-  branches_allowed = Array.from(document.querySelectorAll('[branch]:checked')).map((el) => el.getAttribute('branch'));
+  let branches_allowed = Array.from(document.querySelectorAll('[branch]:checked')).map((el) => el.getAttribute('branch'));
   document.getElementById("branches_allowed_input").value = branches_allowed.join();
 })
