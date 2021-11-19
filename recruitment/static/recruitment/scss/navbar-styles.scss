@@ -43,9 +43,7 @@ $bg-secondary: #e4e4e4;
     }
     .nav-item {
       width: 100%;
-      &:last-child {
-        margin-top: auto;
-      }
+      
       .nav-link {
         display: flex;
         height: 5rem;

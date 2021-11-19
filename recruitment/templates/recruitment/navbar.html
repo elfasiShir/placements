@@ -14,6 +14,27 @@
         </svg>
       </a>
     </li>
+    {% if request.user.from_tnp %}
+     <li class="nav-item">
+      <a href="{% url 'hiring_status' %}" class="nav-link">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="clipboard-list"
+          class="svg-inline--fa fa-clipboard-list fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512">
+          <path fill="currentColor" class="fa-secondary"
+            d="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM96 424c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm96-192c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm128 368c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z">
+          </path>
+        </svg>
+        <span class="link-text">All Jobs</span>
+      </a>
+    </li>
+     <li class="nav-item">
+      <a href="{% url 'post_job' %}" class="nav-link">
+        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="plus-square" class="svg-inline--fa fa-plus-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" class="fa-secondary" d="M352 240v32c0 6.6-5.4 12-12 12h-88v88c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-88h-88c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h88v-88c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v88h88c6.6 0 12 5.4 12 12zm96-160v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-48 346V86c0-3.3-2.7-6-6-6H54c-3.3 0-6 2.7-6 6v340c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"></path></svg>
+        <span class="link-text">Add Job</span>
+      </a>
+    </li>
+
+    {% else %}
     <li class="nav-item">
       <a href="{% url 'student_profile' %}" class="nav-link">
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="id-card"
@@ -50,7 +71,13 @@
         <span class="link-text">Applied Opportunities</span>
       </a>
     </li>
-
+    {% endif %}
+    <li class="nav-item">
+      <a href="{% url 'logout' %}" class="nav-link">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="key" class="svg-inline--fa fa-key fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" class="fa-secondary" d="M512 176.001C512 273.203 433.202 352 336 352c-11.22 0-22.19-1.062-32.827-3.069l-24.012 27.014A23.999 23.999 0 0 1 261.223 384H224v40c0 13.255-10.745 24-24 24h-40v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-78.059c0-6.365 2.529-12.47 7.029-16.971l161.802-161.802C163.108 213.814 160 195.271 160 176 160 78.798 238.797.001 335.999 0 433.488-.001 512 78.511 512 176.001zM336 128c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48-48 21.49-48 48z"></path></svg>
+        <span class="link-text">change Password</span>
+      </a>
+    </li>
     <li class="nav-item">
       <a href="{% url 'logout' %}" class="nav-link">
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-out-alt"
@@ -63,5 +90,6 @@
         <span class="link-text">Logout</span>
       </a>
     </li>
+
   </ul>
 </div>

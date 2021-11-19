@@ -12,10 +12,7 @@
 
 <body>
     {% if request.user.is_authenticated %}
-        {% if request.user.from_tnp %}
-        {% else %}
-            {% include "recruitment/navbar.html" %}
-        {% endif %}
+    {% include "recruitment/navbar.html" %}   
     {% endif %}
     {% block content %}{% endblock %}
 </body>
