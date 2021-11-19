@@ -38,7 +38,9 @@ def register(request):
 def student_profile(request):
     return render(request, "recruitment/student-profile.html")
 
+@login_required
 def apply_to_job(request, company, job_id):
+    # The `company` argument is just for readability in url.
     try:
         job = Job.objects.get(id=job_id)
     except ObjectDoesNotExist:
@@ -49,6 +51,11 @@ def apply_to_job(request, company, job_id):
     job.applied_by.add(request.user)
     return render(request, 'recruitment/applied_success.html', context={'job': job})
 
+@login_required
+def applied_jobs(request):
+    jobs_applied = request.user.applied_jobs.all()
+
+    return render(request, "recruitment/applied-jobs.html", context={"jobs_applied": jobs_applied})
 
 def edit_profile(request):
     if request.method == "POST":
@@ -148,9 +155,6 @@ def manage_job(request, job_id):
                                                                 })
     except Job.DoesNotExist:
         return render(request, "recruitment/manage-job.html", {'no_job_error': 'Job does not exist'})
-
-def applied_jobs(request):
-    return render(request, "recruitment/applied-jobs.html")
 
 def stats(request):
     return render(request, "recruitment/stats.html")
