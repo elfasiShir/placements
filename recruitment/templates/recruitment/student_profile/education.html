@@ -1,4 +1,8 @@
-<h3>Education</h3><br>
+{% extends 'recruitment/student_profile/student_base.html' %}
+{% block student_data %}
+<div class="container-header my-account-header">
+    <h2 class="container-title">Education</h2>
+  </div><br><br>
 <h4>Post Graduation</h4>
 <div class="field-container contact-information">
     <div class="multiple-detail-container wide-input user-details">
@@ -283,3 +287,21 @@
     <input type="hidden" name="tenth-score_type" value="CGPA">
     <input type="hidden" name="tenth-level" value="10th">
 </div>
+{% include 'recruitment/student_profile/backlogs.html' %}
+    <hr>
+    <h3>Education Gap</h3><br>
+    <div><input type="checkbox" name="gap_in_education" id="edu-gap" onchange="eduGapDetails(this)"><label
+        for="edu-gap">&nbsp;Taken
+        a break from education</label></div>
+    <div style="display: none;" class="detail-label-and-field non-resizable-field" id="education-gap">
+      <label class="detail-title" for="input-edu-gap">tell us about list of gaps in the format: from_data, to_date,
+        reason for the gap</label>
+      <textarea type="text" name="reason_for_gap_in_education" id="input-edu-gap" class="detail-field user-detail-text"
+        placeholder="from_data, to_date, reason for the gap"></textarea>
+    </div>
+    <hr />
+    <div class="edit-button-div">
+        <button class="edit-button" type="reset">RESET</button>
+        <button class="edit-button submit-button" type="submit">SAVE</button>
+      </div>
+{% endblock %}

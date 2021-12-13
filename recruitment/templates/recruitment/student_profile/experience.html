@@ -1,0 +1,59 @@
+{% extends 'recruitment/student_profile/student_base.html' %}
+{% block student_data %}
+<div class="container-header my-account-header">
+    <h2 class="container-title">Experience</h2>
+  </div><br><br>
+    <div class="field-container personal-information">
+      <div class="detail-label-and-field non-resizable-field">
+        <label class="detail-title required" for="input-techskills">Technical Skills</label>
+
+        <textarea type="text" name="technical_skills" id="input-skills" class="detail-field user-detail-text"
+          placeholder="Describe your technical skills"></textarea>
+      </div>
+      <div class="detail-label-and-field non-resizable-field">
+        <div class="heading-container">
+          <label class="detail-title" for="input-internships">Projects</label>
+          <h4 class="edit-button remove-add-button" onclick="addProjectRow()">Add</h4>
+          <input type="hidden" id="project-count" name="project_count" value="1">
+        </div>
+        <div class="field-container personal-information" id="project-container">
+          <div class="field-container personal-information non-resizable-field">
+            <div class="three-detail-container wide-input">
+
+              <div class="detail-label-and-field non-resizable-field">
+                <label class="detail-title" for="input-project-title">Project title</label>
+                <input type="text" name="project0-title" id="input-project-title" class="detail-field"
+                  placeholder="Project title" />
+
+              </div>
+              <div class="detail-label-and-field non-resizable-field">
+                <label class="detail-title" for="input-project-contribution">Type of participation</label>
+                <select name="project0-is_team_project" class="detail-field" required id="project-contribution-type">
+                  <option value="Team">Team</option>
+                  <option value="Individual">Individual</option>
+                </select>
+
+              </div>
+              <input type="hidden" name="project0-student" value="{{ request.user.id }}">
+              <div class="detail-label-and-field">
+                <label class="detail-title hide">.</label>
+                <h4 class="edit-button remove-add-button" onclick="removepppRow(this)">Remove</h4>
+              </div>
+            </div>
+            <div class="detail-label-and-field non-resizable-field">
+              <label class="detail-title" for="input-project-description">Project Description</label>
+              <textarea type="text" name="project0-description" id="input-projects"
+                class="detail-field user-detail-text"
+                placeholder="Tell us about your project. The basic idea, its impact, tech stack etc"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <div class="edit-button-div">
+        <button class="edit-button" type="reset">RESET</button>
+        <button class="edit-button submit-button" type="submit">SAVE</button>
+      </div>
+    {% endblock %}

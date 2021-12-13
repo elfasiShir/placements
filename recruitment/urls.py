@@ -8,6 +8,11 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('student/profile', views.student_profile, name='student_profile'),
     path('student/edit', views.edit_profile, name='edit_profile'),
+    path('student/edit/address', views.edit_address, name='edit_address'),
+    path('student/edit/personal_information', views.edit_personal_info, name='edit_personal_information'),
+    path('student/edit/education', views.edit_education, name='edit_education'),
+    path('student/edit/experience', views.edit_experience, name='edit_experience'),
+    path('student/edit/others', views.edit_others, name='edit_others'),
     path('student/applied', views.applied_jobs, name='applied_jobs'),
     path('student/apply/<str:company>/<int:job_id>', views.apply_to_job, name='apply_to_job'),
 

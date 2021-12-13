@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.core.exceptions import ObjectDoesNotExist
 
-from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, JobRoundForm, ProjectForm, SocialProfileForm, StudentProfileForm
+from recruitment.forms import AddressForm, BTechExtrasForm, BacklogsAndEducationGapForm, CertificationForm, EducationForm, InternshipForm, JobForm, JobRoundForm, OthersForm, ProjectForm, SkillsForm, SocialProfileForm, StudentProfileForm
 from recruitment.models import BTechExtras, Job, User
 
 def home(request):
@@ -120,7 +120,100 @@ def edit_profile(request):
         spForm = SocialProfileForm(prefix='social0')
 
     return render(request, "recruitment/edit-student-profile.html")
+def edit_address(request):
+    if request.method == "POST":
+        permanentAddressForm = AddressForm(request.POST,prefix='permanent')
+        hostelAddressForm = AddressForm(request.POST,prefix='hostel')
+        
 
+        for form in [permanentAddressForm, hostelAddressForm]:
+            if form.is_valid():
+                form.save()
+            else:
+                print(form,form.errors)
+    else:
+        permanentAddressForm = AddressForm(prefix='permanent')
+        hostelAddressForm = AddressForm(prefix='hostel')
+    return render(request, "recruitment/student_profile/address.html")
+def edit_personal_info(request):
+    if request.method == "POST":
+        profileForm = StudentProfileForm(request.POST, request.FILES)
+        
+        
+        if profileForm.is_valid():
+            profileForm.save()
+        else:
+            print(profileForm,profileForm.errors)
+    else:
+        profileForm = StudentProfileForm()
+    return render(request, "recruitment/student_profile/personal_information.html")
+def edit_education(request):
+    if request.method == "POST":
+        pgForm = EducationForm(request.POST, request.FILES,prefix='pg')
+        ugForm = EducationForm(request.POST, request.FILES,prefix='ug')
+        interForm = EducationForm(request.POST, request.FILES,prefix='inter')
+        tenthForm = EducationForm(request.POST, request.FILES,prefix='tenth')
+        btechExtras = BTechExtrasForm(request.POST, request.FILES)
+        backlogsAndEduGap = BacklogsAndEducationGapForm(request.POST)
+        
+
+        for form in [pgForm, ugForm, interForm, tenthForm, btechExtras,backlogsAndEduGap]:
+            if form.is_valid():
+                form.save()
+            else:
+                print(form,form.errors)
+    else:
+        pgForm = EducationForm(prefix='pg')
+        ugForm = EducationForm(prefix='ug')
+        interForm = EducationForm(prefix='inter')
+        tenthForm = EducationForm(prefix='tenth')
+        btechExtras = BTechExtrasForm()
+        backlogsAndEduGap = BacklogsAndEducationGapForm()
+    return render(request, "recruitment/student_profile/education.html")
+def edit_experience(request):
+    if request.method == "POST":
+        skillsForm = SkillsForm(request.POST, request.FILES)
+        projectsCount = int(request.POST.get('project_count') or 0)
+ 
+        for i in range(projectsCount):
+            proForm = ProjectForm(request.POST,prefix='project'+str(i))
+            if proForm.is_valid():
+                proForm.save()
+            else:
+                print('pr', i, proForm.errors)
+
+    
+
+        for form in [skillsForm]:
+            if form.is_valid():
+                form.save()
+            else:
+                print(form,form.errors)
+    else:
+        skillsForm = SkillsForm()
+        proForm = ProjectForm(prefix='project0')     
+    return render(request, "recruitment/student_profile/experience.html")
+def edit_others(request):
+    if request.method == "POST":
+        othersForm = OthersForm(request.POST)
+        socialProfilesCount = int(request.POST.get('social_profile_count') or 0)
+
+        for i in range(socialProfilesCount):
+            spForm = SocialProfileForm(request.POST,prefix='social'+str(i))
+            if spForm.is_valid():
+                spForm.save()
+            else:
+                print('sp', i, spForm.errors)
+
+        for form in [othersForm]:
+            if form.is_valid():
+                form.save()
+            else:
+                print(form,form.errors)
+    else:
+        othersForm = OthersForm()
+        spForm = SocialProfileForm(prefix='social0')
+    return render(request, "recruitment/student_profile/others.html")
 def post_job(request):
     if request.method == "POST":
         form = JobForm(request.POST, request.FILES)

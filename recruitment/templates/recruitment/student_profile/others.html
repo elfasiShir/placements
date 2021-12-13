@@ -1,0 +1,67 @@
+{% extends 'recruitment/student_profile/student_base.html' %}
+{% block student_data %}
+<div class="container-header my-account-header">
+    <h2 class="container-title">Others</h2>
+  </div>
+  <br><br>
+    <div class="detail-label-and-field non-resizable-field">
+    <label class="detail-title" for="input-awards">Awards/Recognitions received</label>
+
+    <textarea type="text" name="achievements" id="input-awards" class="detail-field user-detail-text"
+      placeholder="List Your Awards/Recognitions one per line"></textarea>
+  </div>
+  <hr />
+  <div class="detail-label-and-field non-resizable-field">
+    <label class="detail-title" for="input-papers">Papers Publications</label>
+
+    <textarea type="text" name="publications" id="input-papers" class="detail-field user-detail-text"
+      placeholder="Describe Your Published Papers"></textarea>
+  </div>
+  <hr />
+  <div class="detail-label-and-field non-resizable-field">
+    <label class="detail-title" for="input-hackathon">Hackathons Participated</label>
+
+    <textarea type="text" name="hackathons_participated" id="input-hackathon" class="detail-field user-detail-text"
+      placeholder="Hackathons Participated list"></textarea>
+  </div>
+  <hr />
+  <div class="detail-label-and-field non-resizable-field">
+    <div class="heading-container">
+      <label class="detail-title" for="input-social-profile-links">Social Profiles</label>
+      <h4 class="edit-button remove-add-button" onclick="addSocialProfilesRow()">Add</h4>
+      <input type="hidden" id="social-profile-count" name="social_profile_count" value="1">
+    </div>
+    <div class="field-container personal-information" id="social-profiles-container">
+      <div class="field-container personal-information non-resizable-field">
+        <div class="three-detail-container wide-input">
+
+          <select name="social0-name" class="detail-field" required id="input-social-profile-links">
+            <option value="GitHub">GitHub</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="StackOverFlow">Stack Over Flow</option>
+            <option value="Others">Others</option>
+          </select>
+
+          <h4 class="edit-button remove-add-button" onclick="removeRow(this)">Remove</h4>
+
+        </div>
+        <input type="hidden" name="social0-student" value="{{ request.user.id }}">
+
+        <div class="detail-label-and-field">
+          <input type="url" name="social0-link" id="social-profile-link" class="detail-field"
+            placeholder="github profile link" />
+        </div>
+    
+    <div class="detail-label-and-field non-resizable-field">
+        <label class="detail-title" for="input-extraca">Extra Curricular Activities</label>
+      
+        <textarea type="text" name="extra_curricular_activities" id="input-extraca" class="detail-field user-detail-text"
+          placeholder="Describe your Extra Curricular Activities"></textarea>
+      </div>
+  </div>
+</div>
+<div class="edit-button-div">
+    <button class="edit-button" type="reset">RESET</button>
+    <button class="edit-button submit-button" type="submit">SAVE</button>
+  </div>
+{% endblock %}

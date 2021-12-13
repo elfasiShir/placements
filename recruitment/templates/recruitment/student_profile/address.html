@@ -1,0 +1,77 @@
+{% extends 'recruitment/student_profile/student_base.html' %}
+{% block student_data %}
+<div class="container-header my-account-header">
+  <h2 class="container-title">Address</h2>
+</div><br><br>
+    <h3>Permanent Address</h3>
+    <div class="field-container contact-information">
+
+      <div class="detail-label-and-field">
+        <label class="detail-title wide-input required" for="input-address1">Address line 1</label>
+        <input type="text" name="permanent-line_1" required id="input-address1" class="detail-field"
+          placeholder="Tilak Marg, Mandi House,New Delhi" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title wide-input required" for="input-address2">Address line 2</label>
+        <input type="text" name="permanent-line_2" required id="input-address2" class="detail-field"
+          placeholder="Tilak Marg, Mandi House,New Delhi" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-city">City</label>
+        <input type="text" name="permanent-city" required id="input-city" class="detail-field" placeholder="New Delhi" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-state">State</label>
+        <input type="text" name="permanent-state" required id="input-state" class="detail-field" placeholder="New Delhi" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-personal-pincode">Postal Code</label>
+        <input type="number" name="permanent-pincode" required id="input-personal-pincode" class="detail-field"
+          placeholder="110001" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-country">Country</label>
+        <input type="text" name="permanent-country" required id="input-country" class="detail-field" placeholder="India" />
+      </div>
+      <input type="hidden" name="permanent-address_type" value="P">
+      <input type="hidden" name="permanent-student" value="{{ request.user.id }}">
+    </div>
+    <h3>Hostel Address</h3>
+    <div class="field-container contact-information">
+      <div class="detail-label-and-field">
+        <label class="detail-title required" for="input-hostel-address1">Room number and Block</label>
+        <input type="text" name="hostel-line_1" required id="input-hostel-address1" class="detail-field"
+          placeholder="F-16, Godavari" />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-hostel-address2">Address</label>
+        <input type="text" name="hostel-line_2" required id="input-hostel-address2" class="detail-field"
+          value="NIT Andhra Pradesh" readonly />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-city">City</label>
+        <input type="text" name="hostel-city" required id="input-city" class="detail-field" value="Tadepalligudem" readonly />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-hostel-state">State</label>
+        <input type="text" name="hostel-state" required id="input-hostel-state" class="detail-field" value="Andhra Pradesh"
+          readonly />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-hostel-pincode">Postal Code</label>
+        <input type="number" name="hostel-pincode" required id="input-hostel-pincode" class="detail-field" value="534101"
+          readonly />
+      </div>
+      <div class="detail-label-and-field">
+        <label class="detail-title" for="input-hostel-country">Country</label>
+        <input type="text" name="hostel-country" required id="input-hostel-country" class="detail-field" value="India"
+          readonly />
+      </div>
+      <input type="hidden" name="hostel-address_type" value="H">
+      <input type="hidden" name="hostel-student" value="{{ request.user.id }}">
+    </div>
+    <div class="edit-button-div">
+      <button class="edit-button" type="reset">RESET</button>
+      <button class="edit-button submit-button" type="submit">SAVE</button>
+    </div>
+    {% endblock %}

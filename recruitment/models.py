@@ -68,25 +68,18 @@ class StudentProfile(models.Model):
 
     address = models.OneToOneField(Address, on_delete=models.SET_NULL, null=True, blank=True)
 
-    BACKLOGS_STATUS = (
-        ('NB', 'No backlogs'),
-        ('NOB', 'No outstanding backlogs'),
-        ('OB', 'Outstanding backlogs'),
-    )
-    backlogs_status = models.CharField(max_length=3, default='NB')
-    backlogs_cleared = models.SmallIntegerField( null=True,blank=True)
-    outstanding_backlogs = models.SmallIntegerField(null=True,blank=True)
-    backlogs_history = models.TextField( null=True, blank=True)
-    gap_in_education = models.BooleanField()
-    reason_for_gap_in_education = models.TextField( null=True, blank=True)
+    
 
     resume = models.FileField(resume_path)
-    technical_skills = models.TextField('Technical Skills')
+    
+class Others(models.Model):
     achievements = models.TextField('Awards/Recognitions received', null=True, blank=True)
     publications = models.TextField('Papers published', null=True, blank=True)
     hackathons_participated = models.TextField('Hackathons Participated', null=True, blank=True)
     extra_curricular_activities = models.TextField('Extra Curricular Activities', null=True, blank=True)
 
+class Skills(models.Model):
+    technical_skills = models.TextField('Technical Skills')
 
 class Education(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='education')
@@ -121,6 +114,19 @@ class Education(models.Model):
 
     certificate = models.FileField(upload_to=certificate_path, null=True, blank=True)
     marksheet = models.FileField(upload_to=marksheet_path, null=True, blank=True)
+    BACKLOGS_STATUS = (
+        ('NB', 'No backlogs'),
+        ('NOB', 'No outstanding backlogs'),
+        ('OB', 'Outstanding backlogs'),
+    )
+    
+class BacklogsAndEducationGap(models.Model):
+    backlogs_status = models.CharField(max_length=3, default='NB')
+    backlogs_cleared = models.SmallIntegerField( null=True,blank=True)
+    outstanding_backlogs = models.SmallIntegerField(null=True,blank=True)
+    backlogs_history = models.TextField( null=True, blank=True)
+    gap_in_education = models.BooleanField()
+    reason_for_gap_in_education = models.TextField( null=True, blank=True)
 
 class BTechExtras(models.Model):
     btech = models.OneToOneField(Education, on_delete=models.CASCADE, related_name='btech_extras')

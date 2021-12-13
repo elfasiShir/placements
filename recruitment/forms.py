@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.postgres.forms import SimpleArrayField
 
-from recruitment.models import Address, BTechExtras, Certification, Education, Internship, Job, JobRound, Project, SocialProfile, StudentProfile
+from recruitment.models import Address, BTechExtras, BacklogsAndEducationGap, Certification, Education, Internship, Job, JobRound, Others, Project, Skills, SocialProfile, StudentProfile
 
 class JobForm(forms.ModelForm):
     branches_allowed = SimpleArrayField(forms.CharField(max_length=10))
@@ -13,6 +13,21 @@ class JobForm(forms.ModelForm):
 class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
+        fields = '__all__'
+
+class SkillsForm(forms.ModelForm):
+    class Meta:
+        model = Skills
+        fields = '__all__'
+
+class BacklogsAndEducationGapForm(forms.ModelForm):
+    class Meta:
+        model = BacklogsAndEducationGap
+        fields = '__all__'
+
+class OthersForm(forms.ModelForm):
+    class Meta:
+        model = Others
         fields = '__all__'
 
 class StudentProfileForm(forms.ModelForm):
