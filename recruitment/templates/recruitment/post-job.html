@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<form class="user-details-container" enctype="multipart/form-data" action="{% url 'post_job' %}" method="post">
+<form class="user-details-container" id="post-job-form" enctype="multipart/form-data" action="{% url 'post_job' %}" method="post">
   {% csrf_token %}
   {% for error_field, error_message in form.errors.items %}
   {{ error_field|striptags }}: {{ error_message|striptags }}
@@ -126,7 +126,7 @@
       <div class="detail-label-and-field">
         <div class="backlogs-checkbox">
           <input type="checkbox" id="backlogCheckBox" name="backlogs_allowed"
-            onchange="addDiv(this,backlogLimitations)">
+            >
           <label for="backlogCheckBox">Backlogs allowed</label>
         </div>
       </div>

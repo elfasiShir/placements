@@ -2,13 +2,22 @@ import {
   toDateTimeString
 } from './utils.js';
 
-function addDiv(checkbox, divId) {
-  if (checkbox.checked == true) {
-    divId.style.display = "block";
+
+
+document.getElementById('backlogCheckBox').addEventListener('change', function() {
+  const backlogLimitationsDiv=document.getElementById('backlogLimitations');
+  if (this.checked) {
+    backlogLimitationsDiv.style.display = "block";
   } else {
-    divId.style.display = "none";
+    backlogLimitationsDiv.style.display = "none";
+   
   }
-}
+});
+
+
+document.getElementById('input-application-deadline').addEventListener('change', () => {
+  storeToDeadline();
+})
 
 function storeToDeadline() {
   let date = document.getElementById('input-application-deadline').value;
@@ -24,7 +33,19 @@ document.getElementById('input-application-deadline-time').addEventListener('cha
   storeToDeadline();
 })
 
-document.getElementById('branches_allowed_checkboxes').addEventListener('click', () => {
-  let branches_allowed = Array.from(document.querySelectorAll('[branch]:checked')).map((el) => el.getAttribute('branch'));
+const updateBranchCheckBoxes = () => {
+    let branches_allowed = Array.from(document.querySelectorAll('[branch]:checked')).map((el) => el.getAttribute('branch'));
   document.getElementById("branches_allowed_input").value = branches_allowed.join();
+}
+
+document.getElementById('branches_allowed_checkboxes').addEventListener('click', () => {
+  updateBranchCheckBoxes();
 })
+
+const element = document.querySelector('#post-job-form');
+element.addEventListener('submit', event => {
+  storeToDeadline() ;
+  updateBranchCheckBoxes();
+
+});
+
