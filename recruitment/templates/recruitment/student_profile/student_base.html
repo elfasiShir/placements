@@ -16,5 +16,6 @@
 <div class="user-details-container" enctype="multipart/form-data" action="{% url 'edit_profile' %}" method="post">
     {% block student_data %}
     {% endblock %}
+    <div id="user_id" style="visibility: hidden;">{{request.user.id}}</div>
 </div>
 {% endblock %}

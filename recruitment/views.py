@@ -39,6 +39,9 @@ def register(request):
 def student_profile(request):
     return render(request, "recruitment/student-profile.html")
 
+def student_certificates(request):
+    return render(request, "recruitment/student_profile/certificates.html")
+
 @login_required
 def apply_to_job(request, company, job_id):
     # The `company` argument is just for readability in url.
