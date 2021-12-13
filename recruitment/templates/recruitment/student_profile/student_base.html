@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/input-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/dashboard-styles.scss' %}" />
 <link rel="stylesheet" href="{% sass_src 'recruitment/scss/profile-styles.scss' %}" />
+<link rel="stylesheet" href="{% sass_src 'recruitment/scss/strip.scss' %}" />
 <script src="{% static 'recruitment/js/add-remove-html.js'%}"></script>
 <script src="{% static 'recruitment/js/editProfile.js' %}" defer></script>
 {% endblock %}
@@ -16,6 +17,6 @@
 <div class="user-details-container" enctype="multipart/form-data" action="{% url 'edit_profile' %}" method="post">
     {% block student_data %}
     {% endblock %}
-    <div id="user_id" style="visibility: hidden;">{{request.user.id}}</div>
+    {% comment %} <div id="user_id" style="visibility: hidden;">{{request.user.id}}</div> {% endcomment %}
 </div>
 {% endblock %}

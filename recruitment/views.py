@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate, login
 from django.core.exceptions import ObjectDoesNotExist
 
 from recruitment.forms import AddressForm, BTechExtrasForm, CertificationForm, EducationForm, InternshipForm, JobForm, JobRoundForm, ProjectForm, SocialProfileForm, StudentProfileForm
-from recruitment.models import BTechExtras, Job, JobRound, User
+from recruitment.models import BTechExtras, Certification, Job, JobRound, User
+from recruitment.lib.file_path import certificate_path
 from recruitment.utils import jsonify_student_data
 
 def home(request):
@@ -39,9 +40,6 @@ def register(request):
 def student_profile(request):
     return render(request, "recruitment/student-profile.html")
 
-def student_certificates(request):
-    return render(request, "recruitment/student_profile/certificates.html")
-
 @login_required
 def apply_to_job(request, company, job_id):
     # The `company` argument is just for readability in url.
@@ -60,6 +58,24 @@ def applied_jobs(request):
     jobs_applied = request.user.applied_jobs.all()
 
     return render(request, "recruitment/applied-jobs.html", context={"jobs_applied": jobs_applied})
+
+def student_certificates(request):
+    if request.method == "POST":
+        current= request.user
+        newCertificate = Certification(name = request.POST['certificate'],student = current,certificate = request.POST['certificate'],issuing_authority=request.POST['issuing_authority'])
+        newCertificate.save()
+        return redirect(reverse('student_certificates'))
+    
+    certificates_uploaded = Certification.objects.all()
+    return render(request, "recruitment/student_profile/certificates.html", {"certificates_uploaded": certificates_uploaded})
+
+def delete_certificate(request):
+    if request.method == "POST":
+        target_id = request.POST['target']
+        certificate = Certification.objects.get(id=target_id)
+        certificate.delete()
+        return redirect(reverse('student_certificates'))
+    
 
 def edit_profile(request):
     if request.method == "POST":

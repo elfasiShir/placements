@@ -198,7 +198,7 @@ class Job(models.Model):
         ('CL', 'Closed'),
     )
     status = models.CharField("Status", max_length=2, choices=STATUS_CHOICES)
-
+    
 class JobRound(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='job_rounds')
     round_number = models.SmallIntegerField('Round number')
