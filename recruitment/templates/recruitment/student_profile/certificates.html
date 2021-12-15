@@ -2,15 +2,16 @@
 
 {% block student_data %}
 <div class="container-header my-account-header">
-    <h2 class="container-title">Certificates</h2>
+    <h2 class="container-title">Certifications</h2>
 </div>
 <div class="user-details">
     <div class="uploaded-certificates">
-        {% for certificate in certificates_uploaded %}
+        {% for certificate in certificates %}
         <form action="{% url 'delete_certificate' %}" method="post" class="certificate-strip">
             {% csrf_token %}
             <div class="edit-button-div">
                 <span class="detail-field certificate-name"> {{certificate.name}} </span>
+                <span class="detail-field"> {{certificate.issuing_authority}} </span>
             </div>
             <input style="display: none;" type="text"  name="target" value={{certificate.id}} readonly>
             <button type="submit" class="btn-close">
@@ -29,13 +30,17 @@
         <div class="flex-row certificate-form">
             <div class="flex-col">
                 <label class="detail-title required" for="certificateName">Certificate Name</label>
-                <input type="text" name="certificate" class="detail-field" id="certificateName" required
+                <input type="text" name="name" class="detail-field" id="certificateName" required
                     placeholder="certificate name">
             </div>
             <div class="flex-col ">
-                <label class="detail-title " for="input-round-venue">Issuing Authority</label>
+                <label class="detail-title">Issuing Authority</label>
                 <input type="text" id="authority" name="issuing_authority" class="detail-field"
                     placeholder="Harvard" />
+            </div>
+            <div class="flex-col">
+                <label class="detail-title">Certificate</label>
+                <input type="file" name="certificate" class="detail-field" id="certificateFile" accept="application/pdf" />
             </div>
         </div>
         <div class="flex-row flex-spbw">
@@ -43,7 +48,8 @@
                 <button class="edit-button submit-button" type="submit">Upload</button>
             </div>
         </div>
-        <hr />
+        <input type="hidden" name="student" value="{{ request.user.id }}">
     </form>
+    <hr />
 </div>
 {% endblock %}

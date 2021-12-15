@@ -61,13 +61,16 @@ def applied_jobs(request):
 
 def student_certificates(request):
     if request.method == "POST":
-        current= request.user
-        newCertificate = Certification(name = request.POST['certificate'],student = current,certificate = request.POST['certificate'],issuing_authority=request.POST['issuing_authority'])
-        newCertificate.save()
-        return redirect(reverse('student_certificates'))
+        form = CertificationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('student_certificates'))
+    else:
+        form = CertificationForm()
     
-    certificates_uploaded = Certification.objects.all()
-    return render(request, "recruitment/student_profile/certificates.html", {"certificates_uploaded": certificates_uploaded})
+    certificates = Certification.objects.all()
+    return render(request, "recruitment/student_profile/certificates.html",
+                  {"certificates": certificates, "form": form})
 
 def delete_certificate(request):
     if request.method == "POST":
