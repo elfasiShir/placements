@@ -78,10 +78,9 @@ async function fetchStudents(){
     let students = await response.json();
 
     students.forEach(student => {
-        let {id,first_name,last_name}=student
-        let roll=12
+        let {id,first_name,last_name,roll_number}=student
         let name=first_name+" "+last_name
-        addStudentRow(id,roll,name,"#student-list")        
+        addStudentRow(id,roll_number,name,"#student-list")        
     });
     window.didFetch=true
     }
