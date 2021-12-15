@@ -67,17 +67,23 @@ def student_certificates(request):
             return redirect(reverse('student_certificates'))
     else:
         form = CertificationForm()
-    
+
     certificates = Certification.objects.all()
     return render(request, "recruitment/student_profile/certificates.html",
                   {"certificates": certificates, "form": form})
 
 def delete_certificate(request):
     if request.method == "POST":
-        target_id = request.POST['target']
-        certificate = Certification.objects.get(id=target_id)
-        certificate.delete()
-        return redirect(reverse('student_certificates'))
+        certificate_id = request.POST['certificate_id']
+        try:
+            certificate = Certification.objects.get(id=certificate_id, student=request.user)
+            certificate.delete()
+        except Certification.DoesNotExist:
+            # Might be a hacker trying to delete someone else's certificate
+            # TODO: Log this when logging is set up
+            pass
+
+    return redirect(reverse('student_certificates'))
     
 
 def edit_profile(request):
